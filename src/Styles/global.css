@@ -276,12 +276,12 @@
 .glow{
     height: 0;
     width: 0;
-    border: solid red;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .glow img{
-    height: 2rem;
+    height: 3rem;
+    filter: blur(0.2rem);
 }
