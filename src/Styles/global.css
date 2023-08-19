@@ -87,8 +87,22 @@
     width: fit-content;
 }
 
+.glow-path{
+    position: absolute;
+    bottom: 0;
+    right: 2rem;
+    width: fit-content;
+}
+
+.glow-path svg{
+    height: 80vh;
+    right: 3rem;
+    opacity: 0;
+}
+
+
 .clocktower img {
-    height: 78vh;
+    height: 80vh;
 }
 
 .ellipse1 {
@@ -257,4 +271,17 @@
 
 .right img{
     width: 100%;
+}
+
+.glow{
+    height: 0;
+    width: 0;
+    border: solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glow img{
+    height: 2rem;
 }
