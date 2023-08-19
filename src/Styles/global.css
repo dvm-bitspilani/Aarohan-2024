@@ -1,0 +1,260 @@
+.landing-page {
+    height: 100vh;
+    position: relative;
+}
+
+.navbar {
+    width: 100%;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1rem;
+    gap: 2.5rem;
+}
+
+.nav-list li{
+    cursor: pointer;
+}
+
+.nav-container {
+    padding: 2rem;
+    padding-inline: 3rem;
+    display: flex;
+    align-items: center;
+
+}
+
+.nav-logo {
+    margin-right: auto;
+}
+
+.nav-logo img {
+    height: 3rem;
+    width: auto;
+}
+
+.landing-text-container {
+    position: absolute;
+    top: 37%;
+    left: 5rem;
+    display: flex;
+    gap: 2.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-text-container img {
+    height: 8rem;
+}
+
+.landing-text-container button {
+    padding-block: 0.3rem;
+    padding-inline: 1.4rem;
+    background-color: transparent;
+    color: white;
+    border: 1px solid #1F94FC;
+    border-radius: 0.8rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    scale: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+.landing-text-container button:hover{
+    background-color: white;
+    color: #111027;
+    transition: all 0.3s ease-in-out;
+    scale: 1.1;
+    border: solid white;
+}
+
+.dummy {
+    height: 100%;
+}
+
+.clocktower {
+    position: absolute;
+    bottom: 0;
+    right: 2rem;
+    width: fit-content;
+}
+
+.clocktower img {
+    height: 78vh;
+}
+
+.ellipse1 {
+    position: absolute;
+    top: 200vh;
+    left: -50vw;
+    width: 2rem;
+    height: 2rem;
+    transform: rotate(-109.984deg);
+    flex-shrink: 0;
+    z-index: -1;
+}
+
+.ellipse1 img {
+    border-radius: 100rem;
+    background: #7EB1BE;
+    filter: blur(1000px);
+    opacity: 0.3;
+}
+
+.ellipse2 {
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    /* width: 100rem;
+    height: 90rem; */
+    transform: rotate(-0.85deg);
+    z-index: -1;
+
+
+}
+
+.ellipse2 img {
+    position: absolute;
+    height: 40rem;
+    bottom: -20rem;
+    right: -10rem;
+    border-radius: 999.52px;
+    opacity: 1;
+    background: linear-gradient(90deg, #EBEEFD 0%, #547EE1 48.96%, #3A6FEC 91.67%);
+    filter: blur(100rem);
+    opacity: 0.15;
+}
+
+.para{
+    position: relative;
+}
+
+.ellipse3{
+    position: absolute;
+    height: 60rem;
+    bottom: -120%;
+    left: -35rem;
+    border-radius: 999.52px;
+    opacity: 1;
+    background: white;
+    filter: blur(1000rem);
+    opacity: 0.1;
+    z-index: -1;
+
+}
+
+.ellipse4{
+    position: absolute;
+    height: 20rem;
+    bottom: -10%;
+    left: 40%;
+    border-radius: 999.52px;
+    opacity: 1;
+    background: #7EB1BE;
+    filter: blur(1000rem);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.process{
+    position: relative;
+}
+
+.main {
+    padding-inline: 9vw;
+    background-position: center;
+    background-size: 100%;
+}
+
+.heading {
+    color: #1F94FC;
+    font-family: Poppins;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+}
+
+.text {
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: justify;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 3vw;
+}
+
+.card {
+    border: 1px solid rgba(28, 125, 212, 0.70);
+    background: rgb(8, 7, 17);
+    background: linear-gradient(90deg, rgba(18,17,40,1) 0%, rgb(31, 39, 53) 100%);
+    box-shadow: 3px 6px 12px 0px rgba(41, 51, 72, 0.70);
+    border-radius: 2vw;
+    padding: 3.5vw;
+}
+
+.card h1 {
+    color: #1F94FC;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.9rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 0;
+    margin-bottom: 1vw;
+}
+
+.card p {
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding: 0;
+    margin: 0;
+}
+
+.road-to-container{
+    display: grid;
+    grid-template-columns: 4fr 3fr;
+    align-items: center;
+}
+
+.text1{
+    color: #4CBAD6;
+    margin-top: 0;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.right{
+    padding: 2rem;
+}
+
+.right img{
+    width: 100%;
+}
