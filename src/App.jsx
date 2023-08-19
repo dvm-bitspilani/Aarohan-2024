@@ -1,13 +1,11 @@
-import { useState } from 'react'
+import React from 'react'
 import './App.css'
-import Landing from '../pages/Landing.jsx'
 import Navbar from './Components/Navbar.jsx'
 import './Styles/global.css'
 import Main from './pages/Main'
-
+import Landing from './pages/Landing'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
