@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import Landing from './pages/landing'
-import Navbar from './Components/Navbar'
+import Landing from '../pages/Landing.jsx'
+import Navbar from './Components/Navbar.jsx'
 import './Styles/global.css'
 import Main from './pages/Main'
 
