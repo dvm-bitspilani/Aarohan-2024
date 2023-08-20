@@ -1,9 +1,9 @@
 import React from "react";
-import AarohanLogo from "../../public/images/aarohanLogo.png"
-import ClockTower from "../../public/images/clocktower.svg"
-import Ellipse1 from "../../public/images/ellipse1.png"
-import Ellipse from "../../public/images/ellipse2.png"
-import Glow from "../../public/images/glow.png"
+import AarohanLogo from "../images/aarohanLogo.png"
+import ClockTower from "../images/clocktower.svg"
+import Ellipse1 from "../images/ellipse1.png"
+import Ellipse from "../images/ellipse2.png"
+import Glow from "../images/glow.png"
 import { useEffect, useRef } from 'react';
 import { gsap, MotionPathPlugin } from 'gsap/all';
 gsap.registerPlugin(MotionPathPlugin);

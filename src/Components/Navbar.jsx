@@ -1,5 +1,5 @@
 import React from "react";
-import ApogeeLogo from '../../public/images/apogeeLogo.png'
+import ApogeeLogo from '../images/apogeeLogo.png'
 
 export default function Navbar({scrollToTarget}){
     return(

@@ -1,46 +1,52 @@
 import React from "react";
 import Profile from "./Profile";
 import "../Styles/Contact.css"
+import Vishwam from "../Contact/Vishwam.jpg"
+import Nachiket from "../Contact/Nachiket.jpg"
+import Anurag from "../Contact/Anurag.jpg"
+import Rajul from "../Contact/Rajul.jpg"
+import Saumya from "../Contact/Saumya.jpg"
+import Shruti from "../Contact/Shruti.jpg"
 
 export default function Contact() {
     const data2 = [
         {
-            image: "../../public/Contact/Vishwam.jpg",
+            image: `${Vishwam}`,
             name: "Vishwam Bagrodia",
             caption: "Coordinator",
             phone: "+91 8240563699 "
 
         },
         {
-            image: "../../public/Contact/Nachiket.jpg",
+            image: `${Nachiket}`,
             name: "Nachiketh Shastry",
             caption: "Joint Coordinator and Head of Outreach",
             phone: "+91 7483945690 "
 
         },
         {
-            image: "../../public/Contact/Anurag.jpg",
+            image: `${Anurag}`,
             name: "Anurag Singh Bisht",
             caption: "Joint Coordinator and Head of Sponsorship",
             phone: "+91 8602452639 "
 
         },
         {
-            image: "../../public/Contact/Rajul.jpg",
+            image: `${Rajul}`,
             name: "Rajul Bangani",
             caption: "Head of Minifest and Outreach",
             phone: "+91 8722714214 "
 
         },
         {
-            image: "../../public/Contact/Saumya.jpg",
+            image: `${Saumya}`,
             name: "Saumya Ojha",
             caption: "Head of Event Management",
             phone: "+91 9219555290 "
 
         },
         {
-            image: "../../public/Contact/Shruti.jpg",
+            image: `${Shruti}`,
             name: "Shruti Chaturvedi",
             caption: "Head of Graphic Design and Publicity",
             phone: "+91 8851336713"

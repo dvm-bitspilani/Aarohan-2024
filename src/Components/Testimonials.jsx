@@ -1,6 +1,6 @@
 import React from "react";
-import BgPath from "../../public/images/Path2.png"
-import Quote from "../../public/images/quote.svg"
+import BgPath from "../images/Path2.png"
+import Quote from "../images/quote.svg"
 import "../Styles/testimonials.css"
 
 export default function Testimonials() {
