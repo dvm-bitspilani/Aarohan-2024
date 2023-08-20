@@ -43,7 +43,7 @@
 .landing-text-container {
     position: absolute;
     top: 37%;
-    left: 5rem;
+    left: 15vh;
     display: flex;
     gap: 2.5rem;
     flex-direction: column;
@@ -53,7 +53,7 @@
 }
 
 .landing-text-container img {
-    height: 8rem;
+    height: 20vh;
 }
 
 .landing-text-container button {

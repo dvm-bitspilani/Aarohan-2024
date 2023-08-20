@@ -1,7 +1,7 @@
 import React from "react";
 import BgPath from "../../public/images/Path2.png"
 import Quote from "../../public/images/quote.svg"
-import "../Styles/Testimonials.css"
+import "../Styles/testimonials.css"
 
 export default function Testimonials() {
     return (
