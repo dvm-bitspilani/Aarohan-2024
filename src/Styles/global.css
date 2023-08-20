@@ -49,6 +49,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 10;
 }
 
 .landing-text-container img {
@@ -56,24 +57,22 @@
 }
 
 .landing-text-container button {
-    padding-block: 0.3rem;
-    padding-inline: 1.4rem;
+    padding: 0.5rem;
+    padding-inline: 0.7rem;
     background-color: transparent;
     color: white;
     border: 1px solid #1F94FC;
     border-radius: 0.8rem;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     cursor: pointer;
-    scale: 1;
     transition: all 0.3s ease-in-out;
+    letter-spacing: 2px;
 }
 
 .landing-text-container button:hover{
     background-color: white;
     color: #111027;
     transition: all 0.3s ease-in-out;
-    scale: 1.1;
-    border: solid white;
 }
 
 .dummy {
@@ -284,4 +283,14 @@
 .glow img{
     height: 3rem;
     filter: blur(0.2rem);
+}
+
+.text3{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
 }

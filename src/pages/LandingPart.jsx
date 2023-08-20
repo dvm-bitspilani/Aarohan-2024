@@ -30,13 +30,13 @@ export default function Landing() {
         <>
             <div className="dummy">
                 <div className="landing-text-container">
-                    <img src={AarohanLogo} alt="logo" />
+                    <img src={AarohanLogo} alt="logo" draggable="false"/>
                     <div>
                         <button>REGISTER</button>
                     </div>
                 </div>
                 <div className="clocktower">
-                    <img src={ClockTower} alt="" />
+                    <img src={ClockTower} alt="" draggable="false"/>
                 </div>
                 <div className="glow-path">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1099 882" fill="none">

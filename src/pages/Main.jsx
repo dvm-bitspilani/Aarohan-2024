@@ -2,6 +2,9 @@ import React from "react";
 import RoadImg from "../../public/images/road.png"
 import BackgroundImg from "../../public/images/bg.png"
 import Ellipse from "../../public/images/ellipse2.png"
+import Testimonials from "../Components/Testimonials";
+import FAQ from "../Components/FAQ"
+import Contact from "../Components/Contact";
 
 export default function Main() {
     return (
@@ -50,6 +53,10 @@ export default function Main() {
                 <div className="ellipse2">
                     <img src={Ellipse} />
                 </div>
+
+                <Testimonials/>
+                <FAQ/>
+                <Contact/>
             </div>
         </>
     )

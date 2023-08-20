@@ -1,7 +1,7 @@
 import React from "react";
 import ApogeeLogo from '../../public/images/apogeeLogo.png'
 
-export default function Navbar(){
+export default function Navbar({scrollToTarget}){
     return(
         <>
             <div className="navbar">
@@ -10,7 +10,7 @@ export default function Navbar(){
                     <div>
                         <ul className="nav-list">
                             <li>HOME</li>
-                            <li>ABOUT US</li>
+                            <li onClick={scrollToTarget}>ABOUT US</li>
                             <li>SAMPLE PAPER</li>
                             <li>RESULTS</li>
                             <li>FAQS</li>

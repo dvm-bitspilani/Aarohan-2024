@@ -1,0 +1,38 @@
+.testi-page{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* padding-block: 5rem;
+    margin-top: 5rem; */
+    overflow: visible;
+}
+
+.testi-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 2vw;
+}
+
+.quote-box{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.quote-box img{
+    margin: auto;
+}
+
+.breaker{
+    position: relative;
+}
+
+.breaker::after{
+    content: "";
+    width: 50%;
+    border-top: solid #1F94FC 5px;
+    position: absolute;
+    bottom: -1rem;
+    left: 25%;
+}
