@@ -1,6 +1,37 @@
-.reg-tab{
-    color: white;
-    font-family: 'Poppins';
+.tabs-container{
+    display: flex;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.2rem;
+    background-color: transparent;
+}
+
+.tab{
+    color: rgb(188, 188, 188);
+    border: solid transparent;
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    text-align: center;
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
+    border-bottom: solid white;
+    cursor: pointer;
+}
+
+.active{
+    color: white;
+    border: solid white;
+    border-radius: 5px 5px 0 0;
+    border-bottom: none;
+}
+
+.invisible{
+    display: none;
+}
+
+@media only screen and (max-width: 650px){
+    .tab{
+        font-size: 1rem;
+        padding-block: 0.2rem;
+    }
 }
 

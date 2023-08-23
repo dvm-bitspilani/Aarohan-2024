@@ -1,5 +1,4 @@
-import React from "react";
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import React, { useEffect, useState } from "react";
 import "../Styles/Registration.css"
 import Navbar from "../Components/Navbar";
 import 'react-tabs/style/react-tabs.css';
@@ -9,24 +8,36 @@ import Form2 from "../Components/Form2";
 
 
 export default function Registration() {
+
+    const Student = document.getElementById('#student')
+    const School = document.getElementById("#school")
+
+    const [isStudentTab, setIsStudentTab] = useState(true)
+
+    const handleStudentClick = () => {
+        setIsStudentTab(true)
+    }
+
+    const handleSchoolClick = () => {
+        setIsStudentTab(false)
+    }
+
     return (
         <>
             <Navbar />
             <div className="page" style={{ backgroundImage: `url(${BackgroundImg})` }}>
                 <div className="heading" style={{ width: "100%", textAlign: "center", paddingTop: "2rem" }}>Registration Form</div>
-                <Tabs className="reg-tab">
-                    <TabList>
-                        <Tab>Register as Student</Tab>
-                        <Tab>Register as School</Tab>
-                    </TabList>
-                    <TabPanel>
-                             <Form1 />
-                    </TabPanel>
-                    <TabPanel>
-                        <Form2 />
-                    </TabPanel>
-                </Tabs>
+            
+            <div className="tabs-container">
+                <div className={`tab ${isStudentTab && 'active'}`}  onClick={handleStudentClick}>Register as a Student</div>
+                <div className={`tab ${!isStudentTab && 'active'}`} onClick={handleSchoolClick}>Register as a School</div>
             </div>
+            <div className="forms">
+                <div className={`${!isStudentTab && 'invisible'}`}><Form1/></div>
+                <div className={`${isStudentTab && 'invisible'}`}><Form2/></div>
+            </div>
+            </div>
+
         </>
     )
 }

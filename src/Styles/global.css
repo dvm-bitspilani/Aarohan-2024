@@ -3,11 +3,11 @@
     position: relative;
 }
 
-Link{
+Link {
     text-decoration: none;
 }
 
-.page{
+.page {
     padding-inline: 9vw;
     background-position: center;
     background-size: contain;
@@ -29,20 +29,19 @@ Link{
     align-items: center;
     justify-content: space-evenly;
     font-size: 1rem;
-    gap: 2.5rem;
+    gap: 4vw;
 }
 
-.nav-list li{
+.nav-list li {
     cursor: pointer;
     color: white;
 }
 
 .nav-container {
     padding: 2rem;
-    padding-inline: 3rem;
+    padding-inline: 8vw;
     display: flex;
     align-items: center;
-
 }
 
 .nav-logo {
@@ -53,6 +52,54 @@ Link{
     height: 3rem;
     width: auto;
     cursor: pointer;
+}
+
+label.hamburger {
+    display: block;
+    background: transparent;
+    width: 35px;
+    height: 60px;
+    position: relative;
+    cursor: pointer;
+}
+
+input#hamburger {
+    display: none
+}
+
+.line {
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    background: white;
+    transition: 0.5s;
+    border-radius: 5px;
+}
+
+/* steps of 12 are optional, could also be 10, 13 etc */
+.line:nth-child(1) {
+    top: 10px;
+}
+
+.line:nth-child(2) {
+    top: 20px;
+}
+
+.line:nth-child(3) {
+    top: 30px;
+}
+
+/* translateY must be same as */
+#hamburger:checked+.hamburger .line:nth-child(1) {
+    transform: translateY(10px) rotate(-45deg);
+}
+
+#hamburger:checked+.hamburger .line:nth-child(2) {
+    opacity: 0;
+}
+
+#hamburger:checked+.hamburger .line:nth-child(3) {
+    transform: translateY(-10px) rotate(45deg);
 }
 
 .landing-text-container {
@@ -84,7 +131,7 @@ Link{
     cursor: pointer;
 }
 
-.landing-text-container button:hover{
+.landing-text-container button:hover {
     background-color: white;
     color: #111027;
 }
@@ -100,15 +147,15 @@ Link{
     width: fit-content;
 }
 
-.glow-path{
+.glow-path {
     position: absolute;
     bottom: 0;
     right: 2rem;
     width: fit-content;
 }
 
-.glow-path svg{
-        height: 80vh;
+.glow-path svg {
+    height: 80vh;
     right: 3rem;
     opacity: 0;
 }
@@ -158,11 +205,11 @@ Link{
     opacity: 0.15;
 }
 
-.para{
+.para {
     position: relative;
 }
 
-.ellipse3{
+.ellipse3 {
     position: absolute;
     height: 60rem;
     bottom: -120%;
@@ -176,7 +223,7 @@ Link{
 
 }
 
-.ellipse4{
+.ellipse4 {
     position: absolute;
     height: 20rem;
     bottom: -10%;
@@ -189,7 +236,7 @@ Link{
     z-index: -1;
 }
 
-.process{
+.process {
     position: relative;
 }
 
@@ -232,7 +279,7 @@ Link{
 .card {
     border: 1px solid rgba(28, 125, 212, 0.70);
     background: rgb(8, 7, 17);
-    background: linear-gradient(90deg, rgba(18,17,40,1) 0%, rgb(31, 39, 53) 100%);
+    background: linear-gradient(90deg, rgba(18, 17, 40, 1) 0%, rgb(31, 39, 53) 100%);
     box-shadow: 3px 6px 12px 0px rgba(41, 51, 72, 0.70);
     border-radius: 2vw;
     padding: 3.5vw;
@@ -260,13 +307,13 @@ Link{
     margin: 0;
 }
 
-.road-to-container{
+.road-to-container {
     display: grid;
     grid-template-columns: 4fr 3fr;
     align-items: center;
 }
 
-.text1{
+.text1 {
     color: #4CBAD6;
     margin-top: 0;
     text-align: left;
@@ -277,15 +324,15 @@ Link{
     line-height: normal;
 }
 
-.right{
+.right {
     padding: 2rem;
 }
 
-.right img{
+.right img {
     width: 100%;
 }
 
-.glow{
+.glow {
     height: 0;
     width: 0;
     display: flex;
@@ -293,12 +340,12 @@ Link{
     justify-content: center;
 }
 
-.glow img{
+.glow img {
     height: 5rem;
     filter: blur(0.2rem);
 }
 
-.text3{
+.text3 {
     color: white;
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
@@ -308,27 +355,38 @@ Link{
     text-align: center;
 }
 
-@media only screen and (max-width: 1300px){
-    .landing-text-container img{
+.ham{
+    display: none;
+}
+
+@media only screen and (max-width: 1300px) {
+    .landing-text-container img {
         width: 20rem;
     }
+}
 
-@media only screen and (max-width: 1000px){
-    .landing-text-container{
+@media only screen and (max-width: 1030px) {
+    .nav-list {
+        gap: 3vw;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .landing-text-container {
         width: 100%;
         left: 0;
         top: 20vh;
     }
 
-    .landing-text-container img{
+    .landing-text-container img {
         width: 15rem;
     }
 
-    .landing-text-container button{
+    .landing-text-container button {
         padding-inline: 3rem;
     }
 
-    .clocktower{
+    .clocktower {
         left: 0;
         width: 100vw;
         display: flex;
@@ -336,7 +394,23 @@ Link{
         justify-content: center;
     }
 
-    .clocktower img{
+    .clocktower img {
         height: 50vh;
     }
-}}
+
+    .nav-logo img {
+        height: 2rem;
+    }
+
+    .nav-list {
+        display: none;
+    }
+
+    .ham{
+        display: block;
+    }
+
+    .glow {
+        display: none;
+    }
+}

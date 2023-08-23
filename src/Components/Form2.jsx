@@ -22,7 +22,6 @@ export default function Form1() {
                     <label className="form-state">
                         State
                         <select
-                            onchange="print_city('state', this.selectedIndex);"
                             id="sts"
                         ></select>
                     </label>
