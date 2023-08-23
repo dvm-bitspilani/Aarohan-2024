@@ -14,7 +14,7 @@ export default function Main() {
             >
                 <div className="para">
                     <img src={Ellipse} className="ellipse3"/>
-                    <div className="heading">ABOUT US</div>
+                    <div className="heading" id="about">ABOUT US</div>
                     <div className="text">Aarohan is a national-level olympiad crafted and conducted by the students of BITS Pilani, which aims to inculcate scientific temperament in the minds of the young generation. The examination is conducted for the classes IX, X, XI and XlIth. It is conducted in two rounds. With this, we are trying to revive the lost essence of real education, which involves questioning the very fundamentals of any phenomenon. Aarohan has been growing exponentially ever since its inception in 2012. What started as a humble attempt to rekindle curiosity is now a nationwide event. We also made a mark on the international stage with participation from Abu Dhabi and Germany.</div>
                 </div>
                 <div className="para">
@@ -28,10 +28,12 @@ export default function Main() {
                         <div className="card 1">
                             <h1>Round 1</h1>
                             <p>Round one comprises a computer-based exam based on a single theme based on scientific phenomena. The paper would be multiple choice type, being 2 hours long. There are no prerequisites required to attempt the paper as the syllabus would be the same as the syllabus for the student's respective class, and it would be purely application based. The winners of round 1 are then invited to BITS Pilani to be a part of Round 2.</p>
+                            {/* <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ipsa error nostrum labore autem, voluptatem nemo quisquam aut dolorem placeat.</p> */}
                         </div>
                         <div className="card 2">
                             <h1>Round 2</h1>
                             <p>Round 2 is conducted during APOGEE. Team Aarohan conducts exclusive events for the students selected for round 2. Aarohan has seen a few events like Murder Mystery, Anti Chess, Parliamentary Mafia, Escape Room, Cryptic Wordhunt and many more. Round 2 participants get to meet the distinguished personalities who visit the campus during APOGEE, like the honourable Dr A.P.J Abdul Kalam, Prof. H C Verma, Dr. Walter Lewin, Jimmy Wales, Jefferey Archer and many more.</p>
+                            {/* <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa sed sequi aut voluptates laborum natus aliquam dolores. Hic, repellat laborum!</p> */}
                         </div>
                     </div>
                 </div>
@@ -55,7 +57,6 @@ export default function Main() {
                 </div>
 
                 <Testimonials/>
-                <FAQ/>
                 <Contact/>
             </div>
         </>

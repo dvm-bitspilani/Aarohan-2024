@@ -1,6 +1,9 @@
 import React from "react";
 import "../Styles/FAQ.css"
 import FAQbox from "./FAQbox";
+import Navbar from "./Navbar";
+import BackgroundImg from "../images/bg.png"
+
 
 export default function FAQ(){
 
@@ -54,10 +57,13 @@ export default function FAQ(){
     })
 
     return(
-        <>
+        <>  
+            <Navbar/>
+            <div className="page" style={{backgroundImage: `url(${BackgroundImg})`}}>
             <div className="FAQ">
-                <div className="heading" style={{ width: "100%", textAlign: "center" }}>Frequently Asked Questions</div>
+                <div className="heading" style={{ width: "100%", textAlign: "center", paddingTop: "2rem"}}>Frequently Asked Questions</div>
                 {FAQs}
+            </div>
             </div>
         </>
     )

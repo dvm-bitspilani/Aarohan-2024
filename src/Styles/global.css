@@ -3,6 +3,19 @@
     position: relative;
 }
 
+Link{
+    text-decoration: none;
+}
+
+.page{
+    padding-inline: 9vw;
+    background-position: center;
+    background-size: contain;
+    background-repeat: repeat;
+    width: auto;
+    padding-bottom: 5rem;
+}
+
 .navbar {
     width: 100%;
     color: white;
@@ -21,6 +34,7 @@
 
 .nav-list li{
     cursor: pointer;
+    color: white;
 }
 
 .nav-container {
@@ -38,6 +52,7 @@
 .nav-logo img {
     height: 3rem;
     width: auto;
+    cursor: pointer;
 }
 
 .landing-text-container {
@@ -45,7 +60,7 @@
     top: 37%;
     left: 15vh;
     display: flex;
-    gap: 2.5rem;
+    gap: 1rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -53,26 +68,25 @@
 }
 
 .landing-text-container img {
-    height: 20vh;
+    width: 35rem;
+    height: auto;
 }
 
 .landing-text-container button {
-    padding: 0.5rem;
-    padding-inline: 0.7rem;
+    font-family: 'Poppins', sans-serif;
+    padding: 0.2rem;
+    padding-inline: 5rem;
     background-color: transparent;
     color: white;
     border: 1px solid #1F94FC;
-    border-radius: 0.8rem;
-    font-size: 1.5rem;
+    border-radius: 5px;
+    font-size: 2rem;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    letter-spacing: 2px;
 }
 
 .landing-text-container button:hover{
     background-color: white;
     color: #111027;
-    transition: all 0.3s ease-in-out;
 }
 
 .dummy {
@@ -94,7 +108,7 @@
 }
 
 .glow-path svg{
-    height: 80vh;
+        height: 80vh;
     right: 3rem;
     opacity: 0;
 }
@@ -130,8 +144,6 @@
     height: 90rem; */
     transform: rotate(-0.85deg);
     z-index: -1;
-
-
 }
 
 .ellipse2 img {
@@ -185,6 +197,7 @@
     padding-inline: 9vw;
     background-position: center;
     background-size: 100%;
+    height: 100%;
 }
 
 .heading {
@@ -281,7 +294,7 @@
 }
 
 .glow img{
-    height: 3rem;
+    height: 5rem;
     filter: blur(0.2rem);
 }
 
@@ -294,3 +307,36 @@
     line-height: normal;
     text-align: center;
 }
+
+@media only screen and (max-width: 1300px){
+    .landing-text-container img{
+        width: 20rem;
+    }
+
+@media only screen and (max-width: 1000px){
+    .landing-text-container{
+        width: 100%;
+        left: 0;
+        top: 20vh;
+    }
+
+    .landing-text-container img{
+        width: 15rem;
+    }
+
+    .landing-text-container button{
+        padding-inline: 3rem;
+    }
+
+    .clocktower{
+        left: 0;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .clocktower img{
+        height: 50vh;
+    }
+}}
