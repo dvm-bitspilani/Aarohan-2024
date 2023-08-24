@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ApogeeLogo from '../images/apogeeLogo.png'
 import { Link } from "react-router-dom";
-import "../Styles/hamburger.css"
+import "../Styles/Hamburger.css"
 
 export default function Navbar({ scrollToTarget }) {
     const [isHamOpen, setIsHamOpen] = useState(false)
