@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ApogeeLogo from '../images/apogeeLogo.png'
 import { Link } from "react-router-dom";
 import "../Styles/Hamburger.css"
@@ -9,6 +9,14 @@ export default function Navbar({ scrollToTarget }) {
     const handleHamOpen = () => {
         setIsHamOpen(!isHamOpen)
     }
+
+    useEffect(() => {
+
+                isHamOpen ? document.body.style.overflow = "hidden" : "";
+                return () => {
+                  document.body.style.overflow = "visible";
+                }
+              }, [isHamOpen])
 
     return (
         <>
