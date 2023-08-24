@@ -43,6 +43,7 @@ Link {
     display: flex;
     align-items: center;
     overflow-x: hidden;
+    position: relative;
 }
 
 .nav-logo {
