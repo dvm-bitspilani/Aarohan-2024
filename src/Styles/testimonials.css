@@ -4,6 +4,10 @@
     cursor: pointer;
     padding-inline: 5rem;
     padding-bottom: 3rem;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .testi-content {
