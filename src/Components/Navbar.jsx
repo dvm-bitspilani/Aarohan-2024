@@ -11,11 +11,7 @@ export default function Navbar({ scrollToTarget }) {
     }
 
     useEffect(() => {
-
-                isHamOpen ? document.body.style.overflow = "hidden" : "";
-                return () => {
-                  document.body.style.overflow = "visible";
-                }
+                isHamOpen ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "visible";
               }, [isHamOpen])
 
     return (

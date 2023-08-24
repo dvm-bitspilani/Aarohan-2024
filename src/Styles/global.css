@@ -42,7 +42,6 @@ Link {
     padding-inline: 8vw;
     display: flex;
     align-items: center;
-    overflow: hidden;
     position: relative;
 }
 
@@ -236,6 +235,12 @@ input#hamburger {
     filter: blur(1000rem);
     opacity: 0.5;
     z-index: -1;
+    overflow-x: hidden;
+    display: none;
+}
+
+.ellipse4 img{
+    overflow-x: hidden;
 }
 
 .process {
