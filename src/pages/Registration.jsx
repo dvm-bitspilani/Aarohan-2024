@@ -29,8 +29,8 @@ export default function Registration() {
                 <div className="heading" style={{ width: "100%", textAlign: "center", paddingTop: "2rem" }}>Registration Form</div>
             
             <div className="tabs-container">
-                <div className={`tab ${isStudentTab && 'active'}`}  onClick={handleStudentClick}>Register as a Student</div>
-                <div className={`tab ${!isStudentTab && 'active'}`} onClick={handleSchoolClick}>Register as a School</div>
+                <div className={`tab ${isStudentTab && 'active2'}`}  onClick={handleStudentClick}>Register as a Student</div>
+                <div className={`tab ${!isStudentTab && 'active2'}`} onClick={handleSchoolClick}>Register as a School</div>
             </div>
             <div className="forms">
                 <div className={`${!isStudentTab && 'invisible'}`}><Form1/></div>

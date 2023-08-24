@@ -1,0 +1,5 @@
+import React from "react"
+
+export const Round1 = "Round one comprises a computer-based exam based on a single theme based on scientific phenomena. The paper would be multiple choice type, being 2 hours long. There are no prerequisites required to attempt the paper as the syllabus would be the same as the syllabus for the student's respective class, and it would be purely application based. The winners of round 1 are then invited to BITS Pilani to be a part of Round 2."
+
+export const Round2 = "Round 2 is conducted during APOGEE. Team Aarohan conducts exclusive events for the students selected for round 2. Aarohan has seen a few events like Murder Mystery, Anti Chess, Parliamentary Mafia, Escape Room, Cryptic Wordhunt and many more. Round 2 participants get to meet the distinguished personalities who visit the campus during APOGEE, like the honourable Dr A.P.J Abdul Kalam, Prof. H C Verma, Dr. Walter Lewin, Jimmy Wales, Jefferey Archer and many more."

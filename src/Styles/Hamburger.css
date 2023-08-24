@@ -1,0 +1,37 @@
+.ham-menu{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: -100vw;
+    z-index: 11;
+    background-color: black;
+    /* padding-top: 10vh; */
+    justify-content: center;
+    transition: all 0.5s;
+}
+
+.open{
+    right: 0;
+    overflow: hidden;
+}
+
+.ham-list{
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    padding: 0;
+}
+
+.ham-list li{
+    color: white;
+    font-size: 2rem;
+}
+
+.row{
+    z-index: 999;
+}

@@ -7,18 +7,18 @@ import SamplePDF from '/public/document.pdf'
 import "../Styles/Sample.css"
 
 
-export default function Sample(){
-    
+export default function Sample() {
 
-	return (
-        <>
-        <Navbar/>
-        <div className="page">
-                <div className="heading">Sample Paper</div>
-		</div>
-		{/* <Document file={SamplePDF} className="pdf">
-                <Page pageNumber={1} />
-            </Document> */}
-        </>
-	);
+
+        return (
+                <>
+                        <Navbar />
+                        <div className="page">
+                                <div className="heading">Sample Paper</div>
+                                <div className="PDF-viewer">
+                                </div>
+                        </div>
+
+                </>
+        );
 }

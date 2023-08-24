@@ -359,6 +359,30 @@ input#hamburger {
     display: none;
 }
 
+.card-mobile{
+    display: none;
+}
+
+.ellipse2 img{
+    overflow: hidden;
+}
+
+.ellipse1{
+    overflow: hidden;
+}
+
+.ellipse2{
+    overflow: hidden;
+}
+
+.right-mobile{
+    display: none;
+}
+
+.clocktower{
+    overflow: hidden;
+}
+
 @media only screen and (max-width: 1300px) {
     .landing-text-container img {
         width: 20rem;
@@ -412,5 +436,73 @@ input#hamburger {
 
     .glow {
         display: none;
+    }
+
+    .card span > p, a{
+        display: inline-block;
+    }
+
+    .card-mobile{
+        display: block;
+    }
+
+    .card-desktop{
+        display: none;
+    }
+
+    .read-more{
+        font-size: 1.2rem;
+        cursor: pointer;
+        color: #1F94FC;
+        font-family: Poppins;
+        padding-block: 0.5rem;
+    }
+
+    .cards-container{
+        grid-template-columns: auto;
+    }
+
+    .cards-container p{
+        font-size: 1.2rem;
+    }
+
+    .heading{
+        font-size: 2rem;
+    }
+
+    .text{
+        font-size: 1.2rem;
+    }
+
+    .text1{
+        font-size: 1.2rem;
+    }
+
+    .right{
+        display: none;
+    }
+
+    .right-mobile{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* width: 100vw; */
+    }
+
+    .right-mobile img{
+        margin: auto;
+        /* width: 100%; */
+        margin: 1rem;
+        width: 50vw;
+        max-width: 20rem;
+    }
+
+    .left{
+        /* width: 100%; */
+        text-align: justify;
+    }
+
+    .road-to-container{
+        grid-template-columns: 1fr;
     }
 }
