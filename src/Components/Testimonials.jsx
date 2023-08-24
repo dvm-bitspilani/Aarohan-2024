@@ -6,9 +6,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y, Virtual, Keyboard, Mousewheel, Autoplay, EffectCards } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/bundle'
+import { useRef } from "react";
 
 
 export default function Testimonials() {
+    const prevRef = useRef(null);
+  const nextRef = useRef(null);
+    console.log(window.innerWidth)
 
 
     return (
@@ -25,7 +29,9 @@ export default function Testimonials() {
                     autoplay={{ delay: 2000 }}
                     EffectCards={true}
                     loop={true}
-                    navigation={true}
+                    navigation=
+                        {window.innerWidth > 900 ? true : false}
+                    
                     pagination={true}
                 >
                     <SwiperSlide>
