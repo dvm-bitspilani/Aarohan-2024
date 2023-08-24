@@ -1,4 +1,36 @@
-.pdf{
-    width: 50vw;
-    height: 100%;
+iframe{
+    height: 60vh;
+    width: 50%;
+    margin: auto;
 }
+
+.pdf{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.download{
+    font-family: 'Poppins', sans-serif;
+    padding: 0.2rem;
+    padding-inline: 5rem;
+    background-color: transparent;
+    color: white;
+    border: 1px solid #1F94FC;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: fit-content;
+}
+
+@media only screen and (max-width: 1000px){
+    iframe{
+        height: 60vh;
+        width: 100%;
+        margin: auto;
+    }
+    
+}
+
