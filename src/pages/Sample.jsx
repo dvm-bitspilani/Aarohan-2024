@@ -15,7 +15,7 @@ export default function Sample() {
                 <>
                         <Navbar />
                         <div className="page">
-                                <div className="heading" style={{width: "100%", textAlign: "center", paddingTop: "2rem"}}>Sample Paper</div>
+                                <div className="heading" style={{width: "100%", textAlign: "center", paddingTop: "0px"}}>Sample Paper</div>
                                 <div className="pdf">
                                 <iframe src="https://drive.google.com/file/d/1epMPX3r90rrt6Sa0TEsWfDEG8XO5WCz4/preview" allow="autoplay"></iframe>
 

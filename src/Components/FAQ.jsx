@@ -59,7 +59,7 @@ export default function FAQ(){
     return(
         <>  
             <Navbar/>
-            <div className="page" style={{backgroundImage: `url(${BackgroundImg})`}}>
+            <div className="page" style={{backgroundImage: `url(${BackgroundImg})`, paddingTop: "0px"}}>
             <div className="FAQ">
                 <div className="heading" style={{ width: "100%", textAlign: "center", paddingTop: "2rem"}}>Frequently Asked Questions</div>
                 {FAQs}
