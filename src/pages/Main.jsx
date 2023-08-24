@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import RoadImg from "../images/road.png"
 import BackgroundImg from "../images/bg.png"
 import Ellipse from "../images/ellipse2.png"
-import Testimonials from "../Components/Testimonials";
-import FAQ from "../Components/FAQ"
 import Contact from "../Components/Contact";
 import "../Styles/global.css"
+import Testimonials from "../Components/Testimonials"
 
 export default function Main() {
 
@@ -88,7 +87,7 @@ export default function Main() {
                     <img src={Ellipse} />
                 </div>
 
-                <Testimonials />
+                <Testimonials/>
                 <Contact />
             </div>
         </>

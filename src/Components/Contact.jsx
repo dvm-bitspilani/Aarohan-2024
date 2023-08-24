@@ -57,6 +57,7 @@ export default function Contact() {
     const Contact = data2.map((data, index) => {
         return (
             <Profile
+                key = {data.name}
                 image={data.image}
                 name={data.name}
                 caption={data.caption}
