@@ -15,6 +15,7 @@
     padding-inline: 1rem;
     border-bottom: solid white;
     cursor: pointer;
+    transition: all 0.2s;
 }
 
 .active2{

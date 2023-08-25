@@ -141,31 +141,6 @@ input#hamburger {
     height: 100%;
 }
 
-.clocktower {
-    position: absolute;
-    bottom: 0;
-    right: 2rem;
-    width: fit-content;
-}
-
-.glow-path {
-    position: absolute;
-    bottom: 0;
-    right: 2rem;
-    width: fit-content;
-}
-
-.glow-path svg {
-    height: 80vh;
-    right: 3rem;
-    opacity: 0;
-}
-
-
-.clocktower img {
-    height: 80vh;
-}
-
 .ellipse1 {
     position: absolute;
     top: 200vh;
@@ -239,7 +214,7 @@ input#hamburger {
     display: none;
 }
 
-.ellipse4 img{
+.ellipse4 img {
     overflow-x: hidden;
 }
 
@@ -349,7 +324,7 @@ input#hamburger {
 
 .glow img {
     height: 5rem;
-    filter: blur(0.2rem);
+    filter: blur(0.15rem);
 }
 
 .text3 {
@@ -362,32 +337,41 @@ input#hamburger {
     text-align: center;
 }
 
-.ham{
+.ham {
     display: none;
 }
 
-.card-mobile{
+.card-mobile {
     display: none;
 }
 
-.ellipse2 img{
+.ellipse2 img {
     overflow: hidden;
 }
 
-.ellipse1{
+.ellipse1 {
     overflow: hidden;
 }
 
-.ellipse2{
+.ellipse2 {
     overflow: hidden;
 }
 
-.right-mobile{
+.right-mobile {
     display: none;
 }
 
-.clocktower{
-    overflow: hidden;
+.clocktower-container img,
+svg {
+    position: absolute;
+    bottom: 0;
+    right: 2rem;
+    height: 80%;
+    /* height: 60%; */
+}
+
+.clocktower-container svg{
+    opacity: 0;
 }
 
 @media only screen and (max-width: 1300px) {
@@ -396,14 +380,28 @@ input#hamburger {
     }
 }
 
-@media only screen and (max-width: 1030px) {
+@media only screen and (max-width: 1110px) {
     .nav-list {
-        gap: 3vw;
+        gap: 2vw;
     }
 }
 
 @media only screen and (max-width: 1000px) {
-    .nav-container{
+    .clocktower {
+        display: flex;
+        align-items: bottom;
+        justify-content: center;
+    }
+
+    .clocktower-container img,
+    svg {
+        position: absolute;
+        left: 50%;
+        height: 60%;
+        transform: translate(-50%, 0);
+    }
+
+    .nav-container {
         padding-block: 1rem;
     }
 
@@ -421,18 +419,6 @@ input#hamburger {
         padding-inline: 3rem;
     }
 
-    .clocktower {
-        left: 0;
-        width: 100vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .clocktower img {
-        height: 50vh;
-    }
-
     .nav-logo img {
         height: 2rem;
     }
@@ -441,27 +427,24 @@ input#hamburger {
         display: none;
     }
 
-    .ham{
+    .ham {
         display: block;
     }
 
-    .glow {
-        display: none;
-    }
-
-    .card span > p, a{
+    .card span>p,
+    a {
         display: inline-block;
     }
 
-    .card-mobile{
+    .card-mobile {
         display: block;
     }
 
-    .card-desktop{
+    .card-desktop {
         display: none;
     }
 
-    .read-more{
+    .read-more {
         font-size: 1.2rem;
         cursor: pointer;
         color: #1F94FC;
@@ -469,38 +452,38 @@ input#hamburger {
         padding-block: 0.5rem;
     }
 
-    .cards-container{
+    .cards-container {
         grid-template-columns: auto;
     }
 
-    .cards-container p{
+    .cards-container p {
         font-size: 1.2rem;
     }
 
-    .heading{
+    .heading {
         font-size: 2rem;
     }
 
-    .text{
+    .text {
         font-size: 1.2rem;
     }
 
-    .text1{
+    .text1 {
         font-size: 1.2rem;
     }
 
-    .right{
+    .right {
         display: none;
     }
 
-    .right-mobile{
+    .right-mobile {
         display: flex;
         align-items: center;
         justify-content: center;
         /* width: 100vw; */
     }
 
-    .right-mobile img{
+    .right-mobile img {
         margin: auto;
         /* width: 100%; */
         margin: 1rem;
@@ -508,12 +491,12 @@ input#hamburger {
         max-width: 20rem;
     }
 
-    .left{
+    .left {
         /* width: 100%; */
         text-align: justify;
     }
 
-    .road-to-container{
+    .road-to-container {
         grid-template-columns: 1fr;
     }
 }
