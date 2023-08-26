@@ -9,7 +9,7 @@ Link {
 
 .page {
     padding-inline: 9vw;
-    background-position: center;
+    background-position: center top;
     background-size: contain;
     background-repeat: repeat;
     width: auto;
@@ -224,8 +224,9 @@ input#hamburger {
 
 .main {
     padding-inline: 9vw;
-    background-position: center;
-    background-size: 100%;
+    background-position: center top;
+    background-size: contain;
+    background-repeat: repeat-y;
     height: 100%;
 }
 
