@@ -26,7 +26,7 @@ export default function Testimonials() {
                     slidesPerView={1}
                     keyboard={true}
                     Mousewheel={true}
-                    autoplay={{ delay: 1000 }}
+                    autoplay={{ delay: 1500 }}
                     EffectCards={true}
                     loop={true}
                     navigation=

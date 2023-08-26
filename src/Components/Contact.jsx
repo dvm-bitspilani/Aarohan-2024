@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Profile from "./Profile";
 import "../Styles/Contact.css"
 import Vishwam from "../Contact/Vishwam.jpg"
@@ -20,7 +20,7 @@ export default function Contact() {
         {
             image: `${Nachiket}`,
             name: "Nachiketh Shastry",
-            caption: "Joint Coordinator and Head of Outreach",
+            caption: "Joint Coordinator and Head of Knowledge",
             phone: "+91 7483945690 "
 
         },
@@ -54,10 +54,17 @@ export default function Contact() {
         },
     ]
 
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [phone, setPhone] = useState("")
+    const [message, setMessage] = useState("")
+
+    console.log(name, email, phone, message)
+
     const Contact = data2.map((data, index) => {
         return (
             <Profile
-                key = {data.name}
+                key={data.name}
                 image={data.image}
                 name={data.name}
                 caption={data.caption}
@@ -76,13 +83,29 @@ export default function Contact() {
                 <div className="q-form">
                     <div className="heading" style={{ width: "100%", textAlign: "center" }}>Submit Query</div>
                     <label htmlFor="">Full Name</label>
-                    <input type="text" />
+                    <input type="text"
+                        value={name}
+                        onChange={event => setName(event.target.value)}
+                        placeholder="Enter Full Name"
+                        className="input-box"/>
                     <label htmlFor="">Email ID</label>
-                    <input type="text" />
+                    <input type="text"
+                        value={email}
+                        onChange={event => setEmail(event.target.value)}
+                        placeholder="Enter Email ID"
+                        className="input-box"/>
                     <label htmlFor="">Phone Number</label>
-                    <input type="text" />
+                    <input type="text"
+                        value={phone}
+                        onChange={event => setPhone(event.target.value)}
+                        placeholder="Enter Phone Number"
+                        className="input-box"/>
                     <label htmlFor="">Message</label>
-                    <textarea name="Enter Message" id="" rows="10"></textarea>
+                    <textarea id="" rows="10"
+                        value={message}
+                        onChange={event => setMessage(event.target.value)}
+                        placeholder="Enter Message"
+                        ></textarea>
                     <div className="q-form-submit">
                         <button>SUBMIT</button>
                     </div>

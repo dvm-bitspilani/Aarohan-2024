@@ -9,9 +9,6 @@ import Form2 from "../Components/Form2";
 
 export default function Registration() {
 
-    const Student = document.getElementById('#student')
-    const School = document.getElementById("#school")
-
     const [isStudentTab, setIsStudentTab] = useState(true)
 
     const handleStudentClick = () => {
