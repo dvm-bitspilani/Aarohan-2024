@@ -6,6 +6,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/l
 import SamplePDF from '/public/document.pdf'
 import "../Styles/Sample.css"
 import { Link } from "react-router-dom";
+import BackgroundImg from "../images/bg.png"
 
 
 export default function Sample() {
@@ -14,7 +15,7 @@ export default function Sample() {
         return (
                 <>
                         <Navbar />
-                        <div className="page">
+                        <div className="page" style={{backgroundImage: `url(${BackgroundImg})`, paddingTop: "0px"}}>
                                 <div className="heading" style={{width: "100%", textAlign: "center", paddingTop: "0px"}}>Sample Paper</div>
                                 <div className="pdf">
                                 <iframe src="https://drive.google.com/file/d/1epMPX3r90rrt6Sa0TEsWfDEG8XO5WCz4/preview" allow="autoplay"></iframe>

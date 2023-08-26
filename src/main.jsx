@@ -10,6 +10,7 @@ import {
 import FAQ from './Components/FAQ.jsx';
 import Sample from './pages/Sample.jsx';
 import Registration from './pages/Registration.jsx';
+import Gallery from './pages/Gallery.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/Registration",
     element: <Registration/>,
+  },
+  {
+    path: "/Gallery",
+    element: <Gallery/>,
   },
 ]);
 

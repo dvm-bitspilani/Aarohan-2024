@@ -19,7 +19,7 @@ export default function Navbar({ scrollToTarget }) {
             <div className="navbar">
                 <div className="nav-container">
                     <div className="nav-logo">
-                        <Link to={"/"} style={{ textDecoration: "none" }}><img src={ApogeeLogo} alt="logo" /></Link>
+                        <Link to={"/"} style={{ textDecoration: "none" }}><img src={ApogeeLogo} alt="logo" draggable="false"/></Link>
                     </div>
                     <div>
                         <ul className="nav-list">
@@ -28,7 +28,8 @@ export default function Navbar({ scrollToTarget }) {
                             <Link to={"/SamplePaper"} style={{ textDecoration: "none" }}><li>SAMPLE PAPER</li></Link>
                             <li>RESULTS</li>
                             <Link to={"/FAQ"} style={{ textDecoration: "none" }}><li>FAQ</li></Link>
-                            <li>GALLERY</li>
+                            <Link to={"/Gallery"} style={{ textDecoration: "none"}}><li>GALLERY</li></Link>
+                            
                         </ul>
                     </div>
 
