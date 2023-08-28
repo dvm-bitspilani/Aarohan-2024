@@ -55,7 +55,7 @@ export default function Form1() {
 
     const s_a = []
 
-    s_a[0] = "Select City"
+    s_a[0] = "Select State First"
     s_a[1] =
         " Alipur | Andaman Island | Anderson Island | Arainj-Laka-Punga | Austinabad | Bamboo Flat | Barren Island | Beadonabad | Betapur | Bindraban | Bonington | Brookesabad | Cadell Point | Calicut | Chetamale | Cinque Islands | Defence Island | Digilpur | Dolyganj | Flat Island | Geinyale | Great Coco Island | Haddo | Havelock Island | Henry Lawrence Island | Herbertabad | Hobdaypur | Ilichar | Ingoie | Inteview Island | Jangli Ghat | Jhon Lawrence Island | Karen | Kartara | KYD Islannd | Landfall Island | Little Andmand | Little Coco Island | Long Island | Maimyo | Malappuram | Manglutan | Manpur | Mitha Khari | Neill Island | Nicobar Island | North Brother Island | North Passage Island | North Sentinel Island | Nothen Reef Island | Outram Island | Pahlagaon | Palalankwe | Passage Island | Phaiapong | Phoenix Island | Port Blair | Preparis Island | Protheroepur | Rangachang | Rongat | Rutland Island | Sabari | Saddle Peak | Shadipur | Smith Island | Sound Island | South Sentinel Island | Spike Island | Tarmugli Island | Taylerabad | Titaije | Toibalawe | Tusonabad | West Island | Wimberleyganj | Yadita";
     s_a[2] =
@@ -162,6 +162,30 @@ export default function Form1() {
 
     // console.log(schoolName, schoolPOCName, state, city, contact, email, class9, class10, class11, class12, totalAmount)
 
+    const formData = ({
+        school_name: schoolName,
+        school_poc_name: schoolPOCName,
+        city: city,
+        state: state,
+        ninth_class_students: class9,
+        tenth_class_students: class10,
+        eleventh_class_students: class11,
+        twelfth_class_students: class12,
+        contact_no: contact,
+        email_id: email
+    })
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post("https://bits-apogee.org/2024/aarohan/studentreg/", formData);
+            console.log("Post created:", response.data);
+        } catch (error) {
+            console.error("Error creating post:", error);
+        }
+    };
+
+
     return (
         <>
             <form className="form">
@@ -180,7 +204,7 @@ export default function Form1() {
                     <label className="form-state">
                         State
                         <select
-                            onChange={event => {setStateIndex(event.target.value)}
+                            onChange={event => { setStateIndex(event.target.value) }
                             }
                             value={stateIndex}
                         >
@@ -192,10 +216,10 @@ export default function Form1() {
                     <label className="form-city">
                         City
                         <select id="city"
-                        onChange={event => setCity(event.target.value)}
+                            onChange={event => setCity(event.target.value)}
                             value={city}
                         >
-                            <option selected>Select City</option>
+                            {stateIndex && <option value="default" selected>Select City</option>}
                             {city_options}
                         </select>
                     </label>
@@ -203,14 +227,14 @@ export default function Form1() {
 
                 <label >Contact Number of In-Charge</label>
                 <input type="text" className="input-box" placeholder="Enter Contact Number"
-                onChange={event => setContact(event.target.value)}
-                value={contact}
+                    onChange={event => setContact(event.target.value)}
+                    value={contact}
                 />
 
                 <label >Email ID</label>
                 <input type="text" className="input-box" placeholder="Enter Email ID"
-                onChange={event => setEmail(event.target.value)}
-                value={email}
+                    onChange={event => setEmail(event.target.value)}
+                    value={email}
                 />
 
                 <label >Class-wise split up of no of students: </label>
@@ -218,41 +242,41 @@ export default function Form1() {
                     <div className="class">
                         <label htmlFor="">Class 09</label>
                         <input type="number" className="input-box" placeholder="Enter Number"
-                        value={class9}
-                        onChange={event => setClass9(event.target.value)}
+                            value={class9}
+                            onChange={event => setClass9(event.target.value)}
                         />
                     </div>
 
                     <div className="class">
                         <label htmlFor="">Class 10</label>
                         <input type="number" className="input-box" placeholder="Enter Number"
-                        value={class10}
-                        onChange={event => setClass10(event.target.value)}/>
+                            value={class10}
+                            onChange={event => setClass10(event.target.value)} />
                     </div>
 
                     <div className="class">
                         <label htmlFor="">Class 11</label>
                         <input type="number" className="input-box" placeholder="Enter Number"
-                        value={class11}
-                        onChange={event => setClass11(event.target.value)}/>
+                            value={class11}
+                            onChange={event => setClass11(event.target.value)} />
                     </div>
 
                     <div className="class">
                         <label htmlFor="">Class 12</label>
                         <input type="number" className="input-box" placeholder="Enter Number"
-                        value={class12}
-                        onChange={event => setClass12(event.target.value)}/>
+                            value={class12}
+                            onChange={event => setClass12(event.target.value)} />
                     </div>
                 </div>
 
                 <label >Total Amount to be paid</label>
                 <input type="text" className="input-box" placeholder="Enter Total Amount to be paid"
-                value={totalAmount}
-                onChange={event => setTotalAmount(event.target.value)}/>
+                    value={totalAmount}
+                    onChange={event => setTotalAmount(event.target.value)} />
 
                 <div className="submit-buttons">
                     <button className="form-cancel" onClick={handleCancel}>CANCEL</button>
-                    <button className="form-submit">SUBMIT</button>
+                    <button className="form-submit" onClick={handleSubmit}>SUBMIT</button>
                 </div>
 
             </form>

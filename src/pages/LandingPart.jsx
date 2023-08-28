@@ -21,7 +21,6 @@ export default function Landing() {
             motionPath: {
                 path: '#path',
                 align: '#path',
-                autoRotate: true,
                 start: 1,
                 end: 0,
                 curviness: 1,

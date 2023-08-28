@@ -29,7 +29,6 @@ export default function Navbar({ scrollToTarget }) {
                             <li>RESULTS</li>
                             <Link to={"/FAQ"} style={{ textDecoration: "none" }}><li>FAQ</li></Link>
                             <Link to={"/Gallery"} style={{ textDecoration: "none"}}><li>GALLERY</li></Link>
-                            
                         </ul>
                     </div>
 

@@ -1,17 +1,22 @@
 import React, { useEffect } from "react";
 import "../Styles/Form.css"
 import { useState } from "react";
+import axios from "axios";
+import Modal from "./Modal";
 
 export default function Form1() {
-    
-    const [name, setName] = useState("")    
+    const [name, setName] = useState("")
     const [fatherName, setFatherName] = useState("")
     const [school, setSchool] = useState("")
     const [inClass, setInClass] = useState('10')
     const [city, setCity] = useState("")
     const [email, setEmail] = useState("")
+    const [phone, setPhone] = useState("")
 
-    
+    const [showModal, setShowModal] = useState(true)
+    const [errorMessage, setErrorMessage] = useState("")
+
+    let isValid = false
 
     function handleChange(event) {
         setInClass(event.target.value)
@@ -57,7 +62,7 @@ export default function Form1() {
 
     const s_a = []
 
-    s_a[0] = ""
+    s_a[0] = "Select State First"
     s_a[1] =
         " Alipur | Andaman Island | Anderson Island | Arainj-Laka-Punga | Austinabad | Bamboo Flat | Barren Island | Beadonabad | Betapur | Bindraban | Bonington | Brookesabad | Cadell Point | Calicut | Chetamale | Cinque Islands | Defence Island | Digilpur | Dolyganj | Flat Island | Geinyale | Great Coco Island | Haddo | Havelock Island | Henry Lawrence Island | Herbertabad | Hobdaypur | Ilichar | Ingoie | Inteview Island | Jangli Ghat | Jhon Lawrence Island | Karen | Kartara | KYD Islannd | Landfall Island | Little Andmand | Little Coco Island | Long Island | Maimyo | Malappuram | Manglutan | Manpur | Mitha Khari | Neill Island | Nicobar Island | North Brother Island | North Passage Island | North Sentinel Island | Nothen Reef Island | Outram Island | Pahlagaon | Palalankwe | Passage Island | Phaiapong | Phoenix Island | Port Blair | Preparis Island | Protheroepur | Rangachang | Rongat | Rutland Island | Sabari | Saddle Peak | Shadipur | Smith Island | Sound Island | South Sentinel Island | Spike Island | Tarmugli Island | Taylerabad | Titaije | Toibalawe | Tusonabad | West Island | Wimberleyganj | Yadita";
     s_a[2] =
@@ -154,26 +159,88 @@ export default function Form1() {
         setName("")
         setFatherName("")
         setSchool("")
-        setInClass("")
+        setInClass('10')
         setCity("")
         setEmail("")
+        setPhone("")
         setStateIndex(0)
+    }
+
+    const formData = ({
+        full_name: name,
+        fathers_name: fatherName,
+        school_name: school,
+        city: city,
+        state: state,
+        studying_in_class: inClass,
+        contact_no: phone,
+        email_id: email,
+    })
+
+    // name != "" ? isValid = true : ""
+    // fatherName != "" ? isValid = true : ""
+    // school != "" ? isValid = true : ""
+    // city != "" ? isValid = true : ""
+    // stateIndex != 0 ? isValid = true : ""
+    // inClass != "" ? isValid = true : ""
+    // phone != "" ? isValid = true : ""
+    // email != "" ? isValid = true : ""
+
+    name != "" && fatherName != "" && school != "" && city != "" && stateIndex != 0 && inClass != "" && phone != "" && email != "" ? isValid = true : ""
+
+
+    const handleSubmit = async (e) => {
+        if (!isValid) {
+            e.preventDefault();
+            // alert("Please enter all the details")
+            setShowModal(true)
+            setErrorMessage("Please Enter all the details")
+            return false;
+        }
+        e.preventDefault()
+        try {
+            const response = await axios.post("https://bits-apogee.org/2024/aarohan/studentreg/", formData);
+            console.log("Post created:", response.data);
+            alert("Registered Successfuly")
+            return handleCancel
+        } catch (error) {
+            console.error("Error creating post:", error.response.data.message);
+            //   alert(error.response.data.message)
+            setShowModal(true)
+            setErrorMessage(error.response.data.message)
+        }
+
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false)
     }
 
     return (
         <>
-            <form className="form">
+            <Modal
+                message={errorMessage}
+                showModal={showModal}
+                setShowModal={setShowModal}
+                handleCloseModal={handleCloseModal} />
+
+            <form className="form" id="form1">
                 <label >Student Name</label>
-                <input value={name} type="text" className="input-box" placeholder="Enter Name" 
+                <input value={name} type="text" className="input-box" placeholder="Enter Name"
                     onChange={event => setName(event.target.value)}
                 />
                 <label >Father (or Mother) Name</label>
-                <input value={fatherName} type="text" className="input-box" placeholder="Enter Father (or Mother) Name" 
+                <input value={fatherName} type="text" className="input-box" placeholder="Enter Father (or Mother) Name"
                     onChange={event => setFatherName(event.target.value)}
                 />
                 <label >School/Institute</label>
-                <input value={school} type="text" className="input-box" placeholder="Enter School/Institute Name" 
+                <input value={school} type="text" className="input-box" placeholder="Enter School/Institute Name"
                     onChange={event => setSchool(event.target.value)}
+                />
+
+                <label >Phone Number</label>
+                <input value={phone} type="text" className="input-box" placeholder="Enter Phone Number"
+                    onChange={event => setPhone(event.target.value)}
                 />
                 <label >Class: </label>
 
@@ -215,9 +282,9 @@ export default function Form1() {
                         State
                         <select
                             onChange={event => setStateIndex(event.target.value)}
-                            value = {stateIndex}
+                            value={stateIndex}
                         >
-                            <option>Select State</option>
+                            <option value={0}>Select State</option>
                             {state_options}
                         </select>
                     </label>
@@ -225,25 +292,25 @@ export default function Form1() {
                     <label className="form-city">
                         City
                         <select id="city"
-                        defaultValue="default"
-                        onChange={event => setCity(event.target.value)}
-                        value={city}
+                            // defaultValue="default"
+                            onChange={event => setCity(event.target.value)}
+                            value={city}
                         >
-                            <option value = "default" selected>Select City</option>
+                            {stateIndex && <option value="default" selected>Select City</option>}
                             {city_options}
                         </select>
                     </label>
                 </div>
 
                 <label htmlFor="email" >Email ID</label>
-                <input type="text" className="input-box" placeholder="Enter Email ID" 
+                <input type="text" className="input-box" placeholder="Enter Email ID"
                     onChange={event => setEmail(event.target.value)}
                     value={email}
                 />
 
                 <div className="submit-buttons">
                     <button className="form-cancel" onClick={handleCancel}>CANCEL</button>
-                    <button className="form-submit" >SUBMIT</button>
+                    <button className="form-submit" onClick={handleSubmit}>SUBMIT</button>
                 </div>
 
             </form>
