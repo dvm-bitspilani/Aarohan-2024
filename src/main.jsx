@@ -6,7 +6,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-
+import { BrowserRouter as Router} from "react-router-dom";
 import FAQ from './Components/FAQ.jsx';
 import Sample from './pages/Sample.jsx';
 import Registration from './pages/Registration.jsx';
@@ -37,6 +37,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+  <RouterProvider router={router}  basename="/aarohan2024"/>
   </React.StrictMode>,
 )
