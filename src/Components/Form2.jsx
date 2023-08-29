@@ -282,6 +282,7 @@ export default function Form1() {
                 <input type="text" className="input-box" placeholder="Enter Contact Number"
                     onChange={event => setContact(event.target.value)}
                     value={contact}
+                    maxLength={10}
                 />
 
                 <label >Email ID</label>

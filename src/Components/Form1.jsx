@@ -252,6 +252,7 @@ export default function Form1() {
                     <label >Phone Number</label>
                     <input value={phone} type="text" className="input-box" placeholder="Enter Phone Number"
                         onChange={event => setPhone(event.target.value)}
+                        maxLength={10}
                     />
                     <label >Class: </label>
 
