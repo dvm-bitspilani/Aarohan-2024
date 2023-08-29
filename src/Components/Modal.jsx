@@ -6,7 +6,6 @@ export default function Modal(props) {
     return (
         <div className={`modal ${props.showModal ? "show-modal" : "hide-modal"}`}>
             <div className="modal-content">
-                <p>Alert!</p>
                 <p>{props.message}</p>
                 <button onClick={props.handleCloseModal}>CLOSE</button>
             </div>

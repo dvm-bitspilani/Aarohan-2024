@@ -13,7 +13,7 @@ export default function Form1() {
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
 
-    const [showModal, setShowModal] = useState(true)
+    const [showModal, setShowModal] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
 
     let isValid = false
@@ -188,20 +188,34 @@ export default function Form1() {
 
     name != "" && fatherName != "" && school != "" && city != "" && stateIndex != 0 && inClass != "" && phone != "" && email != "" ? isValid = true : ""
 
+    let obj = {
+        email_id: "test@test.com",
+        // paid: {},
+        reg_type: "test",
+    }
 
     const handleSubmit = async (e) => {
         if (!isValid) {
             e.preventDefault();
             // alert("Please enter all the details")
             setShowModal(true)
-            setErrorMessage("Please Enter all the details")
+            setErrorMessage("Please Enter All the details")
             return false;
         }
         e.preventDefault()
         try {
             const response = await axios.post("https://bits-apogee.org/2024/aarohan/studentreg/", formData);
             console.log("Post created:", response.data);
-            alert("Registered Successfuly")
+            if (response.message == 'Student Registered') {
+                try {
+                    const response = await axios.post("https://bits-apogee.org/2024/aarohan/payment/", obj);
+                    console.log("Paying...:", response.data);
+                } catch (error){
+                    console.log("Payment Error: ", error)
+                }
+            }
+            // setShowModal(true)
+            // setErrorMessage("Registered Successfully!")
             return handleCancel
         } catch (error) {
             console.error("Error creating post:", error.response.data.message);
@@ -209,7 +223,6 @@ export default function Form1() {
             setShowModal(true)
             setErrorMessage(error.response.data.message)
         }
-
     };
 
     const handleCloseModal = () => {

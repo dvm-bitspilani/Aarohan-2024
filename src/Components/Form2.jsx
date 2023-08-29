@@ -1,6 +1,8 @@
 import React from "react";
 import "../Styles/Form.css"
 import { useState } from "react";
+import axios from "axios";
+import Modal from "./Modal";
 
 export default function Form1() {
     const [schoolName, setSchoolName] = useState("")
@@ -12,8 +14,12 @@ export default function Form1() {
     const [class10, setClass10] = useState("")
     const [class11, setClass11] = useState("")
     const [class12, setClass12] = useState("")
-    const [totalAmount, setTotalAmount] = useState("")
 
+    const [showModal, setShowModal] = useState(false)
+    const [errorMessage, setErrorMessage] = useState("")
+
+    let isValid = false
+    let totalAmount = "Total amount appears here"
 
     const state_arr = ([
         "Andaman & Nicobar",
@@ -145,6 +151,8 @@ export default function Form1() {
 
     const state = state_arr[stateIndex - 1]
 
+    totalAmount = (+class9 + +class10 + +class11 + +class12) * 175
+
     const handleCancel = (e) => {
         e.preventDefault()
         setSchoolName("")
@@ -156,7 +164,6 @@ export default function Form1() {
         setClass10("")
         setClass11("")
         setClass12("")
-        setTotalAmount("")
         setStateIndex(0)
     }
 
@@ -175,19 +182,59 @@ export default function Form1() {
         email_id: email
     })
 
+    // console.log(formData)
+
+    schoolName != "" && schoolPOCName != "" && city != "" && state != "" && class9 != "" && class10 != "" && class11 != "" && class12 != "" && contact != "" && email != "" ? isValid = true : ""
+
+    let obj = {
+        email_id: "test@test.com",
+        // paid: {},
+        reg_type: "test",
+    }
+
     const handleSubmit = async (e) => {
+        if (!isValid) {
+            e.preventDefault();
+            // alert("Please enter all the details")
+            setShowModal(true)
+            setErrorMessage("Please Enter All the details")
+            return false;
+        }
         e.preventDefault();
         try {
-            const response = await axios.post("https://bits-apogee.org/2024/aarohan/studentreg/", formData);
+            const response = await axios.post("https://bits-apogee.org/2024/aarohan/schoolreg/", formData);
             console.log("Post created:", response.data);
+            if (response.message == 'Student Registered') {
+                try {
+                    const response = await axios.post("https://bits-apogee.org/2024/aarohan/payment/", obj);
+                    console.log("Paying...:", response.data);
+                } catch (error){
+                    console.log("Payment Error: ", error)
+                }
+            }
+            // setShowModal(true)
+            // setErrorMessage("Registered Successfully!")
+            return handleCancel
         } catch (error) {
-            console.error("Error creating post:", error);
+            console.error("Error creating post:", error.response.data.message);
+            //   alert(error.response.data.message)
+            setShowModal(true)
+            setErrorMessage(error.response.data.message)
         }
     };
 
 
+    const handleCloseModal = () => {
+        setShowModal(false)
+    }
+
     return (
         <>
+            <Modal
+                message={errorMessage}
+                showModal={showModal}
+                setShowModal={setShowModal}
+                handleCloseModal={handleCloseModal} />
             <form className="form">
                 <label >School Name</label>
                 <input type="text" className="input-box" placeholder="Enter School Name"
@@ -270,9 +317,9 @@ export default function Form1() {
                 </div>
 
                 <label >Total Amount to be paid</label>
-                <input type="text" className="input-box" placeholder="Enter Total Amount to be paid"
+                <input type="text" className="input-box" placeholder="Total Amount will appear here"
                     value={totalAmount}
-                    onChange={event => setTotalAmount(event.target.value)} />
+                    disabled={true} />
 
                 <div className="submit-buttons">
                     <button className="form-cancel" onClick={handleCancel}>CANCEL</button>

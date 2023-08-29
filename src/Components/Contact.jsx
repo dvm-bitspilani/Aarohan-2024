@@ -7,6 +7,7 @@ import Anurag from "../Contact/Anurag.jpg"
 import Rajul from "../Contact/Rajul.jpg"
 import Saumya from "../Contact/Saumya.jpg"
 import Shruti from "../Contact/Shruti.jpg"
+import Modal from "./Modal";
 
 export default function Contact() {
     const data2 = [
@@ -59,7 +60,12 @@ export default function Contact() {
     const [phone, setPhone] = useState("")
     const [message, setMessage] = useState("")
 
-    console.log(name, email, phone, message)
+    const [showModal, setShowModal] = useState(false)
+    const [errorMessage, setErrorMessage] = useState("")
+
+    let isValid = false
+
+    // console.log(name, email, phone, message)
 
     const Contact = data2.map((data, index) => {
         return (
@@ -73,8 +79,49 @@ export default function Contact() {
         )
     })
 
+    const formData = ({
+        full_name: name,
+        email_id: email,
+        contact_no: phone,
+        message: message,
+    })
+
+    name != "" && email != "" && phone != "" && message != "" ? isValid = true : ""
+
+    const handleSubmit = async (e) => {
+        if (!isValid) {
+            e.preventDefault();
+            // alert("Please enter all the details")
+            setShowModal(true)
+            setErrorMessage("Please Enter All the details")
+            return false;
+        }
+        e.preventDefault()
+        try {
+            const response = await axios.post("https://bits-apogee.org/2024/aarohan/ask_query/", formData);
+            console.log("Post created:", response.data);
+            setShowModal(true)
+            setErrorMessage("Query Submitted Successfuly!")
+            return
+        } catch (error) {
+            console.error("Error creating post:", error.response.data.message);
+            //   alert(error.response.data.message)
+            setShowModal(true)
+            setErrorMessage(error.response.data.message)
+        }
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false)
+    }
+
     return (
         <>
+            <Modal
+                message={errorMessage}
+                showModal={showModal}
+                setShowModal={setShowModal}
+                handleCloseModal={handleCloseModal} />
             <div className="heading" style={{ width: "100%", textAlign: "center" }}>Contact Us</div>
             <div className="contact">
                 {Contact}
@@ -87,27 +134,27 @@ export default function Contact() {
                         value={name}
                         onChange={event => setName(event.target.value)}
                         placeholder="Enter Full Name"
-                        className="input-box"/>
+                        className="input-box" />
                     <label htmlFor="">Email ID</label>
                     <input type="text"
                         value={email}
                         onChange={event => setEmail(event.target.value)}
                         placeholder="Enter Email ID"
-                        className="input-box"/>
+                        className="input-box" />
                     <label htmlFor="">Phone Number</label>
                     <input type="text"
                         value={phone}
                         onChange={event => setPhone(event.target.value)}
                         placeholder="Enter Phone Number"
-                        className="input-box"/>
+                        className="input-box" />
                     <label htmlFor="">Message</label>
                     <textarea id="" rows="10"
                         value={message}
                         onChange={event => setMessage(event.target.value)}
                         placeholder="Enter Message"
-                        ></textarea>
+                    ></textarea>
                     <div className="q-form-submit">
-                        <button>SUBMIT</button>
+                        <button onClick={handleSubmit}>SUBMIT</button>
                     </div>
                 </div>
             </div>
