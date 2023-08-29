@@ -41,7 +41,7 @@ export default function Gallery() {
                     pagination={true}
                     slidesPerView=
                     {window.innerWidth > 900 ? 2 : 1}
-                    slidesPerGroup={2}
+                    slidesPerGroup={1}
                 >
                     <SwiperSlide>
                         <img src={img1} className="gallery-img" />
