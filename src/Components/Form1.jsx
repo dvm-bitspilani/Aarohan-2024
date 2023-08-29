@@ -177,15 +177,6 @@ export default function Form1() {
         email_id: email,
     })
 
-    // name != "" ? isValid = true : ""
-    // fatherName != "" ? isValid = true : ""
-    // school != "" ? isValid = true : ""
-    // city != "" ? isValid = true : ""
-    // stateIndex != 0 ? isValid = true : ""
-    // inClass != "" ? isValid = true : ""
-    // phone != "" ? isValid = true : ""
-    // email != "" ? isValid = true : ""
-
     name != "" && fatherName != "" && school != "" && city != "" && stateIndex != 0 && inClass != "" && phone != "" && email != "" ? isValid = true : ""
 
     let obj = {

@@ -49,7 +49,7 @@ export default function Navbar({ scrollToTarget }) {
                             <Link to={"/SamplePaper"} style={{ textDecoration: "none" }}><li onClick={handleHamOpen}>SAMPLE PAPER</li></Link>
                             <li onClick={handleHamOpen}>RESULTS</li>
                             <Link to={"/FAQ"} style={{ textDecoration: "none" }}><li onClick={handleHamOpen}>FAQ</li></Link>
-                            <li onClick={handleHamOpen}>GALLERY</li>
+                            <Link to={"/Gallery"} style={{ textDecoration: "none"}}><li onClick={handleHamOpen}>GALLERY</li></Link>
                         </ul>
                     </div>
                 </div>

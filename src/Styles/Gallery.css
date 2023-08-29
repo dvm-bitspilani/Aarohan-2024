@@ -1,0 +1,18 @@
+.gallery-img{
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+.gallery-swiper{
+    padding-bottom: 2.5rem ;
+    margin-top: 2rem;
+}
+
+@media only screen and (max-width: 900px){
+    .gallery-swiper{
+        padding-bottom: 2.5rem ;
+        margin-top: 2rem;
+    }
+}
+
