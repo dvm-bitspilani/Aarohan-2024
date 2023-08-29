@@ -179,145 +179,149 @@ export default function Form1() {
 
     name != "" && fatherName != "" && school != "" && city != "" && stateIndex != 0 && inClass != "" && phone != "" && email != "" ? isValid = true : ""
 
-    let obj = {
-        email_id: "test@test.com",
+    const obj = {
+        email_id: email,
         // paid: {},
-        reg_type: "test",
+        reg_type: "Student",
     }
 
     const handleSubmit = async (e) => {
         if (!isValid) {
             e.preventDefault();
-            // alert("Please enter all the details")
-            setShowModal(true)
-            setErrorMessage("Please Enter All the details")
+            setShowModal(true);
+            setErrorMessage("Please Enter All the details");
             return false;
         }
-        e.preventDefault()
+        e.preventDefault();
         try {
             const response = await axios.post("https://bits-apogee.org/2024/aarohan/studentreg/", formData);
-            console.log("Post created:", response.data);
-            if (response.message == 'Student Registered') {
+            // console.log("Post created:", response.data);
+            obj.email_id = response.data.email_id;
+            obj.reg_type = response.data.reg_type;
+            // console.log(obj);
+    
+            if (response.data.message === 'Student registered.') {
                 try {
-                    const response = await axios.post("https://bits-apogee.org/2024/aarohan/payment/", obj);
-                    console.log("Paying...:", response.data);
-                } catch (error){
-                    console.log("Payment Error: ", error)
+                    // console.log("pay");
+                    const paymentResponse = await axios.post("https://bits-apogee.org/2024/aarohan/payment/", obj);
+                    // console.log("Paying...:", paymentResponse.data);
+    
+                    // Display the payment response data
+                    window.document.write(paymentResponse.data);
+                } catch (paymentError) {
+                    // console.log("Payment Error: ", paymentError);
                 }
             }
-            // setShowModal(true)
-            // setErrorMessage("Registered Successfully!")
-            return handleCancel
         } catch (error) {
-            console.error("Error creating post:", error.response.data.message);
-            //   alert(error.response.data.message)
-            setShowModal(true)
-            setErrorMessage(error.response.data.message)
+            // console.log(error.response.data.message);
+            setShowModal(true);
+            setErrorMessage(error.response.data.message);
         }
     };
+    
 
-    const handleCloseModal = () => {
-        setShowModal(false)
+        const handleCloseModal = () => {
+            setShowModal(false)
+        }
+
+        return (
+            <>
+                <Modal
+                    message={errorMessage}
+                    showModal={showModal}
+                    setShowModal={setShowModal}
+                    handleCloseModal={handleCloseModal} />
+
+                <form className="form" id="form1">
+                    <label >Student Name</label>
+                    <input value={name} type="text" className="input-box" placeholder="Enter Name"
+                        onChange={event => setName(event.target.value)}
+                    />
+                    <label >Father (or Mother) Name</label>
+                    <input value={fatherName} type="text" className="input-box" placeholder="Enter Father (or Mother) Name"
+                        onChange={event => setFatherName(event.target.value)}
+                    />
+                    <label >School/Institute</label>
+                    <input value={school} type="text" className="input-box" placeholder="Enter School/Institute Name"
+                        onChange={event => setSchool(event.target.value)}
+                    />
+
+                    <label >Phone Number</label>
+                    <input value={phone} type="text" className="input-box" placeholder="Enter Phone Number"
+                        onChange={event => setPhone(event.target.value)}
+                    />
+                    <label >Class: </label>
+
+                    <div className="class-radio">
+                        <input type="radio" className="input-radio" name="class" value="9"
+                            checked={inClass === "9"}
+                            onChange={handleChange}
+                            id="class9"
+                        />
+                        <label htmlFor="class9" onClick={handleChange} value="10">Class 9</label>
+
+
+                        <input type="radio" className="input-radio" name="class" value="10"
+                            id="class10"
+                            checked={inClass === "10"}
+                            onChange={handleChange}
+                        />
+                        <label htmlFor="class10" onClick={handleChange}>Class 10</label>
+
+
+                        <input type="radio" className="input-radio" name="class" value="11"
+                            checked={inClass === "11"}
+                            onChange={handleChange}
+                            id="class11"
+                        />
+                        <label htmlFor="class11" onClick={handleChange}>Class 11</label>
+
+
+                        <input type="radio" className="input-radio" name="class" value="12"
+                            checked={inClass === "12"}
+                            onChange={handleChange}
+                            id="class12"
+                        />
+                        <label htmlFor="class12">Class 12</label>
+                    </div>
+
+                    <div className="form-location">
+                        <label className="form-state">
+                            State
+                            <select
+                                onChange={event => setStateIndex(event.target.value)}
+                                value={stateIndex}
+                            >
+                                <option value={0}>Select State</option>
+                                {state_options}
+                            </select>
+                        </label>
+
+                        <label className="form-city">
+                            City
+                            <select id="city"
+                                // defaultValue="default"
+                                onChange={event => setCity(event.target.value)}
+                                value={city}
+                            >
+                                {stateIndex && <option value="default" selected>Select City</option>}
+                                {city_options}
+                            </select>
+                        </label>
+                    </div>
+
+                    <label htmlFor="email" >Email ID</label>
+                    <input type="text" className="input-box" placeholder="Enter Email ID"
+                        onChange={event => setEmail(event.target.value)}
+                        value={email}
+                    />
+
+                    <div className="submit-buttons">
+                        <button className="form-cancel" onClick={handleCancel}>CANCEL</button>
+                        <button className="form-submit" onClick={handleSubmit}>SUBMIT</button>
+                    </div>
+
+                </form>
+            </>
+        )
     }
-
-    return (
-        <>
-            <Modal
-                message={errorMessage}
-                showModal={showModal}
-                setShowModal={setShowModal}
-                handleCloseModal={handleCloseModal} />
-
-            <form className="form" id="form1">
-                <label >Student Name</label>
-                <input value={name} type="text" className="input-box" placeholder="Enter Name"
-                    onChange={event => setName(event.target.value)}
-                />
-                <label >Father (or Mother) Name</label>
-                <input value={fatherName} type="text" className="input-box" placeholder="Enter Father (or Mother) Name"
-                    onChange={event => setFatherName(event.target.value)}
-                />
-                <label >School/Institute</label>
-                <input value={school} type="text" className="input-box" placeholder="Enter School/Institute Name"
-                    onChange={event => setSchool(event.target.value)}
-                />
-
-                <label >Phone Number</label>
-                <input value={phone} type="text" className="input-box" placeholder="Enter Phone Number"
-                    onChange={event => setPhone(event.target.value)}
-                />
-                <label >Class: </label>
-
-                <div className="class-radio">
-                    <input type="radio" className="input-radio" name="class" value="9"
-                        checked={inClass === "9"}
-                        onChange={handleChange}
-                        id="class9"
-                    />
-                    <label htmlFor="class9" onClick={handleChange} value="10">Class 9</label>
-
-
-                    <input type="radio" className="input-radio" name="class" value="10"
-                        id="class10"
-                        checked={inClass === "10"}
-                        onChange={handleChange}
-                    />
-                    <label htmlFor="class10" onClick={handleChange}>Class 10</label>
-
-
-                    <input type="radio" className="input-radio" name="class" value="11"
-                        checked={inClass === "11"}
-                        onChange={handleChange}
-                        id="class11"
-                    />
-                    <label htmlFor="class11" onClick={handleChange}>Class 11</label>
-
-
-                    <input type="radio" className="input-radio" name="class" value="12"
-                        checked={inClass === "12"}
-                        onChange={handleChange}
-                        id="class12"
-                    />
-                    <label htmlFor="class12">Class 12</label>
-                </div>
-
-                <div className="form-location">
-                    <label className="form-state">
-                        State
-                        <select
-                            onChange={event => setStateIndex(event.target.value)}
-                            value={stateIndex}
-                        >
-                            <option value={0}>Select State</option>
-                            {state_options}
-                        </select>
-                    </label>
-
-                    <label className="form-city">
-                        City
-                        <select id="city"
-                            // defaultValue="default"
-                            onChange={event => setCity(event.target.value)}
-                            value={city}
-                        >
-                            {stateIndex && <option value="default" selected>Select City</option>}
-                            {city_options}
-                        </select>
-                    </label>
-                </div>
-
-                <label htmlFor="email" >Email ID</label>
-                <input type="text" className="input-box" placeholder="Enter Email ID"
-                    onChange={event => setEmail(event.target.value)}
-                    value={email}
-                />
-
-                <div className="submit-buttons">
-                    <button className="form-cancel" onClick={handleCancel}>CANCEL</button>
-                    <button className="form-submit" onClick={handleSubmit}>SUBMIT</button>
-                </div>
-
-            </form>
-        </>
-    )
-}

@@ -3,10 +3,10 @@
         <style>.a{fill:#989898;}</style>
     </defs>
     <g transform="translate(0)">
-        <path class="a"
+        <path className="a"
               d="M0,47.828V66.421H18.593V47.828H6.2a12.41,12.41,0,0,1,12.4-12.4v-6.2A18.613,18.613,0,0,0,0,47.828Z"
               transform="translate(0 -29.235)"/>
-        <path class="a"
+        <path className="a"
               d="M252.475,35.433v-6.2a18.613,18.613,0,0,0-18.593,18.593V66.421h18.593V47.828h-12.4A12.41,12.41,0,0,1,252.475,35.433Z"
               transform="translate(-209.092 -29.235)"/>
     </g>

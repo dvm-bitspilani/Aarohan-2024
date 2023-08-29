@@ -8,6 +8,7 @@ import Rajul from "../Contact/Rajul.jpg"
 import Saumya from "../Contact/Saumya.jpg"
 import Shruti from "../Contact/Shruti.jpg"
 import Modal from "./Modal";
+import axios from "axios";
 
 export default function Contact() {
     const data2 = [
@@ -79,6 +80,14 @@ export default function Contact() {
         )
     })
 
+    const handleCancel = (e) => {
+        e.preventDefault()
+        setName("")
+        setEmail("")
+        setPhone("")
+        setMessage("")
+    }
+
     const formData = ({
         full_name: name,
         email_id: email,
@@ -99,10 +108,9 @@ export default function Contact() {
         e.preventDefault()
         try {
             const response = await axios.post("https://bits-apogee.org/2024/aarohan/ask_query/", formData);
-            console.log("Post created:", response.data);
+            // console.log("Post created:", response.data);
             setShowModal(true)
             setErrorMessage("Query Submitted Successfuly!")
-            return
         } catch (error) {
             console.error("Error creating post:", error.response.data.message);
             //   alert(error.response.data.message)

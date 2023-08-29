@@ -33,9 +33,7 @@ export default function Gallery() {
                     modules={[Navigation, Pagination, Scrollbar, A11y, Virtual, Keyboard, Mousewheel, Autoplay, EffectCards]}
                     spaceBetween={50}
                     keyboard={true}
-                    Mousewheel={true}
                     autoplay={{ delay: 1500 }}
-                    EffectCards={true}
                     loop={true}
                     navigation= {true}
                     pagination={true}

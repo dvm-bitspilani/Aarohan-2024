@@ -56,7 +56,7 @@ export default function Main() {
                                 The motivation behind this is to not limit the learning experience just with a time bound test rather take it to actual experience. You get to attend sessions on topics like career building, soft skills development, competitive preparation from the speakers you daily watch and admire. As a part of Road to Aarohan you will also get a chance to submit your project in the research exhibition conducted after aarohan round 1.</p>
                         </div>
                         <div className="right">
-                            <img src={RoadImg} alt="" drga/>
+                            <img src={RoadImg} alt="" draggable="false"/>
                         </div>
                     </div>
                 </div>

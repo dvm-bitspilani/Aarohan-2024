@@ -12,7 +12,7 @@ import { useRef } from "react";
 export default function Testimonials() {
     const prevRef = useRef(null);
   const nextRef = useRef(null);
-    console.log(window.innerWidth)
+    // console.log(window.innerWidth)
 
 
     return (
@@ -25,9 +25,7 @@ export default function Testimonials() {
                     spaceBetween={50}
                     slidesPerView={1}
                     keyboard={true}
-                    Mousewheel={true}
                     autoplay={{ delay: 1500 }}
-                    EffectCards={true}
                     loop={true}
                     navigation=
                         {window.innerWidth > 900 ? true : false}

@@ -186,10 +186,10 @@ export default function Form1() {
 
     schoolName != "" && schoolPOCName != "" && city != "" && state != "" && class9 != "" && class10 != "" && class11 != "" && class12 != "" && contact != "" && email != "" ? isValid = true : ""
 
-    let obj = {
-        email_id: "test@test.com",
+    const obj = {
+        email_id: email,
         // paid: {},
-        reg_type: "test",
+        reg_type: "School",
     }
 
     const handleSubmit = async (e) => {
@@ -203,23 +203,29 @@ export default function Form1() {
         e.preventDefault();
         try {
             const response = await axios.post("https://bits-apogee.org/2024/aarohan/schoolreg/", formData);
-            console.log("Post created:", response.data);
-            if (response.message == 'Student Registered') {
+            // console.log("Post created:", response.data);
+
+            obj.email_id = response.data.email_id;
+            obj.reg_type = response.data.reg_type;
+
+            // console.log(obj);
+            if (response.data.message === 'School created.') {
                 try {
-                    const response = await axios.post("https://bits-apogee.org/2024/aarohan/payment/", obj);
-                    console.log("Paying...:", response.data);
-                } catch (error){
-                    console.log("Payment Error: ", error)
+                    // console.log("pay");
+                    const paymentResponse = await axios.post("https://bits-apogee.org/2024/aarohan/payment/", obj);
+                    // console.log("Paying...:", paymentResponse.data);
+    
+                    window.document.write(paymentResponse.data);
+                } catch (paymentError) {
+                    // console.log("Payment Error: ", paymentError);
                 }
             }
             // setShowModal(true)
             // setErrorMessage("Registered Successfully!")
-            return handleCancel
         } catch (error) {
-            console.error("Error creating post:", error.response.data.message);
-            //   alert(error.response.data.message)
-            setShowModal(true)
-            setErrorMessage(error.response.data.message)
+            // console.log(error.response.data.message);
+            setShowModal(true);
+            setErrorMessage(error.response.data.message);
         }
     };
 

@@ -35,10 +35,10 @@ export default function Navbar({ scrollToTarget }) {
 
                     <div className="row ham" >
                         <input type="checkbox" id="hamburger" checked={isHamOpen}/>
-                        <label for="hamburger" class="hamburger" onClick={handleHamOpen}>
-                            <span class="line"></span>
-                            <span class="line"></span>
-                            <span class="line"></span>
+                        <label htmlFor="hamburger" className="hamburger" onClick={handleHamOpen}>
+                            <span className="line"></span>
+                            <span className="line"></span>
+                            <span className="line"></span>
                         </label>
                     </div>
 
