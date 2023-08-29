@@ -207,6 +207,7 @@ export default function Form1() {
                     // console.log("Paying...:", paymentResponse.data);
     
                     // Display the payment response data
+                    console.log("Loading...")
                     window.document.write(paymentResponse.data);
                 } catch (paymentError) {
                     // console.log("Payment Error: ", paymentError);
@@ -214,8 +215,10 @@ export default function Form1() {
             }
         } catch (error) {
             // console.log(error.response.data.message);
+            error.response && setErrorMessage(error.response.data.message);
+            error.message && setErrorMessage(error.response.data.message);
             setShowModal(true);
-            setErrorMessage(error.response.data.message);
+
         }
     };
     
