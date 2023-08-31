@@ -45,7 +45,7 @@ export default function Navbar(props) {
                     <div className={`ham-menu ${isHamOpen && 'open'}`}>
                         <ul className="ham-list">
                             <Link to={"/"} style={{ textDecoration: "none" }}><li onClick={handleHamOpen}>HOME</li></Link>
-                            <a href="/#about" style={{ textDecoration: "none" }}><li onClick={handleHamOpen}>ABOUT US</li></a>
+                            <a href="/aarohan2024/#about" style={{ textDecoration: "none" }}><li onClick={handleHamOpen}>ABOUT US</li></a>
                             <Link to={"/SamplePaper"} style={{ textDecoration: "none" }}><li onClick={handleHamOpen}>SAMPLE PAPER</li></Link>
                             <li onClick={handleHamOpen}>RESULTS</li>
                             <Link to={"/FAQ"} style={{ textDecoration: "none" }}><li onClick={handleHamOpen}>FAQ</li></Link>
