@@ -18,6 +18,8 @@ export default function Form1() {
     const [showModal, setShowModal] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
 
+    const [isLoading, setIsLoading] = useState(false)
+
     let isValid = false
     let totalAmount = "Total amount appears here"
 
@@ -165,6 +167,7 @@ export default function Form1() {
         setClass11("")
         setClass12("")
         setStateIndex(0)
+        setIsLoading(false)
     }
 
     // console.log(schoolName, schoolPOCName, state, city, contact, email, class9, class10, class11, class12, totalAmount)
@@ -184,7 +187,7 @@ export default function Form1() {
 
     // console.log(formData)
 
-    schoolName != "" && schoolPOCName != "" && city != "" && state != "" && class9 != "" && class10 != "" && class11 != "" && class12 != "" && contact != "" && email != "" ? isValid = true : ""
+    schoolName != "" && schoolPOCName != "" && city != "" && city != "default" && state != "" && class9 != "" && class10 != "" && class11 != "" && class12 != "" && contact != "" && email != "" ? isValid = true : ""
 
     const obj = {
         email_id: email,
@@ -193,11 +196,13 @@ export default function Form1() {
     }
 
     const handleSubmit = async (e) => {
+        setIsLoading(true)
         if (!isValid) {
             e.preventDefault();
             // alert("Please enter all the details")
             setShowModal(true)
             setErrorMessage("Please Enter All the details")
+            setIsLoading(false)
             return false;
         }
         e.preventDefault();
@@ -216,22 +221,29 @@ export default function Form1() {
                     // console.log("Paying...:", paymentResponse.data);
     
                     window.document.write(paymentResponse.data);
+                    setIsLoading(false)
                 } catch (paymentError) {
-                    // console.log("Payment Error: ", paymentError);
+                    setShowModal(true);
+                    setErrorMessage("Payment Error");
+                    setIsLoading(false)
                 }
             }
             // setShowModal(true)
             // setErrorMessage("Registered Successfully!")
         } catch (error) {
             // console.log(error.response.data.message);
+            setIsLoading(false)
             setShowModal(true);
-            setErrorMessage(error.response.data.message);
+            // error.message && setErrorMessage(error.message);
+            if(typeof error.message != 'undefined') setErrorMessage(error.message)
+            if(typeof error.response != 'undefined') setErrorMessage(error.response.data.message)
         }
     };
 
 
     const handleCloseModal = () => {
         setShowModal(false)
+        setIsLoading(false)
     }
 
     return (

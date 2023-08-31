@@ -14,7 +14,11 @@ import Gallery from './pages/Gallery.jsx';
 
 const router = createBrowserRouter([
   {
-    path: "",
+    path: "/",
+    element: <App/>,
+  },
+  {
+    path: "/aarohan2024",
     element: <App/>,
   },
   {

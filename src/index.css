@@ -8,6 +8,7 @@ body{
   background-color: #111027;
   overflow-x: hidden;
   height: 100vh;
+  scroll-behavior: smooth;
 }
 
 html{
@@ -19,4 +20,5 @@ html{
   box-sizing: border-box;
   user-select: none;
   -webkit-user-drag: none;
+  scroll-behavior: smooth;
 }

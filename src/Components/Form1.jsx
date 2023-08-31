@@ -16,6 +16,8 @@ export default function Form1() {
     const [showModal, setShowModal] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
 
+    const [isLoading, setIsLoading] = useState(false)
+
     let isValid = false
 
     function handleChange(event) {
@@ -164,6 +166,7 @@ export default function Form1() {
         setEmail("")
         setPhone("")
         setStateIndex(0)
+        setIsLoading(false)
     }
 
     const formData = ({
@@ -177,7 +180,10 @@ export default function Form1() {
         email_id: email,
     })
 
-    name != "" && fatherName != "" && school != "" && city != "" && stateIndex != 0 && inClass != "" && phone != "" && email != "" ? isValid = true : ""
+    name != "" && fatherName != "" && school != "" && city != "" && city != "default" && stateIndex != 0 && inClass != "" && phone != "" && email != "" ? isValid = true : ""
+
+    console.log(formData)
+    console.log(isValid)
 
     const obj = {
         email_id: email,
@@ -186,10 +192,12 @@ export default function Form1() {
     }
 
     const handleSubmit = async (e) => {
+        setIsLoading(true)
         if (!isValid) {
             e.preventDefault();
             setShowModal(true);
             setErrorMessage("Please Enter All the details");
+            setIsLoading(false)
             return false;
         }
         e.preventDefault();
@@ -199,133 +207,137 @@ export default function Form1() {
             obj.email_id = response.data.email_id;
             obj.reg_type = response.data.reg_type;
             // console.log(obj);
-    
+
             if (response.data.message === 'Student registered.') {
                 try {
                     // console.log("pay");
                     const paymentResponse = await axios.post("https://bits-apogee.org/2024/aarohan/payment/", obj);
                     // console.log("Paying...:", paymentResponse.data);
-    
+
                     // Display the payment response data
-                    console.log("Loading...")
                     window.document.write(paymentResponse.data);
+                    setIsLoading(false)
                 } catch (paymentError) {
-                    // console.log("Payment Error: ", paymentError);
+                    setShowModal(true);
+                    setErrorMessage("Payment Error");
+                    setIsLoading(false)
                 }
             }
         } catch (error) {
             // console.log(error.response.data.message);
-            error.response && setErrorMessage(error.response.data.message);
-            error.message && setErrorMessage(error.response.data.message);
+            setIsLoading(false)
             setShowModal(true);
-
+            // error.message && setErrorMessage(error.message);
+            if(typeof error.message != 'undefined') setErrorMessage("An Error Occured!")
+            if(typeof error.response != 'undefined') setErrorMessage(error.response.data.message)
         }
     };
-    
-
-        const handleCloseModal = () => {
-            setShowModal(false)
-        }
-
-        return (
-            <>
-                <Modal
-                    message={errorMessage}
-                    showModal={showModal}
-                    setShowModal={setShowModal}
-                    handleCloseModal={handleCloseModal} />
-
-                <form className="form" id="form1">
-                    <label >Student Name</label>
-                    <input value={name} type="text" className="input-box" placeholder="Enter Name"
-                        onChange={event => setName(event.target.value)}
-                    />
-                    <label >Father (or Mother) Name</label>
-                    <input value={fatherName} type="text" className="input-box" placeholder="Enter Father (or Mother) Name"
-                        onChange={event => setFatherName(event.target.value)}
-                    />
-                    <label >School/Institute</label>
-                    <input value={school} type="text" className="input-box" placeholder="Enter School/Institute Name"
-                        onChange={event => setSchool(event.target.value)}
-                    />
-
-                    <label >Phone Number</label>
-                    <input value={phone} type="text" className="input-box" placeholder="Enter Phone Number"
-                        onChange={event => setPhone(event.target.value)}
-                        maxLength={10}
-                    />
-                    <label >Class: </label>
-
-                    <div className="class-radio">
-                        <input type="radio" className="input-radio" name="class" value="9"
-                            checked={inClass === "9"}
-                            onChange={handleChange}
-                            id="class9"
-                        />
-                        <label htmlFor="class9" onClick={handleChange} value="10">Class 9</label>
 
 
-                        <input type="radio" className="input-radio" name="class" value="10"
-                            id="class10"
-                            checked={inClass === "10"}
-                            onChange={handleChange}
-                        />
-                        <label htmlFor="class10" onClick={handleChange}>Class 10</label>
-
-
-                        <input type="radio" className="input-radio" name="class" value="11"
-                            checked={inClass === "11"}
-                            onChange={handleChange}
-                            id="class11"
-                        />
-                        <label htmlFor="class11" onClick={handleChange}>Class 11</label>
-
-
-                        <input type="radio" className="input-radio" name="class" value="12"
-                            checked={inClass === "12"}
-                            onChange={handleChange}
-                            id="class12"
-                        />
-                        <label htmlFor="class12">Class 12</label>
-                    </div>
-
-                    <div className="form-location">
-                        <label className="form-state">
-                            State
-                            <select
-                                onChange={event => setStateIndex(event.target.value)}
-                                value={stateIndex}
-                            >
-                                <option value={0}>Select State</option>
-                                {state_options}
-                            </select>
-                        </label>
-
-                        <label className="form-city">
-                            City
-                            <select id="city"
-                                // defaultValue="default"
-                                onChange={event => setCity(event.target.value)}
-                                value={city}
-                            >
-                                {stateIndex && <option value="default" selected>Select City</option>}
-                                {city_options}
-                            </select>
-                        </label>
-                    </div>
-
-                    <label htmlFor="email" >Email ID</label>
-                    <input type="text" className="input-box" placeholder="Enter Email ID"
-                        onChange={event => setEmail(event.target.value)}
-                        value={email}
-                    />
-
-                    <div className="submit-buttons">
-                        <button className="form-cancel" onClick={handleCancel}>CANCEL</button>
-                        <button className="form-submit" onClick={handleSubmit}>SUBMIT</button>
-                    </div>
-
-                </form>
-            </>
-        )
+    const handleCloseModal = () => {
+        setShowModal(false)
+        setIsLoading(false)
     }
+
+    return (
+        <>
+            <Modal
+                message={errorMessage}
+                showModal={showModal}
+                setShowModal={setShowModal}
+                handleCloseModal={handleCloseModal} />
+
+            <form className="form" id="form1">
+                <label >Student Name</label>
+                <input value={name} type="text" className="input-box" placeholder="Enter Name"
+                    onChange={event => setName(event.target.value)}
+                />
+                <label >Father (or Mother) Name</label>
+                <input value={fatherName} type="text" className="input-box" placeholder="Enter Father (or Mother) Name"
+                    onChange={event => setFatherName(event.target.value)}
+                />
+                <label >School/Institute</label>
+                <input value={school} type="text" className="input-box" placeholder="Enter School/Institute Name"
+                    onChange={event => setSchool(event.target.value)}
+                />
+
+                <label >Phone Number</label>
+                <input value={phone} type="text" className="input-box" placeholder="Enter Phone Number"
+                    onChange={event => setPhone(event.target.value)}
+                    maxLength={10}
+                />
+                <label >Class: </label>
+
+                <div className="class-radio">
+                    <input type="radio" className="input-radio" name="class" value="9"
+                        checked={inClass === "9"}
+                        onChange={handleChange}
+                        id="class9"
+                    />
+                    <label htmlFor="class9" onClick={handleChange} value="10">Class 9</label>
+
+
+                    <input type="radio" className="input-radio" name="class" value="10"
+                        id="class10"
+                        checked={inClass === "10"}
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="class10" onClick={handleChange}>Class 10</label>
+
+
+                    <input type="radio" className="input-radio" name="class" value="11"
+                        checked={inClass === "11"}
+                        onChange={handleChange}
+                        id="class11"
+                    />
+                    <label htmlFor="class11" onClick={handleChange}>Class 11</label>
+
+
+                    <input type="radio" className="input-radio" name="class" value="12"
+                        checked={inClass === "12"}
+                        onChange={handleChange}
+                        id="class12"
+                    />
+                    <label htmlFor="class12">Class 12</label>
+                </div>
+
+                <div className="form-location">
+                    <label className="form-state">
+                        State
+                        <select
+                            onChange={event => setStateIndex(event.target.value)}
+                            value={stateIndex}
+                        >
+                            <option value={0}>Select State</option>
+                            {state_options}
+                        </select>
+                    </label>
+
+                    <label className="form-city">
+                        City
+                        <select id="city"
+                            // defaultValue="default"
+                            onChange={event => setCity(event.target.value)}
+                            value={city}
+                        >
+                            {stateIndex && <option value="default" selected>Select City</option>}
+                            {city_options}
+                        </select>
+                    </label>
+                </div>
+
+                <label htmlFor="email" >Email ID</label>
+                <input type="text" className="input-box" placeholder="Enter Email ID"
+                    onChange={event => setEmail(event.target.value)}
+                    value={email}
+                />
+
+                <div className="submit-buttons">
+                    <button className="form-cancel" onClick={handleCancel}>CANCEL</button>
+                    <button className="form-submit" onClick={handleSubmit}>{isLoading ? "Loading..." : "SUBMIT"}</button>
+                </div>
+
+            </form>
+        </>
+    )
+}
