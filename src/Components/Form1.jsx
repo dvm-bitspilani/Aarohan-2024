@@ -340,9 +340,9 @@ export default function Form1() {
                 <div className="information">
                     Dates for Aarohan 2024:
                     <br/>
-                    <br/>4th November: 9am-12noon
-                    <br/>18th November: 2pm-5pm
-                    <br/>26th November: 2pm-5pm
+                    <br/>4th November, 2023: 9am-12noon
+                    <br/>18th November, 2023: 2pm-5pm
+                    <br/>26th November, 2023: 2pm-5pm
                     <br/>
                     <br/>Please register atleast 5 days before an attempt to be eligible for the exam.
                     The last date for registration is the 20th of November.
