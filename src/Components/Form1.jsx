@@ -228,8 +228,8 @@ export default function Form1() {
             setIsLoading(false)
             setShowModal(true);
             // error.message && setErrorMessage(error.message);
-            if(typeof error.message != 'undefined') setErrorMessage("An Error Occured!")
-            if(typeof error.response != 'undefined') setErrorMessage(error.response.data.message)
+            if (typeof error.message != 'undefined') setErrorMessage("An Error Occured!")
+            if (typeof error.response != 'undefined') setErrorMessage(error.response.data.message)
         }
     };
 
@@ -335,6 +335,21 @@ export default function Form1() {
                 <div className="submit-buttons">
                     <button className="form-cancel" onClick={handleCancel}>CANCEL</button>
                     <button className="form-submit" onClick={handleSubmit}>{isLoading ? "Loading..." : "SUBMIT"}</button>
+                </div>
+
+                <div className="information">
+                    Dates for Aarohan 2024:
+                    <br/>
+                    <br/>4th November: 9am-12noon
+                    <br/>18th November: 2pm-5pm
+                    <br/>26th November: 2pm-5pm
+                    <br/>
+                    <br/>Please register atleast 5 days before an attempt to be eligible for the exam.
+                    The last date for registration is the 20th of November.
+                    <br/>
+                    <br/>Please note that you will have to attempt ONLY ONE of the three attempts. You will NOT be allowed to give the exam more than once.
+                    <br/>
+                    <br/>Best of Luck and Be Curious!
                 </div>
 
             </form>
