@@ -345,7 +345,7 @@ export default function Form1() {
                     <br/>26th November, 2023: 2pm-5pm
                     <br/>
                     <br/>Please register atleast 5 days before an attempt to be eligible for the exam.
-                    The last date for registration is the 20th of November, 2023.
+                    The last date for registration is the 23th of November, 2023.
                     <br/>
                     <br/>Please note that you will have to attempt ONLY ONE of the three attempts. You will NOT be allowed to give the exam more than once.
                     <br/>
