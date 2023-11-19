@@ -34,7 +34,7 @@ export default function FAQ(){
         },
         {
             question: "What is the exam/registration fee?",
-            answer: "The exam fee is Rs 150 per student, to be paid online on our website. "
+            answer: "The exam fee is Rs 175 per student, to be paid online on our website. "
         },
         {
             question: "How is this different from other Olympiads? ",
