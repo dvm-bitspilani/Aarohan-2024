@@ -142,6 +142,11 @@ input[type="radio"]:checked+label {
     justify-content: space-between;
 }
 
+.regs_closed{
+    text-align: center;
+    margin: 3rem;
+}
+
 
 @media only screen and (max-width: 1000px){
     .class-radio{

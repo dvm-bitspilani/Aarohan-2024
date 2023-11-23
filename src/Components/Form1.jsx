@@ -241,14 +241,14 @@ export default function Form1() {
 
     return (
         <>
-            <Modal
+            {/* <Modal
                 message={errorMessage}
                 showModal={showModal}
                 setShowModal={setShowModal}
-                handleCloseModal={handleCloseModal} />
+                handleCloseModal={handleCloseModal} /> */}
 
             <form className="form" id="form1">
-                <label >Student Name</label>
+                {/* <label >Student Name</label>
                 <input value={name} type="text" className="input-box" placeholder="Enter Name"
                     onChange={event => setName(event.target.value)}
                 />
@@ -335,10 +335,16 @@ export default function Form1() {
                 <div className="submit-buttons">
                     <button className="form-cancel" onClick={handleCancel}>CANCEL</button>
                     <button className="form-submit" onClick={handleSubmit}>{isLoading ? "Loading..." : "SUBMIT"}</button>
-                </div>
+                </div> */}
 
                 <div className="information">
-                    Dates for Aarohan 2024:
+                    <div className="regs_closed">Student Registrations are closed</div>
+                    {/* <br/>
+                    <br/>
+
+
+
+                    <br/>Dates for Aarohan 2024:
                     <br/>
                     <br/>4th November, 2023: 9am-12noon
                     <br/>18th November, 2023: 2pm-5pm
@@ -349,7 +355,7 @@ export default function Form1() {
                     <br/>
                     <br/>Please note that you will have to attempt ONLY ONE of the three attempts. You will NOT be allowed to give the exam more than once.
                     <br/>
-                    <br/>Best of Luck and Be Curious!
+                    <br/>Best of Luck and Be Curious! */}
                 </div>
 
             </form>
