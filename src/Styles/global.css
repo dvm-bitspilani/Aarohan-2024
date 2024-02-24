@@ -120,6 +120,10 @@ input#hamburger {
     height: auto;
 }
 
+.spons{
+    width: 15rem !important;
+}
+
 .landing-text-container button {
     font-family: 'Poppins', sans-serif;
     padding: 0.2rem;
@@ -379,6 +383,10 @@ svg {
     .landing-text-container img {
         width: 20rem;
     }
+
+    .spons{
+        width: 10rem !important;
+    }
 }
 
 @media only screen and (max-width: 1110px) {
@@ -414,6 +422,10 @@ svg {
 
     .landing-text-container img {
         width: 15rem;
+    }
+
+    .spons{
+        width: 8rem !important;
     }
 
     .landing-text-container button {

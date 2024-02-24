@@ -1,6 +1,6 @@
 import React from "react";
 import AarohanLogo from "../images/aarohanLogo.png"
-import SponsLogo from "../images/spons.jpg"
+import SponsLogo from "../images/spons.png"
 import ClockTower from "../images/clocktower.svg"
 import Ellipse1 from "../images/ellipse1.png"
 import Ellipse from "../images/ellipse2.png"
@@ -35,7 +35,7 @@ export default function Landing() {
             <div className="dummy">
                 <div className="landing-text-container">
                     <img src={AarohanLogo} alt="logo" draggable="false" />
-                    <img src={SponsLogo} alt="logo" draggable="false" />
+                    <img src={SponsLogo} alt="logo" draggable="false" className="spons"/>
                     <div>
                         <Link to="/Registration">
                             <button>REGISTER</button>
