@@ -180,14 +180,14 @@ export default function Form1() {
   };
 
   name != "" &&
-  fatherName != "" &&
-  school != "" &&
-  city != "" &&
-  city != "default" &&
-  stateIndex != 0 &&
-  inClass != "" &&
-  phone != "" &&
-  email != ""
+    fatherName != "" &&
+    school != "" &&
+    city != "" &&
+    city != "default" &&
+    stateIndex != 0 &&
+    inClass != "" &&
+    phone != "" &&
+    email != ""
     ? (isValid = true)
     : "";
 
@@ -360,11 +360,11 @@ export default function Form1() {
 
 
 
-                    <br/>Dates for Aarohan 2024:
+                    <br/>Dates for Aarohan 2025:
                     <br/>
-                    <br/>4th November, 2023: 9am-12noon
-                    <br/>18th November, 2023: 2pm-5pm
-                    <br/>26th November, 2023: 2pm-5pm
+                    <br/>20th October, 2024: 9am-12noon
+                    <br/>10th November, 2024: 2pm-5pm
+                    <br/>17th November, 2024: 2pm-5pm
                     <br/>
                     <br/>Please register atleast 5 days before an attempt to be eligible for the exam.
                     The last date for registration is the 23rd of November, 2023.

@@ -54,7 +54,7 @@ export default function Main() {
                             <p className="text1"
                                 style={{ color: "white" }}
                             >The first student run Indian series aims to provide its participants an enriching experience in the form of workshops and seminars apart from the examination.
-                                The motivation behind this is to not limit the learning experience just with a time bound test rather take it to actual experience. You get to attend sessions on topics like career building, soft skills development, competitive preparation from the speakers you daily watch and admire. As a part of Road to Aarohan you will also get a chance to submit your project in the research exhibition conducted after aarohan round 1.</p>
+                                The motivation behind this is to not limit the learning experience just with a time bound test rather take it to actual experience. You get to attend sessions on topics like career building, soft skills development, competitive preparation from the speakers you daily watch and admire. As a part of Road to Aarohan you will also get a chance to submit your project in the research exhibition conducted after Aarohan round 1.</p>
                         </div>
                         <div className="right">
                             <img src={RoadImg} alt="" draggable="false" />

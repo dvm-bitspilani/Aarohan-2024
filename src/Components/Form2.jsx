@@ -186,16 +186,16 @@ export default function Form1() {
   // console.log(formData)
 
   schoolName != "" &&
-  schoolPOCName != "" &&
-  city != "" &&
-  city != "default" &&
-  state != "" &&
-  class9 != "" &&
-  class10 != "" &&
-  class11 != "" &&
-  class12 != "" &&
-  contact != "" &&
-  email != ""
+    schoolPOCName != "" &&
+    city != "" &&
+    city != "default" &&
+    state != "" &&
+    class9 != "" &&
+    class10 != "" &&
+    class11 != "" &&
+    class12 != "" &&
+    contact != "" &&
+    email != ""
     ? (isValid = true)
     : "";
 
@@ -404,14 +404,14 @@ export default function Form1() {
         </div>
 
         <div className="information">
-          Dates for Aarohan 2024:
+          Dates for Aarohan 2025:
           <br />
           <br />
-          4th November, 2023: 9am-12noon
+          20th October, 2024: 9am-12noon
           <br />
-          18th November, 2023: 2pm-5pm
+          10th November, 2024: 2pm-5pm
           <br />
-          26th November, 2023: 2pm-5pm
+          17th November, 2024: 2pm-5pm
           <br />
           <br />
           Please register atleast 5 days before an attempt to be eligible for
