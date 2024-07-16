@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ApogeeLogo from '../images/apogeeLogo.png'
+import ApogeeLogo2025 from '../images/ApogeeLogo2025.svg'
 import { Link, useLocation } from "react-router-dom";
 import "../Styles/Hamburger.css"
 
@@ -19,7 +20,7 @@ export default function Navbar(props) {
             <div className="navbar">
                 <div className="nav-container">
                     <div className="nav-logo">
-                        <a href="https://www.bits-apogee.org/" style={{ textDecoration: "none" }}><img src={ApogeeLogo} alt="logo" draggable="false" /></a>
+                        <a href="https://www.bits-apogee.org/" style={{ textDecoration: "none" }}><img src={ApogeeLogo2025} alt="logo" draggable="false" /></a>
                     </div>
                     <div>
                         <ul className="nav-list">
