@@ -415,8 +415,8 @@ export default function Form1() {
           <br />
           <br />
           Please register atleast 5 days before an attempt to be eligible for
-          the exam. The last date for registration is the 23rd of November,
-          2023.
+          the exam. The last date for registration is the 12th of November,
+          2024.
           <br />
           <br />
           Please note that you will have to attempt ONLY ONE of the three
