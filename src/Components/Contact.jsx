@@ -1,52 +1,52 @@
 import React, { useState } from "react";
 import Profile from "./Profile";
 import "../Styles/Contact.css";
-import Vishwam from "../Contact/Vishwam.jpg";
-import Nachiket from "../Contact/Nachiket.jpg";
-import Anurag from "../Contact/Anurag.jpg";
-import Rajul from "../Contact/Rajul.jpg";
-import Saumya from "../Contact/Saumya.jpg";
-import Shruti from "../Contact/Shruti.jpg";
+import Parth from '../Contact/parth_gokak.jpg'
+import Aashna from '../Contact/aashna_ased.jpg'
+import Arushi from '../Contact/arushi_pant.jpg'
+import Yuvraj from '../Contact/yuvraj_jagtap.jpg'
+import Anirudh from '../Contact/anirudh_ladha.jpg'
+import Navya from '../Contact/navya_gupta.jpg'
 import Modal from "./Modal";
 import axios from "axios";
 
 export default function Contact() {
   const data2 = [
     {
-      image: `${Vishwam}`,
-      name: "Vishwam Bagrodia",
+      image: `${Parth}`,
+      name: "Parth Gokak",
       caption: "Coordinator",
-      phone: "+91 8240563699 ",
+      phone: "+91 9588654137 ",
     },
     {
-      image: `${Nachiket}`,
-      name: "Nachiketh Shastry",
-      caption: "Joint Coordinator and Head of Knowledge",
-      phone: "+91 7483945690 ",
+      image: `${Aashna}`,
+      name: "Aashna Ased",
+      caption: "Joint Coordinator and Minifest Lead",
+      phone: "+91 9980188179 ",
     },
     {
-      image: `${Anurag}`,
-      name: "Anurag Singh Bisht",
-      caption: "Joint Coordinator and Head of Sponsorship",
-      phone: "+91 8602452639 ",
+      image: `${Arushi}`,
+      name: "Arushi Pant",
+      caption: "Joint Coordinator and Graphic Designing Lead",
+      phone: "+91 8569860911 ",
     },
     {
-      image: `${Rajul}`,
-      name: "Rajul Bangani",
-      caption: "Head of Minifest and Outreach",
-      phone: "+91 8722714214 ",
+      image: `${Yuvraj}`,
+      name: "Yuvvraj Jagtap",
+      caption: "Knowledge Team Lead",
+      phone: "+91 9130046886 ",
     },
     {
-      image: `${Saumya}`,
-      name: "Saumya Ojha",
-      caption: "Head of Event Management",
-      phone: "+91 9219555290 ",
+      image: `${Anirudh}`,
+      name: "Anirudh Ladha",
+      caption: "Sponsorship Team Lead",
+      phone: "+91 9345280098 ",
     },
     {
-      image: `${Shruti}`,
-      name: "Shruti Chaturvedi",
-      caption: "Head of Graphic Design and Publicity",
-      phone: "+91 8851336713",
+      image: `${Navya}`,
+      name: "Navya Gupta",
+      caption: "Event Management Team Lead",
+      phone: "+91 9599944206 ",
     },
   ];
 
