@@ -20,6 +20,7 @@ import img10 from "../Gallery/10.jpg"
 import img11 from "../Gallery/11.jpg"
 import img12 from "../Gallery/12.jpg"
 import img13 from "../Gallery/13.jpg"
+import Footer from "../Components/Footer";
 
 export default function Gallery() {
 
@@ -35,7 +36,7 @@ export default function Gallery() {
                     keyboard={true}
                     autoplay={{ delay: 1500 }}
                     loop={true}
-                    navigation= {true}
+                    navigation={true}
                     pagination={true}
                     slidesPerView=
                     {window.innerWidth > 900 ? 2 : 1}
@@ -94,6 +95,7 @@ export default function Gallery() {
                     </SwiperSlide>
 
                 </Swiper>
+                <Footer />
             </div >
 
         </>

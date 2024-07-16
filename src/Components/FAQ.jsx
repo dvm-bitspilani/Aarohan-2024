@@ -3,9 +3,10 @@ import "../Styles/FAQ.css"
 import FAQbox from "./FAQbox";
 import Navbar from "./Navbar";
 import BackgroundImg from "../images/bg.png"
+import Footer from "./Footer";
 
 
-export default function FAQ(){
+export default function FAQ() {
 
     const data = [
         {
@@ -47,23 +48,24 @@ export default function FAQ(){
     ]
 
     const FAQs = data.map((data, index) => {
-        return(
+        return (
             <FAQbox
-            question = {data.question}
-            answer = {data.answer}
-            index = {data.question}
-        />
+                question={data.question}
+                answer={data.answer}
+                index={data.question}
+            />
         )
     })
 
-    return(
-        <>  
-            <Navbar/>
-            <div className="page" style={{backgroundImage: `url(${BackgroundImg})`, paddingTop: "0px"}}>
-            <div className="FAQ">
-                <div className="heading" style={{ width: "100%", textAlign: "center", paddingTop: "2rem"}}>Frequently Asked Questions</div>
-                {FAQs}
-            </div>
+    return (
+        <>
+            <Navbar />
+            <div className="page" style={{ backgroundImage: `url(${BackgroundImg})`, paddingTop: "0px" }}>
+                <div className="FAQ">
+                    <div className="heading" style={{ width: "100%", textAlign: "center", paddingTop: "2rem" }}>Frequently Asked Questions</div>
+                    {FAQs}
+                </div>
+                <Footer />
             </div>
         </>
     )

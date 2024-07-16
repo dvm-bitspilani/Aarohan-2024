@@ -1,18 +1,19 @@
-iframe{
+iframe {
     height: 60vh;
     width: 50%;
     margin: auto;
 }
 
-.pdf{
+.pdf {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    padding-bottom: calc(5rem - 60px);
 }
 
-.download{
+.download {
     font-family: 'Poppins', sans-serif;
     padding: 0.2rem;
     padding-inline: 5rem;
@@ -25,12 +26,11 @@ iframe{
     width: fit-content;
 }
 
-@media only screen and (max-width: 1000px){
-    iframe{
+@media only screen and (max-width: 1000px) {
+    iframe {
         height: 60vh;
         width: 100%;
         margin: auto;
     }
-    
-}
 
+}

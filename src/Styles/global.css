@@ -13,7 +13,7 @@ Link {
     background-size: contain;
     background-repeat: repeat;
     width: auto;
-    padding-bottom: 5rem;
+    /* padding-bottom: 5rem; */
 }
 
 .navbar {
@@ -120,7 +120,7 @@ input#hamburger {
     height: auto;
 }
 
-.spons{
+.spons {
     width: 15rem !important;
 }
 
@@ -375,7 +375,7 @@ svg {
     /* height: 60%; */
 }
 
-.clocktower-container svg{
+.clocktower-container svg {
     opacity: 0;
 }
 
@@ -384,7 +384,7 @@ svg {
         width: 20rem;
     }
 
-    .spons{
+    .spons {
         width: 10rem !important;
     }
 }
@@ -424,7 +424,7 @@ svg {
         width: 15rem;
     }
 
-    .spons{
+    .spons {
         width: 8rem !important;
     }
 

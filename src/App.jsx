@@ -6,18 +6,15 @@ import Main from './pages/Main';
 import Landing from './pages/LandingPart.jsx';
 
 function App() {
-
-  
-
   return (
     <>
       <div>
         <div className='landing-page'>
-          <Navbar 
+          <Navbar
           />
           <Landing />
         </div>
-        <Main className="target"/>
+        <Main className="target" />
       </div>
     </>
   );
