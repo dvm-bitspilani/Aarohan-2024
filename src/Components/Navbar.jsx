@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import ApogeeLogo from '../images/apogeeLogo.png'
 import { Link, useLocation } from "react-router-dom";
 import "../Styles/Hamburger.css"
@@ -26,7 +26,6 @@ export default function Navbar(props) {
                             <Link to={"/"} style={{ textDecoration: "none" }}><li>HOME</li></Link>
                             <a href="/aarohan2024/#about" style={{ textDecoration: "none" }}><li>ABOUT US</li></a>
                             <Link to={"/SamplePaper"} style={{ textDecoration: "none" }}><li>SAMPLE PAPER</li></Link>
-                            <li>RESULTS</li>
                             <Link to={"/FAQ"} style={{ textDecoration: "none" }}><li>FAQ</li></Link>
                             <Link to={"/Gallery"} style={{ textDecoration: "none" }}><li>GALLERY</li></Link>
                         </ul>
@@ -47,7 +46,6 @@ export default function Navbar(props) {
                             <Link to={"/"} style={{ textDecoration: "none" }}><li onClick={handleHamOpen}>HOME</li></Link>
                             <a href="/aarohan2024/#about" style={{ textDecoration: "none" }}><li onClick={handleHamOpen}>ABOUT US</li></a>
                             <Link to={"/SamplePaper"} style={{ textDecoration: "none" }}><li onClick={handleHamOpen}>SAMPLE PAPER</li></Link>
-                            <li onClick={handleHamOpen}>RESULTS</li>
                             <Link to={"/FAQ"} style={{ textDecoration: "none" }}><li onClick={handleHamOpen}>FAQ</li></Link>
                             <Link to={"/Gallery"} style={{ textDecoration: "none" }}><li onClick={handleHamOpen}>GALLERY</li></Link>
                         </ul>
