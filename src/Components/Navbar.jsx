@@ -25,7 +25,7 @@ export default function Navbar(props) {
                     <div>
                         <ul className="nav-list">
                             <Link to={"/"} style={{ textDecoration: "none" }}><li>HOME</li></Link>
-                            <a href="/aarohan2024/#about" style={{ textDecoration: "none" }}><li>ABOUT US</li></a>
+                            <a href="/aarohan2025/#about" style={{ textDecoration: "none" }}><li>ABOUT US</li></a>
                             <Link to={"/SamplePaper"} style={{ textDecoration: "none" }}><li>SAMPLE PAPER</li></Link>
                             <Link to={"/FAQ"} style={{ textDecoration: "none" }}><li>FAQ</li></Link>
                             <Link to={"/Gallery"} style={{ textDecoration: "none" }}><li>GALLERY</li></Link>
@@ -45,7 +45,7 @@ export default function Navbar(props) {
                     <div className={`ham-menu ${isHamOpen && 'open'}`}>
                         <ul className="ham-list">
                             <Link to={"/"} style={{ textDecoration: "none" }}><li onClick={handleHamOpen}>HOME</li></Link>
-                            <a href="/aarohan2024/#about" style={{ textDecoration: "none" }}><li onClick={handleHamOpen}>ABOUT US</li></a>
+                            <a href="/aarohan2025/#about" style={{ textDecoration: "none" }}><li onClick={handleHamOpen}>ABOUT US</li></a>
                             <Link to={"/SamplePaper"} style={{ textDecoration: "none" }}><li onClick={handleHamOpen}>SAMPLE PAPER</li></Link>
                             <Link to={"/FAQ"} style={{ textDecoration: "none" }}><li onClick={handleHamOpen}>FAQ</li></Link>
                             <Link to={"/Gallery"} style={{ textDecoration: "none" }}><li onClick={handleHamOpen}>GALLERY</li></Link>
