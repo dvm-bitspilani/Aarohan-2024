@@ -1,5 +1,7 @@
 import { useFormik } from "formik"
 import TextInput from "./Inputs/TextInput"
+import RadioGroup from "./Inputs/RadioGroup"
+import CustomRadio from "./Inputs/Radio"
 
 export default function StudentForm({ closed, children }) {
     if (closed) {
@@ -17,7 +19,7 @@ export default function StudentForm({ closed, children }) {
             school_name: "",
             city: "",
             state: "",
-            studying_in_class: null,
+            studying_in_class: "",
             contact_no: "",
             email_id: ""
         },
@@ -56,6 +58,46 @@ export default function StudentForm({ closed, children }) {
                 onChange={handleChange}
                 onBlur={handleBlur}
             />
+            <RadioGroup
+                title="Class: "
+            >
+                <CustomRadio
+                    name="studying_in_class"
+                    value="9"
+                    label="Class 9"
+                    id="class9"
+                    onChange={handleChange}
+                    setFieldValue={setFieldValue}
+                    formikValue={values.studying_in_class}
+                />
+                <CustomRadio
+                    name="studying_in_class"
+                    value="10"
+                    label="Class 10"
+                    id="class10"
+                    onChange={handleChange}
+                    setFieldValue={setFieldValue}
+                    formikValue={values.studying_in_class}
+                />
+                <CustomRadio
+                    name="studying_in_class"
+                    value="11"
+                    label="Class 11"
+                    id="class11"
+                    onChange={handleChange}
+                    setFieldValue={setFieldValue}
+                    formikValue={values.studying_in_class}
+                />
+                <CustomRadio
+                    name="studying_in_class"
+                    value="12"
+                    label="Class 12"
+                    id="class12"
+                    onChange={handleChange}
+                    setFieldValue={setFieldValue}
+                    formikValue={values.studying_in_class}
+                />
+            </RadioGroup>
             {children}
         </form>
     )

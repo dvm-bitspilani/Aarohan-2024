@@ -265,40 +265,6 @@ export default function Form1() {
         handleCloseModal={handleCloseModal} />
 
       <StudentForm closed={false}>
-        <label >Class: </label>
-        <div className="class-radio">
-          <input type="radio" className="input-radio" name="class" value="9"
-            checked={inClass === "9"}
-            onChange={handleChange}
-            id="class9"
-          />
-          <label htmlFor="class9" onClick={handleChange} value="10">Class 9</label>
-
-
-          <input type="radio" className="input-radio" name="class" value="10"
-            id="class10"
-            checked={inClass === "10"}
-            onChange={handleChange}
-          />
-          <label htmlFor="class10" onClick={handleChange}>Class 10</label>
-
-
-          <input type="radio" className="input-radio" name="class" value="11"
-            checked={inClass === "11"}
-            onChange={handleChange}
-            id="class11"
-          />
-          <label htmlFor="class11" onClick={handleChange}>Class 11</label>
-
-
-          <input type="radio" className="input-radio" name="class" value="12"
-            checked={inClass === "12"}
-            onChange={handleChange}
-            id="class12"
-          />
-          <label htmlFor="class12">Class 12</label>
-        </div>
-
         <div className="form-location">
           <label className="form-state">
             State
@@ -332,7 +298,7 @@ export default function Form1() {
 
         <div className="submit-buttons">
           <button className="form-cancel" onClick={handleCancel}>CANCEL</button>
-          <button className="form-submit" onClick={handleSubmit}>{isLoading ? "Loading..." : "SUBMIT"}</button>
+          <button className="form-submit" type="submit">{isLoading ? "Loading..." : "SUBMIT"}</button>
         </div>
 
         <div className="information">
