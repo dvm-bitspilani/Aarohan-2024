@@ -15,7 +15,7 @@ export default function FAQ() {
         },
         {
             question: "How will the exam be conducted?",
-            answer: "The exam will be conducted in Online Mode. All the registered students will be getting their login credentials and Admit cards with the link for the online examination porta"
+            answer: "The exam will be conducted in Online Mode. All the registered students will be getting their login credentials and Admit cards with the link for the online examination portal"
         },
         {
             question: "What is the exam pattern?",
