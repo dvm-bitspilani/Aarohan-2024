@@ -3,6 +3,7 @@ import "../Styles/Form.css";
 import { useState } from "react";
 import axios from "axios";
 import Modal from "./Modal";
+import StudentForm from "./Forms/StudentForm";
 
 export default function Form1() {
   const [name, setName] = useState("");
@@ -179,15 +180,15 @@ export default function Form1() {
     email_id: email,
   };
 
-  name != "" &&
-    fatherName != "" &&
-    school != "" &&
-    city != "" &&
-    city != "default" &&
-    stateIndex != 0 &&
-    inClass != "" &&
-    phone != "" &&
-    email != ""
+  name !== "" &&
+    fatherName !== "" &&
+    school !== "" &&
+    city !== "" &&
+    city !== "default" &&
+    stateIndex !== 0 &&
+    inClass !== "" &&
+    phone !== "" &&
+    email !== ""
     ? (isValid = true)
     : "";
 
@@ -257,123 +258,104 @@ export default function Form1() {
 
   return (
     <>
-      {/* <Modal
-                message={errorMessage}
-                showModal={showModal}
-                setShowModal={setShowModal}
-                handleCloseModal={handleCloseModal} /> */}
+      <Modal
+        message={errorMessage}
+        showModal={showModal}
+        setShowModal={setShowModal}
+        handleCloseModal={handleCloseModal} />
 
-      <form className="form" id="form1">
-        {/* <label >Student Name</label>
-                <input value={name} type="text" className="input-box" placeholder="Enter Name"
-                    onChange={event => setName(event.target.value)}
-                />
-                <label >Father (or Mother) Name</label>
-                <input value={fatherName} type="text" className="input-box" placeholder="Enter Father (or Mother) Name"
-                    onChange={event => setFatherName(event.target.value)}
-                />
-                <label >School/Institute</label>
-                <input value={school} type="text" className="input-box" placeholder="Enter School/Institute Name"
-                    onChange={event => setSchool(event.target.value)}
-                />
-
-                <label >Phone Number</label>
-                <input value={phone} type="text" className="input-box" placeholder="Enter Phone Number"
-                    onChange={event => setPhone(event.target.value)}
-                    maxLength={10}
-                />
-                <label >Class: </label>
-
-                <div className="class-radio">
-                    <input type="radio" className="input-radio" name="class" value="9"
-                        checked={inClass === "9"}
-                        onChange={handleChange}
-                        id="class9"
-                    />
-                    <label htmlFor="class9" onClick={handleChange} value="10">Class 9</label>
+      <StudentForm closed={false}>
+        <label >Class: </label>
+        <div className="class-radio">
+          <input type="radio" className="input-radio" name="class" value="9"
+            checked={inClass === "9"}
+            onChange={handleChange}
+            id="class9"
+          />
+          <label htmlFor="class9" onClick={handleChange} value="10">Class 9</label>
 
 
-                    <input type="radio" className="input-radio" name="class" value="10"
-                        id="class10"
-                        checked={inClass === "10"}
-                        onChange={handleChange}
-                    />
-                    <label htmlFor="class10" onClick={handleChange}>Class 10</label>
+          <input type="radio" className="input-radio" name="class" value="10"
+            id="class10"
+            checked={inClass === "10"}
+            onChange={handleChange}
+          />
+          <label htmlFor="class10" onClick={handleChange}>Class 10</label>
 
 
-                    <input type="radio" className="input-radio" name="class" value="11"
-                        checked={inClass === "11"}
-                        onChange={handleChange}
-                        id="class11"
-                    />
-                    <label htmlFor="class11" onClick={handleChange}>Class 11</label>
+          <input type="radio" className="input-radio" name="class" value="11"
+            checked={inClass === "11"}
+            onChange={handleChange}
+            id="class11"
+          />
+          <label htmlFor="class11" onClick={handleChange}>Class 11</label>
 
 
-                    <input type="radio" className="input-radio" name="class" value="12"
-                        checked={inClass === "12"}
-                        onChange={handleChange}
-                        id="class12"
-                    />
-                    <label htmlFor="class12">Class 12</label>
-                </div>
+          <input type="radio" className="input-radio" name="class" value="12"
+            checked={inClass === "12"}
+            onChange={handleChange}
+            id="class12"
+          />
+          <label htmlFor="class12">Class 12</label>
+        </div>
 
-                <div className="form-location">
-                    <label className="form-state">
-                        State
-                        <select
-                            onChange={event => setStateIndex(event.target.value)}
-                            value={stateIndex}
-                        >
-                            <option value={0}>Select State</option>
-                            {state_options}
-                        </select>
-                    </label>
+        <div className="form-location">
+          <label className="form-state">
+            State
+            <select
+              onChange={event => setStateIndex(event.target.value)}
+              value={stateIndex}
+            >
+              <option value={0}>Select State</option>
+              {state_options}
+            </select>
+          </label>
 
-                    <label className="form-city">
-                        City
-                        <select id="city"
-                            // defaultValue="default"
-                            onChange={event => setCity(event.target.value)}
-                            value={city}
-                        >
-                            {stateIndex && <option value="default" selected>Select City</option>}
-                            {city_options}
-                        </select>
-                    </label>
-                </div>
+          <label className="form-city">
+            City
+            <select id="city"
+              // defaultValue="default"
+              onChange={event => setCity(event.target.value)}
+              value={city}
+            >
+              {stateIndex && <option value="default" selected>Select City</option>}
+              {city_options}
+            </select>
+          </label>
+        </div>
 
-                <label htmlFor="email" >Email ID</label>
-                <input type="text" className="input-box" placeholder="Enter Email ID"
-                    onChange={event => setEmail(event.target.value)}
-                    value={email}
-                />
+        <label htmlFor="email" >Email ID</label>
+        <input type="text" className="input-box" placeholder="Enter Email ID"
+          onChange={event => setEmail(event.target.value)}
+          value={email}
+        />
 
-                <div className="submit-buttons">
-                    <button className="form-cancel" onClick={handleCancel}>CANCEL</button>
-                    <button className="form-submit" onClick={handleSubmit}>{isLoading ? "Loading..." : "SUBMIT"}</button>
-                </div> */}
+        <div className="submit-buttons">
+          <button className="form-cancel" onClick={handleCancel}>CANCEL</button>
+          <button className="form-submit" onClick={handleSubmit}>{isLoading ? "Loading..." : "SUBMIT"}</button>
+        </div>
 
         <div className="information">
-          <div className="regs_closed">Student Registrations are closed</div>
-          {/* <br/>
-                    <br/>
+
+          <br />
+          <br />
 
 
 
-                    <br/>Dates for Aarohan 2025:
-                    <br/>
-                    <br/>20th October, 2024: 9am-12noon
-                    <br/>10th November, 2024: 2pm-5pm
-                    <br/>17th November, 2024: 2pm-5pm
-                    <br/>
-                    <br/>Please register atleast 5 days before an attempt to be eligible for the exam.
-                    The last date for registration is the 18th of October, 2024.
-                    <br/>
-                    <br/>Please note that you will have to attempt ONLY ONE of the three attempts. You will NOT be allowed to give the exam more than once.
-                    <br/>
-                    <br/>Best of Luck and Be Curious! */}
+          <br />Dates for Aarohan 2025:
+          <br />
+          <br />20th October, 2024: 9am-12noon
+          <br />10th November, 2024: 2pm-5pm
+          <br />17th November, 2024: 2pm-5pm
+          <br />
+          <br />Please register atleast 5 days before an attempt to be eligible for the exam.
+          The last date for registration is the 18th of October, 2024.
+          <br />
+          <br />Please note that you will have to attempt ONLY ONE of the three attempts. You will NOT be allowed to give the exam more than once.
+          <br />
+          <br />Best of Luck and Be Curious!
         </div>
-      </form>
+      </StudentForm>
     </>
   );
 }
