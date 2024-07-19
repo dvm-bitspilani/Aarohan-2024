@@ -13,7 +13,7 @@ export default function StudentForm({ closed, children }) {
         )
     }
 
-    const { values, errors, handleBlur, handleSubmit, handleChange, setFieldValue } = useFormik({
+    const { values, errors, handleBlur, handleSubmit, handleChange, setFieldValue, resetForm } = useFormik({
         initialValues: {
             full_name: "",
             fathers_name: "",
@@ -28,6 +28,10 @@ export default function StudentForm({ closed, children }) {
             console.log(values)
         }
     })
+
+    function handleCancel() {
+        resetForm()
+    }
 
     return (
         <form className="form" onSubmit={handleSubmit}>
@@ -102,6 +106,20 @@ export default function StudentForm({ closed, children }) {
             <LocationInput
                 setFieldValue={setFieldValue}
             />
+            <TextInput
+                name="email_id"
+                title="Email ID"
+                values={values}
+                onChange={handleChange}
+                onBlur={handleBlur}
+            />
+            <div className="submit-buttons">
+                <button className="form-cancel" onClick={handleCancel}>CANCEL</button>
+                <button className="form-submit" type="submit">
+                    {/* {isLoading ? "Loading..." : "SUBMIT"} */}
+                    SUBMIT
+                </button>
+            </div>
             {children}
         </form>
     )
