@@ -212,7 +212,7 @@ export default function Form1() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://bits-apogee.org/2024/main/aarohan/studentreg/",
+        "https://bits-apogee.org/2025/main/aarohan/studentreg/",
         formData,
       );
       // console.log("Post created:", response.data);
@@ -224,7 +224,7 @@ export default function Form1() {
         try {
           // console.log("pay");
           const paymentResponse = await axios.post(
-            "https://bits-apogee.org/2024/main/aarohan/payment/",
+            "https://bits-apogee.org/2025/main/aarohan/payment/",
             obj,
           );
           // console.log("Paying...:", paymentResponse.data);

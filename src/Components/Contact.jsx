@@ -104,7 +104,7 @@ export default function Contact() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://bits-apogee.org/2024/main/aarohan/ask_query/",
+        "https://bits-apogee.org/2025/main/aarohan/ask_query/",
         formData,
       );
       // console.log("Post created:", response.data);
