@@ -7,6 +7,15 @@
     font-size: 1.2rem;
 }
 
+.information {
+    /* display: flex; */
+    /* flex-direction: column; */
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin-block: 1rem;
+    font-size: 1.2rem;
+}
+
 label {
     margin-top: 1rem;
     margin-bottom: 0.2rem;
@@ -22,7 +31,7 @@ label {
     gap: 1vw;
 }
 
-.class-radio label{
+.class-radio label {
     width: 20%;
     text-align: center;
 }
@@ -50,7 +59,7 @@ label {
     -webkit-backdrop-filter: blur(5px);
 }
 
-.class{
+.class {
     display: flex;
     flex-direction: column;
     width: 24%;
@@ -103,7 +112,7 @@ label {
     border-radius: 5px;
 }
 
-.submit-buttons button:hover{
+.submit-buttons button:hover {
     color: #111027;
     background-color: white;
 }
@@ -135,33 +144,33 @@ input[type="radio"]:checked+label {
 }
 
 
-.split-up{
+.split-up {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
 
-.regs_closed{
+.regs_closed {
     text-align: center;
     margin: 3rem;
 }
 
 
-@media only screen and (max-width: 1000px){
-    .class-radio{
+@media only screen and (max-width: 1000px) {
+    .class-radio {
         gap: 0;
     }
 
-    .class-radio label{
+    .class-radio label {
         width: 18%;
     }
 
-    .split-up{
+    .split-up {
         flex-wrap: wrap;
     }
 
-    .class{
+    .class {
         width: 48%;
 
     }
@@ -169,25 +178,27 @@ input[type="radio"]:checked+label {
 
 
 @media only screen and (max-width: 600px) {
-    .class-radio label{
+    .class-radio label {
         width: 40%;
     }
 
-    label{
+    label {
         font-size: 1rem;
     }
 
-    input{
+    input {
         font-size: 0.8rem
-    };
+    }
+
+    ;
 }
 
 @media only screen and (max-width: 470px) {
-    .class-radio{
+    .class-radio {
         flex-wrap: wrap;
     }
 
-    .class-radio label{
+    .class-radio label {
         width: 38%;
     }
 }
