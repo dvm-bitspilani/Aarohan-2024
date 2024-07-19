@@ -20,35 +20,41 @@
 
 }
 
-.breaker{
+.breaker {
     width: 40%;
     border-top: solid #1F94FC 4px;
     margin-block: 1rem;
 }
 
 .swiper-button-next,
-    .swiper-button-prev{
-        color: white;
-    }
+.swiper-button-prev {
+    color: white;
+}
 
-    .text5{
-        font-family: 'Poppins', sans-serif;
-        font-size: 1.5rem;
-    }
+.swiper-wrapper {
+    align-items: center;
+}
+
+.text5 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    white-space: pre-wrap;
+}
 
 @media only screen and (max-width: 900px) {
-    .testi-container{
+    .testi-container {
         padding: 0;
         padding-bottom: 2rem;
 
     }
 
-    .text5{
+    .text5 {
         font-family: 'Poppins', sans-serif;
         font-size: 1rem;
+        white-space: pre-wrap;
     }
 
-    .testi-content{
+    .testi-content {
         padding: 2rem;
     }
 }
