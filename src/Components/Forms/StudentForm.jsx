@@ -2,6 +2,7 @@ import { useFormik } from "formik"
 import TextInput from "./Inputs/TextInput"
 import RadioGroup from "./Inputs/RadioGroup"
 import CustomRadio from "./Inputs/Radio"
+import LocationInput from "./Inputs/Location"
 
 export default function StudentForm({ closed, children }) {
     if (closed) {
@@ -98,6 +99,9 @@ export default function StudentForm({ closed, children }) {
                     formikValue={values.studying_in_class}
                 />
             </RadioGroup>
+            <LocationInput
+                setFieldValue={setFieldValue}
+            />
             {children}
         </form>
     )
