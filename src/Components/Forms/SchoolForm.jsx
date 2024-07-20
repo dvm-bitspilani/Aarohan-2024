@@ -21,6 +21,7 @@ export default function SchoolForm({ closed = false, children }) {
     const [isLoading, setIsLoading] = useState(false)
     const [errorMessage, setErrorMessage] = useState(null)
     const [totalAmount, setTotalAmount] = useState(0);
+    let obj;
 
     const handleCloseModal = () => {
         setShowModal(false);
@@ -44,6 +45,8 @@ export default function SchoolForm({ closed = false, children }) {
             setIsLoading(true)
             axios.post('https://bits-apogee.org/2025/main/aarohan/schoolreg/', values)
                 .then(response => {
+                    obj.email_id = response.data.email_id;
+                    obj.reg_type = response.data.reg_type;
                     if (response.data.message === "School created.") {
                         axios.post("https://bits-apogee.org/2025/main/aarohan/payment/", obj)
                             .then(paymentResponse => {
@@ -84,6 +87,13 @@ export default function SchoolForm({ closed = false, children }) {
         const class12 = values.twelfth_class_students
         setTotalAmount((+class9 + +class10 + +class11 + +class12) * 175)
     }, [values.ninth_class_students, values.tenth_class_students, values.eleventh_class_students, values.twelfth_class_students])
+
+    useEffect(() => {
+        obj = {
+            email_id: values.email_id,
+            reg_type: "Student",
+        };
+    }, [values.email_id])
 
     function handleCancel() {
         resetForm()
