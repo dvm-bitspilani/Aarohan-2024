@@ -3,6 +3,7 @@ import TextInput from "./Inputs/TextInput"
 import RadioGroup from "./Inputs/RadioGroup"
 import CustomRadio from "./Inputs/Radio"
 import LocationInput from "./Inputs/Location"
+import { studentFormSchema } from "./ValidationSchemas/formSchemas"
 
 export default function StudentForm({ closed, children }) {
     if (closed) {
@@ -26,7 +27,10 @@ export default function StudentForm({ closed, children }) {
         },
         onSubmit: (values, action) => {
             console.log(values)
-        }
+        },
+        validationSchema: studentFormSchema,
+        validateOnChange: false,
+        validateOnBlur: false
     })
 
     function handleCancel() {
