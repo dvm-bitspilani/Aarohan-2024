@@ -20,7 +20,6 @@ export default function StudentForm({ closed, children }) {
     const [showModal, setShowModal] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
     const [errorMessage, setErrorMessage] = useState(null)
-    let obj;
 
     const handleCloseModal = () => {
         setShowModal(false);
@@ -43,10 +42,11 @@ export default function StudentForm({ closed, children }) {
             console.log(values)
             axios.post('https://bits-apogee.org/2025/main/aarohan/studentreg/', values)
                 .then(response => {
-                    obj.email_id = response.data.email_id;
-                    obj.reg_type = response.data.reg_type;
                     if (response.data.message === "Student registered.") {
-                        axios.post("https://bits-apogee.org/2025/main/aarohan/payment/", obj)
+                        axios.post("https://bits-apogee.org/2025/main/aarohan/payment/", {
+                            email_id: response.data.email_id,
+                            reg_type: response.data.reg_type
+                        })
                             .then(paymentResponse => {
                                 window.document.write(paymentResponse.data);
                                 setIsLoading(false)
@@ -76,13 +76,6 @@ export default function StudentForm({ closed, children }) {
             setErrorMessage(Object.values(errors)[0])
         }
     }, [errors])
-
-    useEffect(() => {
-        obj = {
-            email_id: values.email_id,
-            reg_type: "School",
-        };
-    }, [values.email_id])
 
     function handleCancel() {
         resetForm()
