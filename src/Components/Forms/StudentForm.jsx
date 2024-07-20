@@ -46,17 +46,20 @@ export default function StudentForm({ closed, children }) {
                         axios.post("https://bits-apogee.org/2025/main/aarohan/payment/", obj)
                             .then(paymentResponse => {
                                 window.document.write(paymentResponse.data);
+                                setIsLoading(false)
                             })
                             .catch(err => {
                                 setShowModal(true);
                                 setErrorMessage("Payment Error")
                                 console.log(err)
+                                setIsLoading(false)
                             })
                     }
                 })
                 .catch(err => {
                     setShowModal(true)
                     setErrorMessage("An unexpected error occured, please try again later")
+                    setIsLoading(false)
                 })
         },
         validationSchema: studentFormSchema,
