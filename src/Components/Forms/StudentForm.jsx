@@ -35,7 +35,8 @@ export default function StudentForm({ closed, children }) {
             state: "",
             studying_in_class: "",
             contact_no: "",
-            email_id: ""
+            email_id: "",
+            coupon_code: ""
         },
         onSubmit: (values, action) => {
             setIsLoading(true)
@@ -60,9 +61,16 @@ export default function StudentForm({ closed, children }) {
                     }
                 })
                 .catch(err => {
-                    setShowModal(true)
-                    setErrorMessage("An unexpected error occured, please try again later")
-                    setIsLoading(false)
+                    if (err.response.status === 409) {
+                        setShowModal(true)
+                        setErrorMessage("You have been registered")
+                        setIsLoading(false)
+                    }
+                    else {
+                        setShowModal(true)
+                        setErrorMessage("An unexpected error occured, please try again later")
+                        setIsLoading(false)
+                    }
                 })
         },
         validationSchema: studentFormSchema,
@@ -164,6 +172,13 @@ export default function StudentForm({ closed, children }) {
                 <TextInput
                     name="email_id"
                     title="Email ID"
+                    values={values}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                />
+                <TextInput
+                    name="coupon_code"
+                    title="Coupon Code (Optional)"
                     values={values}
                     onChange={handleChange}
                     onBlur={handleBlur}
