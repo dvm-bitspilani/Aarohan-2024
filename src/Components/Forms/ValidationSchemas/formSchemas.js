@@ -10,3 +10,16 @@ export const studentFormSchema = Yup.object({
     contact_no: Yup.string().matches(/^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/g, 'Please enter a valid phone number').required('All fields are required'),
     email_id: Yup.string().email("Email is invalid").required("All fields are required")
 })
+
+export const schoolFormSchema = Yup.object({
+    school_name: Yup.string().required("All fields are required"),
+    school_poc_name: Yup.string().required("All fields are required"),
+    city: Yup.string().required("All fields are required"),
+    state: Yup.string().required("All fields are required"),
+    ninth_class_students: Yup.string().matches(/^\d+$/g, "Number of students has to be 0 or positive").required("All fields are required"),
+    tenth_class_students: Yup.string().matches(/^\d+$/g, "Number of students has to be 0 or positive").required("All fields are required"),
+    eleventh_class_students: Yup.string().matches(/^\d+$/g, "Number of students has to be 0 or positive").required("All fields are required"),
+    twelfth_class_students: Yup.string().matches(/^\d+$/g, "Number of students has to be 0 or positive").required("All fields are required"),
+    contact_no: Yup.string().matches(/^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/g, 'Please enter a valid phone number').required('All fields are required'),
+    email_id: Yup.string().email("Email is invalid").required("All fields are required")
+})
