@@ -19,9 +19,21 @@ export default function Sample() {
                         <div className="page" style={{ backgroundImage: `url(${BackgroundImg})`, paddingTop: "0px" }}>
                                 <div className="heading" style={{ width: "100%", textAlign: "center", paddingTop: "0px" }}>Sample Paper</div>
                                 <div className="pdf">
-                                        <iframe src="https://drive.google.com/file/d/1epMPX3r90rrt6Sa0TEsWfDEG8XO5WCz4/preview" allow="autoplay"></iframe>
+                                        {/* <iframe src="https://drive.google.com/file/d/1epMPX3r90rrt6Sa0TEsWfDEG8XO5WCz4/preview" allow="autoplay"></iframe> */}
+                                        {/* <a href="https://drive.google.com/u/0/uc?id=1epMPX3r90rrt6Sa0TEsWfDEG8XO5WCz4&export=download"><button className="download">DOWNLOAD</button></a> */}
+                                           {/* Google Doc iframe */}
+                    <iframe
+                        src="https://docs.google.com/document/d/1_urDcWKG7JGcx3QKuL0-wH3R0G2gRF-DGCF-cKjQYZo/preview"
+                        width="100%"
+                        height="600px"
+                        allow="autoplay"
+                        title="Sample Google Doc"
+                    ></iframe>
 
-                                        <a href="https://drive.google.com/u/0/uc?id=1epMPX3r90rrt6Sa0TEsWfDEG8XO5WCz4&export=download"><button className="download">DOWNLOAD</button></a>
+                      {/* dowmload but docs */}
+                      <a href="https://docs.google.com/document/d/1_urDcWKG7JGcx3QKuL0-wH3R0G2gRF-DGCF-cKjQYZo/export?format=docx">
+                        <button className="download">DOWNLOAD </button>
+                    </a>
                                 </div>
                                 <Footer />
                         </div>
