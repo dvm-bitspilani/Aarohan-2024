@@ -5,7 +5,7 @@ import SchoolForm from "./Forms/SchoolForm";
 export default function Form1() {
   return (
     <>
-      <SchoolForm closed={false}>
+      <SchoolForm closed={true}>
         <div className="information">
           Dates for Aarohan 2025:
           <br />
@@ -18,8 +18,7 @@ export default function Form1() {
           <br />
           <br />
           Please register atleast 5 days before an attempt to be eligible for
-          the exam. The last date for registration is the 18th of October,
-          2024.
+          the exam. The last date for registration is the 18th of October, 2024.
           <br />
           <br />
           Please note that you will have to attempt ONLY ONE of the three
