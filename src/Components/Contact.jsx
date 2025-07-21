@@ -1,52 +1,45 @@
 import React, { useState } from "react";
 import Profile from "./Profile";
 import "../Styles/Contact.css";
-import Parth from '../Contact/parth_gokak.jpg'
-import Aashna from '../Contact/aashna_ased.jpg'
-import Arushi from '../Contact/arushi_pant.jpg'
-import Yuvraj from '../Contact/yuvraj_jagtap.jpg'
-import Anirudh from '../Contact/anirudh_ladha.jpg'
-import Navya from '../Contact/navya_gupta.jpg'
+import Aman from '../Contact/aman_sharma.jpg'
+import Anirvan from '../Contact/anirvan_kanavi.jpg'
+import Bhoomi from '../Contact/bhoomi_motihar.jpg'
+import Maanas from '../Contact/maanas_popuri.jpg'
+import Varenyam from '../Contact/varenyam_bharti.jpg'
 import Modal from "./Modal";
 import axios from "axios";
 
 export default function Contact() {
   const data2 = [
     {
-      image: `${Parth}`,
-      name: "Parth Gokak",
+      image: `${Maanas}`,
+      name: "Maanas Popuri",
       caption: "Coordinator",
-      phone: "+91 9588654137 ",
+      phone: "+91 9886060434",
     },
     {
-      image: `${Aashna}`,
-      name: "Aashna Ased",
-      caption: "Joint Coordinator and Minifest Lead",
-      phone: "+91 9980188179 ",
+      image: `${Bhoomi}`,
+      name: "Bhoomi Motihar",
+      caption: "Joint-Coordinator and Minifest Head",
+      phone: "+91 9664390939",
     },
     {
-      image: `${Arushi}`,
-      name: "Arushi Pant",
-      caption: "Joint Coordinator and Graphic Designing Lead",
-      phone: "+91 8569860911 ",
+      image: `${Aman}`,
+      name: "Aman Sharma",
+      caption: "Kowledge Team Head",
+      phone: "+91 8630314103",
     },
     {
-      image: `${Yuvraj}`,
-      name: "Yuvvraj Jagtap",
-      caption: "Knowledge Team Lead",
-      phone: "+91 9130046886 ",
+      image: `${Varenyam}`,
+      name: "Varenyam Bharti",
+      caption: "Sponsorship Head",
+      phone: "+91 6289735341",
     },
     {
-      image: `${Anirudh}`,
-      name: "Anirudh Ladha",
-      caption: "Sponsorship Team Lead",
-      phone: "+91 9345280098 ",
-    },
-    {
-      image: `${Navya}`,
-      name: "Navya Gupta",
-      caption: "Event Management Team Lead",
-      phone: "+91 9599944206 ",
+      image: `${Anirvan}`,
+      name: "Anirvan Kanavi",
+      caption: "Joint-Coordinator",
+      phone: "+91 9136072921",
     },
   ];
 
