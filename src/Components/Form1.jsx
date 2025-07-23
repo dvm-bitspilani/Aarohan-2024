@@ -4,7 +4,7 @@ import StudentForm from "./Forms/StudentForm";
 export default function Form1() {
   return (
     <>
-      <StudentForm closed={true}>
+      <StudentForm closed={false}>
         <div className="information">
           <br />
           <br />

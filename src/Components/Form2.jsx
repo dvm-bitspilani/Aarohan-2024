@@ -5,7 +5,7 @@ import SchoolForm from "./Forms/SchoolForm";
 export default function Form1() {
   return (
     <>
-      <SchoolForm closed={true}>
+      <SchoolForm closed={false}>
         <div className="information">
           Dates for Aarohan 2025:
           <br />
