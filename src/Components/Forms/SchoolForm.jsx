@@ -53,11 +53,11 @@ export default function SchoolForm({ closed = false, children }) {
       setIsLoading(true);
       console.log("submit");
       axios
-        .post(`${BASE_URL}/aarohan/schoolreg/`, values)
+        .post(`${BASE_URL}/schoolreg/`, values)
         .then((response) => {
           if (response.data.message === "School created.") {
             axios
-              .post(`${BASE_URL}/aarohan/payment/`, {
+              .post(`${BASE_URL}/payment/`, {
                 email_id: response.data.email_id,
                 reg_type: response.data.reg_type,
               })

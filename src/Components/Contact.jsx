@@ -97,10 +97,7 @@ export default function Contact() {
     }
     e.preventDefault();
     try {
-      const response = await axios.post(
-        `${BASE_URL}/aarohan/ask_query/`,
-        formData
-      );
+      const response = await axios.post(`${BASE_URL}/ask_query/`, formData);
       // console.log("Post created:", response.data);
       setShowModal(true);
       setErrorMessage("Query Submitted Successfuly!");

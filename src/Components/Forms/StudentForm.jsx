@@ -51,11 +51,11 @@ export default function StudentForm({ closed, children }) {
       setIsLoading(true);
       console.log(values);
       axios
-        .post(`${BASE_URL}/aarohan/studentreg/`, values)
+        .post(`${BASE_URL}/studentreg/`, values)
         .then((response) => {
           if (response.data.message === "Student registered.") {
             axios
-              .post(`${BASE_URL}/aarohan/payment/`, {
+              .post(`${BASE_URL}/payment/`, {
                 email_id: response.data.email_id,
                 reg_type: response.data.reg_type,
               })
