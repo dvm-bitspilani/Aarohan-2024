@@ -1,13 +1,14 @@
-import React, { useState } from "react";
-import Profile from "./Profile";
-import "../Styles/Contact.css";
-import Aman from '../Contact/aman_sharma.jpg'
-import Anirvan from '../Contact/anirvan_kanavi.jpg'
-import Bhoomi from '../Contact/bhoomi_motihar.jpg'
-import Maanas from '../Contact/maanas_popuri.jpg'
-import Varenyam from '../Contact/varenyam_bharti.jpg'
-import Modal from "./Modal";
 import axios from "axios";
+import { useState } from "react";
+import Aman from "../Contact/aman_sharma.jpg";
+import Anirvan from "../Contact/anirvan_kanavi.jpg";
+import Bhoomi from "../Contact/bhoomi_motihar.jpg";
+import Maanas from "../Contact/maanas_popuri.jpg";
+import Varenyam from "../Contact/varenyam_bharti.jpg";
+import "../Styles/Contact.css";
+import { BASE_URL } from "../Utils/apis";
+import Modal from "./Modal";
+import Profile from "./Profile";
 
 export default function Contact() {
   const data2 = [
@@ -97,8 +98,8 @@ export default function Contact() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://bits-apogee.org/2025/main/aarohan/ask_query/",
-        formData,
+        `${BASE_URL}/aarohan/ask_query/`,
+        formData
       );
       // console.log("Post created:", response.data);
       setShowModal(true);
