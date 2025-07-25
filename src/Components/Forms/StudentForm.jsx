@@ -41,10 +41,10 @@ export default function StudentForm({ closed, children }) {
         onSubmit: (values, action) => {
             setIsLoading(true)
             console.log(values)
-            axios.post('https://bits-apogee.org/2025/main/aarohan/studentreg/', values)
+            axios.post('https://aarohan.bits-apogee.org/aarohan/studentreg/', values)
                 .then(response => {
                     if (response.data.message === "Student registered.") {
-                        axios.post("https://bits-apogee.org/2025/main/aarohan/payment/", {
+                        axios.post("https://bits-apogee.org/aarohan/payment/", {
                             email_id: response.data.email_id,
                             reg_type: response.data.reg_type
                         })
