@@ -7,6 +7,37 @@
   font-size: 1.2rem;
 }
 
+.school-pdf-download-link {
+  text-decoration: none;
+  margin-top: 2rem;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: white;
+  border: solid white 0.5px;
+
+  transition: background 150ms linear;
+
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.school-pdf-download-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#download-icon {
+  position: static;
+}
+
 .information {
   /* display: flex; */
   /* flex-direction: column; */

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import { schoolFormSchema } from "./ValidationSchemas/formSchemas";
 
+import { FaFileDownload } from "react-icons/fa";
 import { BASE_URL } from "../../Utils/apis";
 import Modal from "../Modal";
 import LocationInput from "./Inputs/Location";
@@ -119,7 +120,19 @@ export default function SchoolForm({ closed = false, children }) {
         setShowModal={setShowModal}
         handleCloseModal={handleCloseModal}
       />
-      <form className="form" onSubmit={handleSubmit}>
+      <a
+        href="/PDFs/school_application_form.pdf"
+        download="Application Form.pdf"
+        className="school-pdf-download-link"
+      >
+        <span>DOWNLOAD STUDENT APPLICATION FORM</span>
+        <FaFileDownload id="download-icon" />
+      </a>
+      <form
+        className="form"
+        style={{ marginTop: 0, marginBottom: "1rem" }}
+        onSubmit={handleSubmit}
+      >
         <TextInput
           name="school_name"
           title="School Name"
