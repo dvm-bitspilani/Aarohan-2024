@@ -34,3 +34,21 @@ iframe {
     }
 
 }
+.tab-btn {
+  font-family: 'Poppins', sans-serif;
+    padding: 0.2rem;
+    padding-inline: 2rem;
+    background-color: transparent;
+    color: white;
+    border: 1px solid #1F94FC;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.tab-btn.active {
+  background-color:  #1F94FC;
+  color: white;
+}
+
