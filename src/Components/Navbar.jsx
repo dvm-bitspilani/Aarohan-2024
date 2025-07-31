@@ -21,12 +21,9 @@ export default function Navbar(props) {
       <div className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
-            <a
-              href="https://www.bits-apogee.org/"
-              style={{ textDecoration: "none" }}
-            >
+            <Link to={"/"}>
               <img src={ApogeeLogo2026} alt="logo" draggable="false" />
-            </a>
+            </Link>
           </div>
           <div>
             <ul className="nav-list">
