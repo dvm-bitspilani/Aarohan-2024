@@ -15,19 +15,19 @@ export default function Sample() {
         const documents = {
     "Grade 9": {
       title: "Grade 9 Sample",
-      file: "/grades/Aarohan SQP 9th.pdf",
+      file: "/grades/Aarohan_SQP_9th.pdf",
     },
     "Grade 10": {
       title: "Grade 10 Sample",
-      file: "/grades/Aarohan SQP 10th.pdf",
+      file: "/grades/Aarohan_SQP_10th.pdf",
     },
     "Grade 11": {
       title: "Grade 11 Sample",
-      file: "/grades/Aarohan SQP 11th.pdf",
+      file: "/grades/Aarohan_SQP_11th.pdf",
     },
     "Grade 12": {
       title: "Grade 12 Sample",
-      file: "/grades/Aarohan SQP 12th.pdf",
+      file: "/grades/Aarohan_SQP_12th.pdf",
     },
   };
     const grades = Object.keys(documents);
