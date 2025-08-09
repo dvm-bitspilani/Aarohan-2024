@@ -1,3 +1,3 @@
 # allow pdf files to be viewed on same origin 
-/grades/Aarohan_SQP_11th.pdf
+/grades/*
     X-Frames-Options: SAMEORIGIN
