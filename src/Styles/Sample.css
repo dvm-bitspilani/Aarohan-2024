@@ -34,3 +34,35 @@ iframe {
     }
 
 }
+.tab-btn {
+  font-family: 'Poppins', sans-serif;
+    padding: 0.2rem;
+    padding-inline: 2rem;
+    background-color: transparent;
+    color: white;
+    border: 1px solid #1F94FC;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: fit-content;  
+    flex: 1 1 20%; 
+    text-align: center;
+}
+
+.tab-btn.active {
+  background-color:  #1F94FC;
+  color: white;
+}
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+@media (max-width: 850px) {
+  .tab-btn {
+    flex: 1 1 45%;  
+  }
+}
