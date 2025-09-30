@@ -8,8 +8,15 @@ import "../Styles/Sample.css";
 import { Link } from "react-router-dom";
 import BackgroundImg from "../images/bg.png";
 import Footer from "../Components/Footer";
+import Preloader from "./Preloader";
+
+const assetsArr = [
+	"/src/images/bg.png",
+	"/src/images/ApogeeLogo2026.svg",
+]
 
 export default function Sample() {
+	const [isPreLoading, setIsPreLoading] = useState(true);
 	const [selectedGrade, setSelectedGrade] = useState("Grade 9");
 	const documents = {
 		"Grade 9": {
@@ -31,6 +38,7 @@ export default function Sample() {
 	};
 	const grades = Object.keys(documents);
 	return (
+		isPreLoading ? <Preloader onEnter={() => setIsPreLoading(false)} assetsArr={assetsArr} /> :
 		<>
 			<Navbar />
 			<div

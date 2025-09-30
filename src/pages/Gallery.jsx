@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../Components/Navbar";
+import Preloader from "./Preloader";
 import BackgroundImg from "../images/bg.png"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y, Virtual, Keyboard, Mousewheel, Autoplay, EffectCards } from 'swiper/modules';
@@ -22,9 +23,30 @@ import img12 from "../Gallery/12.jpg"
 import img13 from "../Gallery/13.jpg"
 import Footer from "../Components/Footer";
 
+
+const assetsArr = [
+    "/src/images/bg.png",
+    "/src/images/ApogeeLogo2026.svg",
+    "/src/Gallery/1.jpg",
+    "/src/Gallery/2.jpg",
+    "/src/Gallery/3.jpg",
+    "/src/Gallery/4.jpg",
+    "/src/Gallery/5.jpg",
+    "/src/Gallery/6.jpg",
+    "/src/Gallery/7.jpg",
+    "/src/Gallery/8.jpg",
+    "/src/Gallery/9.jpg",
+    "/src/Gallery/10.jpg",
+    "/src/Gallery/11.jpg",
+    "/src/Gallery/12.jpg",
+    "/src/Gallery/13.jpg",
+]
+
 export default function Gallery() {
+    const [isPreLoading, setIsPreLoading] = useState(true);
 
     return (
+        isPreLoading ? <Preloader onEnter={() => setIsPreLoading(false)} assetsArr={assetsArr} /> :
         <>
             <Navbar />
             <div className="page" style={{ backgroundImage: `url(${BackgroundImg})`, paddingTop: "0px" }}>

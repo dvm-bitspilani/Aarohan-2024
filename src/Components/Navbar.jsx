@@ -27,21 +27,41 @@ export default function Navbar(props) {
           </div>
           <div>
             <ul className="nav-list">
-              <Link to={"/"} style={{ textDecoration: "none" }}>
-                <li>HOME</li>
-              </Link>
-              <a href="/aarohan2025/#about" style={{ textDecoration: "none" }}>
-                <li>ABOUT US</li>
-              </a>
-              <Link to={"/SamplePaper"} style={{ textDecoration: "none" }}>
-                <li>SAMPLE PAPER</li>
-              </Link>
-              <Link to={"/FAQ"} style={{ textDecoration: "none" }}>
-                <li>FAQ</li>
-              </Link>
-              <Link to={"/Gallery"} style={{ textDecoration: "none" }}>
-                <li>GALLERY</li>
-              </Link>
+              <li>
+                <Link to={"/"} style={{ textDecoration: "none" }}>
+                  HOME
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/aarohan2025"
+                  style={{ textDecoration: "none" }}
+                  onClick={(e) => {
+                    setTimeout(() => {
+                      document
+                        .getElementById("about")
+                        ?.scrollIntoView({ behavior: "smooth" });
+                    }, 100);
+                  }}
+                >
+                  ABOUT US
+                </Link>
+              </li>
+              <li>
+                <Link to={"/SamplePaper"} style={{ textDecoration: "none" }}>
+                  SAMPLE PAPER
+                </Link>
+              </li>
+              <li>
+                <Link to={"/FAQ"} style={{ textDecoration: "none" }}>
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link to={"/Gallery"} style={{ textDecoration: "none" }}>
+                  GALLERY
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -60,21 +80,41 @@ export default function Navbar(props) {
 
           <div className={`ham-menu ${isHamOpen && "open"}`}>
             <ul className="ham-list">
-              <Link to={"/"} style={{ textDecoration: "none" }}>
-                <li onClick={handleHamOpen}>HOME</li>
-              </Link>
-              <a href="/aarohan2025/#about" style={{ textDecoration: "none" }}>
-                <li onClick={handleHamOpen}>ABOUT US</li>
-              </a>
-              <Link to={"/SamplePaper"} style={{ textDecoration: "none" }}>
-                <li onClick={handleHamOpen}>SAMPLE PAPER</li>
-              </Link>
-              <Link to={"/FAQ"} style={{ textDecoration: "none" }}>
-                <li onClick={handleHamOpen}>FAQ</li>
-              </Link>
-              <Link to={"/Gallery"} style={{ textDecoration: "none" }}>
-                <li onClick={handleHamOpen}>GALLERY</li>
-              </Link>
+              <li onClick={handleHamOpen}>
+                <Link to={"/"} style={{ textDecoration: "none" }}>
+                  HOME
+                </Link>
+              </li>
+              <li onClick={handleHamOpen}>
+                <Link
+                  to={"/aarohan2025"}
+                  onClick={(e) => {
+                    setTimeout(() => {
+                      document
+                        .getElementById("about")
+                        ?.scrollIntoView({ behavior: "smooth" });
+                    }, 100);
+                  }}
+                  style={{ textDecoration: "none" }}
+                >
+                  ABOUT US
+                </Link>
+              </li>
+              <li onClick={handleHamOpen}>
+                <Link to={"/SamplePaper"} style={{ textDecoration: "none" }}>
+                  SAMPLE PAPER
+                </Link>
+              </li>
+              <li onClick={handleHamOpen}>
+                <Link to={"/FAQ"} style={{ textDecoration: "none" }}>
+                  FAQ
+                </Link>
+              </li>
+              <li onClick={handleHamOpen}>
+                <Link to={"/Gallery"} style={{ textDecoration: "none" }}>
+                  GALLERY
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

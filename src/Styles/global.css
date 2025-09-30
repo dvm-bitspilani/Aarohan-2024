@@ -32,7 +32,7 @@ Link {
     gap: 3vw;
 }
 
-.nav-list li {
+.nav-list li a {
     cursor: pointer;
     color: white;
 }
