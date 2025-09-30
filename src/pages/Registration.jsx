@@ -6,9 +6,15 @@ import Form1 from "../Components/Form1";
 import BackgroundImg from "../images/bg.png"
 import Form2 from "../Components/Form2";
 import Footer from "../Components/Footer";
+import Preloader from "./Preloader";
 
+const assetsArr = [
+    "/src/images/bg.png",
+    "/src/images/ApogeeLogo2026.svg",
+];
 
 export default function Registration() {
+    const [isPreLoading, setIsPreLoading] = useState(true);
 
     const [isStudentTab, setIsStudentTab] = useState(true)
 
@@ -21,6 +27,7 @@ export default function Registration() {
     }
 
     return (
+        isPreLoading ? <Preloader onEnter={() => setIsPreLoading(false)} assetsArr={assetsArr} /> :
         <>
             <Navbar />
             <div className="page" style={{ backgroundImage: `url(${BackgroundImg})` }}>

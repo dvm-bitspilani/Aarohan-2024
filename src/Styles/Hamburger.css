@@ -29,7 +29,7 @@
     overflow-x: hidden;
 }
 
-.ham-list li{
+.ham-list li a{
     color: white;
     font-size: 2rem;
 }

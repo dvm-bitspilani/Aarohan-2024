@@ -1,0 +1,34 @@
+.preloader {
+  /* background-color: white; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loader {
+  width: 100px;
+  height: 100px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.percentage {
+  color: whitesmoke;
+  font-size: 1.5rem;
+}
