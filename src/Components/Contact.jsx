@@ -27,7 +27,7 @@ export default function Contact() {
     {
       image: `${Aman}`,
       name: "Aman Sharma",
-      caption: "Kowledge Team Head",
+      caption: "Knowledge Team Head",
       phone: "+91 8630314103",
     },
     {
