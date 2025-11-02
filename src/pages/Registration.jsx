@@ -7,6 +7,7 @@ import BackgroundImg from "../images/bg.png"
 import Form2 from "../Components/Form2";
 import Footer from "../Components/Footer";
 import Preloader from "./Preloader";
+import Modal from "../Components/Modal";
 
 const assetsArr = [
     "/src/images/bg.png",
@@ -14,6 +15,9 @@ const assetsArr = [
 ];
 
 export default function Registration() {
+
+    const [showModal, setShowModal] = useState(true);
+
     const [isPreLoading, setIsPreLoading] = useState(true);
 
     const [isStudentTab, setIsStudentTab] = useState(true)
@@ -29,6 +33,11 @@ export default function Registration() {
     return (
         isPreLoading ? <Preloader onEnter={() => setIsPreLoading(false)} assetsArr={assetsArr} /> :
         <>
+            <Modal 
+                showModal={showModal} 
+                message={"Kindly note that students registering after 31st October—whether through schools or individually—will be eligible to appear only for the second attempt. The final date for registration is 5th November."} 
+                handleCloseModal={() => setShowModal(false)}
+            />
             <Navbar />
             <div className="page" style={{ backgroundImage: `url(${BackgroundImg})` }}>
                 <div className="heading" style={{ width: "100%", textAlign: "center", paddingTop: "0px" }}>Registration Form</div>

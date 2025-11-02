@@ -53,6 +53,10 @@
   /* margin: 2rem 0; */
 }
 
+.information ul ul {
+  padding-left: 20px;
+}
+
 label {
   margin-top: 1rem;
   margin-bottom: 0.2rem;

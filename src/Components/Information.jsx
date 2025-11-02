@@ -1,17 +1,31 @@
+import { date } from "yup";
 import { toWords } from "../Utils/apis";
 
 export default function Information({
   year = 2026,
-  dates = ["2nd November, 2025: 9am-12pm", "9th November, 2025: 9am-12pm"],
+  dates = [{
+    date: "2nd November, 2025",
+    slots: ["9:00 a.m. - 11:00 a.m.", "3:00 p.m. - 5:00 p.m."]
+  }, {
+    date: "9nd November, 2025",
+    slots: ["9:00 a.m. - 11:00 a.m.", "3:00 p.m. - 5:00 p.m."]
+  }],
   lastDate = "31st October, 2025",
 }) {
   return (
     <div className="information">
       <p>Dates for Aarohan {year}:</p>
       <ul>
-        {dates.map((date) => (
-          <li key={date}>{date}</li>
-        ))}
+        {
+          dates.map(date => 
+            <div key={date.date}>
+              <li>{date.date}</li>
+              <ul className="slots-list">
+                {date.slots.map((slot, i) => <li key={i}>Slot {i + 1}: {slot}</li>)}
+              </ul>
+            </div>
+          )
+        }
       </ul>
       <p>
         Please register atleast 5 days before an attempt to be eligible for the
