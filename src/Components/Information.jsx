@@ -10,7 +10,7 @@ export default function Information({
     date: "9nd November, 2025",
     slots: ["9:00 a.m. - 11:00 a.m.", "3:00 p.m. - 5:00 p.m."]
   }],
-  lastDate = "31st October, 2025",
+  lastDate = "5th November, 2025",
 }) {
   return (
     <div className="information">
@@ -28,8 +28,7 @@ export default function Information({
         }
       </ul>
       <p>
-        Please register atleast 5 days before an attempt to be eligible for the
-        exam. The last date for registration is the {lastDate}.
+        The last date for registration is the {lastDate}.
       </p>
       <p>
         Please note that you will have to attempt ONLY ONE of the{" "}
