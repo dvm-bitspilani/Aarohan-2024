@@ -35,7 +35,7 @@ export default function Registration() {
         <>
             <Modal 
                 showModal={showModal} 
-                message={"Kindly note that students registering after 31st October—whether through schools or individually—will be eligible to appear only for the second attempt. The final date for registration is 5th November."} 
+                message={"Kindly note that students registering after 31st October—whether through schools or individually—will be eligible to appear only for the second attempt. The final date for registration is 7th November."} 
                 handleCloseModal={() => setShowModal(false)}
             />
             <Navbar />

@@ -10,7 +10,7 @@ export default function Information({
     date: "9nd November, 2025",
     slots: ["9:00 a.m. - 11:00 a.m.", "3:00 p.m. - 5:00 p.m."]
   }],
-  lastDate = "5th November, 2025",
+  lastDate = "7th November, 2025",
 }) {
   return (
     <div className="information">
