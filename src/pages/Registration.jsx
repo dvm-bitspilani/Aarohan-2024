@@ -35,7 +35,7 @@ export default function Registration() {
         <>
             <Modal 
                 showModal={showModal} 
-                message={"Kindly note that students registering after 31st October—whether through schools or individually—will be eligible to appear only for the second attempt. The final date for registration is 7th November."} 
+                message={"Due to high demand and clashing of students' school exams, we have decided to host another attempt- 23rd November for Aarohan round 1. The last date of registration for the same is 20th November 2025."} 
                 handleCloseModal={() => setShowModal(false)}
             />
             <Navbar />
