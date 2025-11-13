@@ -34,9 +34,9 @@ export default function Information({
         The last date for registration is the {lastDate}.
       </p>
       <p>
-        Please note that you will have to attempt ONLY ONE of the{" "}
+        { /* Please note that you will have to attempt ONLY ONE of the{" "}
         {toWords.convert(dates.length, { currency: false }).toLowerCase()}{" "}
-        attempt{dates.length > 1 && "s"}. You will NOT be allowed to give the
+        attempt{dates.length > 1 && "s"}. */ } You will NOT be allowed to give the
         exam more than once.
       </p>
       <p>Best of Luck and Be Curious!</p>

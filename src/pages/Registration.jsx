@@ -34,8 +34,9 @@ export default function Registration() {
         isPreLoading ? <Preloader onEnter={() => setIsPreLoading(false)} assetsArr={assetsArr} /> :
         <>
             <Modal 
-                showModal={showModal} 
-                message={"Due to high demand and clashing of students' school exams, we have decided to host another attempt- 23rd November for Aarohan round 1. The last date of registration for the same is 20th November 2025."} 
+                showModal={showModal}
+                title="Important Notice: Third and Final Examination Attempt"
+                message={"Please be informed that a third and final examination attempt has been scheduled for 23rd November 2025. This opportunity is available exclusively for students who have not yet appeared for the examination. Registration Deadline: 20th November 2025."} 
                 handleCloseModal={() => setShowModal(false)}
             />
             <Navbar />
