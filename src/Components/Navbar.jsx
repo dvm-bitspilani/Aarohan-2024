@@ -53,6 +53,11 @@ export default function Navbar(props) {
                 </Link>
               </li>
               <li>
+                <Link to={"/AnswerKey"} style={{ textDecoration: "none" }}>
+                  ANSWER KEY
+                </Link>
+              </li>
+              <li>
                 <Link to={"/FAQ"} style={{ textDecoration: "none" }}>
                   FAQ
                 </Link>
@@ -103,6 +108,11 @@ export default function Navbar(props) {
               <li onClick={handleHamOpen}>
                 <Link to={"/SamplePaper"} style={{ textDecoration: "none" }}>
                   SAMPLE PAPER
+                </Link>
+              </li>
+              <li onClick={handleHamOpen}>
+                <Link to={"/AnswerKey"} style={{ textDecoration: "none" }}>
+                  ANSWER KEY
                 </Link>
               </li>
               <li onClick={handleHamOpen}>

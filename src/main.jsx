@@ -11,6 +11,7 @@ import FAQ from './Components/FAQ.jsx';
 import Sample from './pages/Sample.jsx';
 import Registration from './pages/Registration.jsx';
 import Gallery from './pages/Gallery.jsx';
+import AnswerKey from './pages/AnswerKey.jsx';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "/SamplePaper",
     element: <Sample />,
+  },
+  {
+    path: "/AnswerKey",
+    element: <AnswerKey />,
   },
   {
     path: "/Registration",
