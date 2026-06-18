@@ -12,6 +12,7 @@ import Sample from './pages/Sample.jsx';
 import Registration from './pages/Registration.jsx';
 import Gallery from './pages/Gallery.jsx';
 import AnswerKey from './pages/AnswerKey.jsx';
+import Brochure from './pages/Brochure.jsx';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
     path: "/Gallery",
     element: <Gallery />,
   },
+  {
+    path:"/Brochure",
+    element: <Brochure />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

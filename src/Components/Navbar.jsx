@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ApogeeLogo2026 from "../images/ApogeeLogo2026.svg";
 import "../Styles/Hamburger.css";
+import AarohanLogo from '../images/Aarohan.png'
 
 export default function Navbar(props) {
   const [isHamOpen, setIsHamOpen] = useState(false);
@@ -67,6 +68,11 @@ export default function Navbar(props) {
                   GALLERY
                 </Link>
               </li>
+              <li>
+                <Link to={"/Brochure"} style={{ textDecoration: "none" }}>
+                  Brochure
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -123,6 +129,11 @@ export default function Navbar(props) {
               <li onClick={handleHamOpen}>
                 <Link to={"/Gallery"} style={{ textDecoration: "none" }}>
                   GALLERY
+                </Link>
+              </li>
+              <li onClick={handleHamOpen}>
+                <Link to={"/Brochure"} style={{ textDecoration: "none" }}>
+                  Brochure
                 </Link>
               </li>
             </ul>
