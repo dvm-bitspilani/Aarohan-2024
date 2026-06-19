@@ -43,7 +43,7 @@ export default function Sample() {
 			<Navbar />
 			<div
 				className="page"
-				style={{ backgroundImage: `url(${BackgroundImg})`, paddingTop: "0px" }}
+				style={{  paddingTop: "0px" }}
 			>
 				<div
 					className="heading"

@@ -49,7 +49,7 @@ export default function Gallery() {
         isPreLoading ? <Preloader onEnter={() => setIsPreLoading(false)} assetsArr={assetsArr} /> :
         <>
             <Navbar />
-            <div className="page" style={{ backgroundImage: `url(${BackgroundImg})`, paddingTop: "0px" }}>
+            <div className="page" style={{  paddingTop: "0px" }}>
                 <div className="heading" style={{ width: "100%", textAlign: "center", paddingTop: "1.5rem" }}>Our Gallery</div>
                 <Swiper
                     className="gallery-swiper"

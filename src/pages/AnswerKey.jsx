@@ -40,7 +40,7 @@ export default function AnswerKey() {
 			<Navbar />
 			<div
 				className="page"
-				style={{ backgroundImage: `url(${BackgroundImg})`, paddingTop: "0px" }}
+				
 			>
 				<div
 					className="heading"

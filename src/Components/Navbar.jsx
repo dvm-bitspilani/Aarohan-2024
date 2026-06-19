@@ -133,7 +133,7 @@ export default function Navbar(props) {
               </li>
               <li onClick={handleHamOpen}>
                 <Link to={"/Brochure"} style={{ textDecoration: "none" }}>
-                  Brochure
+                  BROCHURE
                 </Link>
               </li>
             </ul>

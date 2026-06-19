@@ -33,7 +33,7 @@ export default function Main() {
     <>
       <div
         className="main"
-        style={{ backgroundImage: `url(${BackgroundImg})` }}
+      
       >
         <div className="para">
           <img src={Ellipse} className="ellipse3" />
