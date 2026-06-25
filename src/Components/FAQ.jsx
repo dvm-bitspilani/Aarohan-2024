@@ -76,7 +76,7 @@ export default function FAQ() {
       <Navbar />
       <div
         className="page"
-        style={{  paddingTop: "0px" }}
+        style={{ paddingTop: "0px" }}
       >
         <div className="FAQ">
           <div

@@ -127,11 +127,6 @@ export default function Navbar(props) {
                 </Link>
               </li>
               <li onClick={handleHamOpen}>
-                <Link to={"/Gallery"} style={{ textDecoration: "none" }}>
-                  GALLERY
-                </Link>
-              </li>
-              <li onClick={handleHamOpen}>
                 <Link to={"/Brochure"} style={{ textDecoration: "none" }}>
                   BROCHURE
                 </Link>
