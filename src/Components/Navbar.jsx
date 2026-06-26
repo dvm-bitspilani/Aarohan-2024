@@ -1,140 +1,144 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import ApogeeLogo2026 from "../images/ApogeeLogo2026.svg";
-import "../Styles/Hamburger.css";
-import AarohanLogo from '../images/Aarohan.png'
+import { useState, useEffect } from "react";
+import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
+import AarohanLogo from "../images/aarohanLogo.png"
+import "../Styles/Navbar.css";
 
-export default function Navbar(props) {
-  const [isHamOpen, setIsHamOpen] = useState(false);
+export default function Header() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
 
-  const handleHamOpen = () => {
-    setIsHamOpen(!isHamOpen);
-  };
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
 
-  useEffect(() => {
-    isHamOpen
-      ? (document.body.style.overflowY = "hidden")
-      : (document.body.style.overflowY = "visible");
-  }, [isHamOpen]);
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
 
-  return (
-    <>
-      <div className="navbar">
-        <div className="nav-container">
-          <div className="nav-logo">
-            <Link to={"/"}>
-              <img src={ApogeeLogo2026} alt="logo" draggable="false" />
-            </Link>
-          </div>
-          <div>
-            <ul className="nav-list">
-              <li>
-                <Link to={"/"} style={{ textDecoration: "none" }}>
-                  HOME
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/aarohan2025"
-                  style={{ textDecoration: "none" }}
-                  onClick={(e) => {
-                    setTimeout(() => {
-                      document
-                        .getElementById("about")
-                        ?.scrollIntoView({ behavior: "smooth" });
-                    }, 100);
-                  }}
-                >
-                  ABOUT US
-                </Link>
-              </li>
-              <li>
-                <Link to={"/SamplePaper"} style={{ textDecoration: "none" }}>
-                  SAMPLE PAPER
-                </Link>
-              </li>
-              <li>
-                <Link to={"/AnswerKey"} style={{ textDecoration: "none" }}>
-                  ANSWER KEY
-                </Link>
-              </li>
-              <li>
-                <Link to={"/FAQ"} style={{ textDecoration: "none" }}>
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link to={"/Gallery"} style={{ textDecoration: "none" }}>
-                  GALLERY
-                </Link>
-              </li>
-              <li>
-                <Link to={"/Brochure"} style={{ textDecoration: "none" }}>
-                  Brochure
-                </Link>
-              </li>
-            </ul>
-          </div>
+    useEffect(() => {
+        if (location.pathname === "/" && location.state?.scrollTo) {
+            const targetId = location.state.scrollTo;
+            let clearStateTimeout;
 
-          <div className="row ham">
-            <input type="checkbox" id="hamburger" checked={isHamOpen} />
-            <label
-              htmlFor="hamburger"
-              className="hamburger"
-              onClick={handleHamOpen}
-            >
-              <span className="line"></span>
-              <span className="line"></span>
-              <span className="line"></span>
-            </label>
-          </div>
+            const timeoutId = setTimeout(() => {
+                if (targetId === "top") {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                } else {
+                    const element = document.getElementById(targetId);
+                    if (element) {
+                        element.scrollIntoView({ 
+                            behavior: "smooth", 
+                            block: "center" 
+                        });
+                    }
+                }
+                
+                clearStateTimeout = setTimeout(() => {
+                    navigate("/", { replace: true, state: {} });
+                }, 800);
 
-          <div className={`ham-menu ${isHamOpen && "open"}`}>
-            <ul className="ham-list">
-              <li onClick={handleHamOpen}>
-                <Link to={"/"} style={{ textDecoration: "none" }}>
-                  HOME
+            }, 300);
+
+            return () => {
+                clearTimeout(timeoutId);
+                if (clearStateTimeout) clearTimeout(clearStateTimeout);
+            };
+        }
+    }, [location, navigate]);
+
+    const handleScrollToAbout = (e) => {
+        e.preventDefault();
+        closeMenu();
+
+        if (location.pathname === "/") {
+            const element = document.getElementById("about-container");
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+        } else {
+            navigate("/", { state: { scrollTo: "about-container" } });
+        }
+    };
+
+    const handleGoHome = (e) => {
+        e.preventDefault();
+        closeMenu();
+
+        if (location.pathname === "/") {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+            navigate("/", { state: { scrollTo: "top" } });
+        }
+    };
+
+    return (
+        <header className="global-header">
+            <div className="logo-container">
+                <Link to="/" onClick={handleGoHome}>
+                    <img src={AarohanLogo} className="aarohan-logo" alt="Aarohan 2026 Logo" />
                 </Link>
-              </li>
-              <li onClick={handleHamOpen}>
-                <Link
-                  to={"/aarohan2025"}
-                  onClick={(e) => {
-                    setTimeout(() => {
-                      document
-                        .getElementById("about")
-                        ?.scrollIntoView({ behavior: "smooth" });
-                    }, 100);
-                  }}
-                  style={{ textDecoration: "none" }}
-                >
-                  ABOUT US
-                </Link>
-              </li>
-              <li onClick={handleHamOpen}>
-                <Link to={"/SamplePaper"} style={{ textDecoration: "none" }}>
-                  SAMPLE PAPER
-                </Link>
-              </li>
-              <li onClick={handleHamOpen}>
-                <Link to={"/AnswerKey"} style={{ textDecoration: "none" }}>
-                  ANSWER KEY
-                </Link>
-              </li>
-              <li onClick={handleHamOpen}>
-                <Link to={"/FAQ"} style={{ textDecoration: "none" }}>
-                  FAQ
-                </Link>
-              </li>
-              <li onClick={handleHamOpen}>
-                <Link to={"/Brochure"} style={{ textDecoration: "none" }}>
-                  BROCHURE
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+            </div>
+
+            <div className={`hamburger-menu ${isMenuOpen ? "hidden" : ""}`} onClick={toggleMenu}>
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
+            </div>
+
+            <nav className={`main-nav ${isMenuOpen ? "nav-open" : ""}`}>
+                <div className="close-menu" onClick={closeMenu}>
+                    &times;
+                </div>
+
+                <ul className="main-ul">
+                    <li>
+                        <NavLink
+                            to="/"
+                            className={({ isActive }) => isActive ? "active-link" : "inactive-link"}
+                            end
+                            onClick={handleGoHome}>
+                            HOME
+                        </NavLink>
+                    </li>
+                    <li>
+                        <a href="#about-container" className="about-link" onClick={handleScrollToAbout}>ABOUT US</a>
+                    </li>
+                    <li>
+                        <NavLink
+                            to="/brochure"
+                            className={({ isActive }) => isActive ? "active-link" : "inactive-link"}
+                            onClick={closeMenu}>
+                            BROCHURE
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            to="/SamplePaper"
+                            className={({ isActive }) => isActive ? "active-link" : "inactive-link"}
+                            onClick={closeMenu}>
+                            SAMPLE PAPER
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            to="/AnswerKey"
+                            className={({ isActive }) => isActive ? "active-link" : "inactive-link"}
+                            onClick={closeMenu}>
+                            ANSWER KEY
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            to="/FAQs"
+                            className={({ isActive }) => isActive ? "active-link" : "inactive-link"}
+                            onClick={closeMenu}>
+                            FAQs
+                        </NavLink>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </header>
+    );
 }
