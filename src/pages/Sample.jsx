@@ -43,11 +43,11 @@ export default function Sample() {
 			<Navbar />
 			<div
 				className="page"
-				style={{  paddingTop: "0px" }}
+				style={{  paddingTop: "5rem" }}
 			>
 				<div
 					className="heading"
-					style={{ width: "100%", textAlign: "center", paddingTop: "0px" }}
+					style={{ width: "100%", textAlign: "center", paddingTop: "0px",color:"white" }}
 				>
 					Sample Paper
 				</div>

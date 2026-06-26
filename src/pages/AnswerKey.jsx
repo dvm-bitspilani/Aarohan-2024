@@ -40,11 +40,11 @@ export default function AnswerKey() {
 			<Navbar />
 			<div
 				className="page"
-				
+				style={{  paddingTop: "5rem" }}
 			>
 				<div
 					className="heading"
-					style={{ width: "100%", textAlign: "center", paddingTop: "0px" }}
+					style={{ width: "100%", textAlign: "center", paddingTop: "0px",color:"white" }}
 				>
 					Answer Key
 				</div>
