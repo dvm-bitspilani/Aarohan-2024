@@ -63,9 +63,7 @@
   display: block;
 }
 
-.gallery-col:hover .gallery-col-track {
-  animation-play-state: paused;
-}
+
 
 
 

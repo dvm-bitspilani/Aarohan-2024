@@ -126,7 +126,6 @@ export default function SchoolForm({ closed = false, children }) {
         className="school-pdf-download-link"
       >
         <span>DOWNLOAD STUDENT APPLICATION FORM</span>
-        <FaFileDownload id="download-icon" />
       </a>
       <form
         className="form"
