@@ -56,8 +56,7 @@ export default function Main() {
 
         <Testimonials1 />
         <Gallery />
-        <Contacts />
-        <Query />
+        <Contact />
         <Footer />
       </div>
     </>

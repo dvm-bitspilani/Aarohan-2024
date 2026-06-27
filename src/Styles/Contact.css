@@ -4,7 +4,7 @@
     gap: 2vw;
     color: white;
     text-align: center;
-    align-items: baseline;
+    align-items:center;
     margin-top: 2rem;
     user-select: none;
 }
@@ -13,91 +13,185 @@
     flex: 20rem;
 }
 
-.img-container {
-    height: 10rem;
-    width: 10rem;
-    border-radius: 10rem;
-    background-position: center;
-    background-size: cover;
-    margin: 0.2rem;
-}
-
 .profile {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding: 25px;
+    border: 2px solid #7047A5;
+    border-radius: 20px;
+    background-color: #00000070;
+    backdrop-filter: blur(5px);
     justify-content: center;
-    width: 15rem;
-    color: white;
-    font-family: 'Poppins', sans-serif;
+    align-items: center;
+    width: 30vw;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
     font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-align: center;
+    margin-bottom: 2rem;
 }
 
-.profile>* {
-    padding: 0.1rem;
+.img-container {
+    width: 12vw;
+    height: 12vw;
+    border-radius: 10%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
 }
 
 .contact-name {
-    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+    color: gold;
+    text-transform: uppercase;
+    margin-bottom: 12px;
 }
 
-.q-form {
-    width: 90%;
-    margin: auto;
+.contact-caption {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    margin-bottom: 12px;
 }
 
-.q-form {
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
-    font-style: normal;
-    font-weight: 400;
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
+.contact-phone {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
 }
 
-.q-form textarea {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    padding-inline: 0.5rem;
-    padding-block: 0.2rem;
-    border-radius: 5px;
-    color: white;
-    border: solid white 0.5px;
+@media screen and (max-width: 1024px) {
+    .profile {
+        width: 50vw;
+    }
+}
 
-    background: rgba(255, 255, 255, 0.07);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+@media screen and (max-width: 768px) {
+    .profile {
+        width: 90vw;
+        padding: 20px;
+    }
+
+    .img-container {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .contact-name {
+        font-size: 0.9rem;
+    }
 }
 
 .query {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+.q-form {
+    display: flex;
+    flex-direction: column;
+    width: clamp(300px, 80vw, 1000px);
+    padding: 25px;
+
+    background-color: #00000090;
+    backdrop-filter: blur(3px);
+
+    border: 2px solid #7047A5;
+    border-radius: 20px;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+.q-form label {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.input-box,
+.q-form textarea {
     width: 100%;
-    padding-bottom: 5rem;
+    padding: 15px;
+
+    border: 2px solid #7047A5;
+    border-radius: 5px;
+
+    background: transparent;
+    backdrop-filter: blur(5px);
+
+    color: aliceblue;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.input-box:focus,
+.q-form textarea:focus {
+    outline: none;
+}
+
+.q-form textarea {
+    resize: none;
+    border-radius: 10px;
 }
 
 .q-form-submit {
-    width: 100%;
-    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .q-form-submit button {
-    width: 100%;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
-    cursor: pointer;
-    background-color: transparent;
+    padding: 20px 50px;
+
+    border: 2px solid #7047A5;
+    border-radius: 10px;
+
+    background: transparent;
+    backdrop-filter: blur(5px);
+
     color: white;
-    border: solid #1F94FC;
-    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.175rem;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .q-form-submit button:hover {
-    color: #111027;
-    background-color: white;
+    background-color: #00000099;
+    border-color: gold;
+    color: gold;
+}
+
+@media (max-width: 768px) {
+    .q-form {
+        width: 90vw;
+        padding: 20px;
+    }
+
+    .heading {
+        text-align: center;
+    }
+
+    .q-form-submit button {
+        width: 100%;
+    }
+}
+.query-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 2.5rem;
+    letter-spacing: 0.75rem;
+    color: gold;
+    border-bottom: 1px solid #7047A5;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
 }

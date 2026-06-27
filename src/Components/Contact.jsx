@@ -1,47 +1,55 @@
 import axios from "axios";
 import { useState } from "react";
-import Aman from "../Contact/aman_sharma.jpg";
-import Anirvan from "../Contact/anirvan_kanavi.jpg";
-import Bhoomi from "../Contact/bhoomi_motihar.jpg";
-import Maanas from "../Contact/maanas_popuri.jpg";
-import Varenyam from "../Contact/varenyam_bharti.jpg";
 import "../Styles/Contact.css";
 import { BASE_URL } from "../Utils/apis";
 import Modal from "./Modal";
 import Profile from "./Profile";
 
+import Yuva from "../Contact/yuva.png"
+import Prisha from "../Contact/prisha_singhal.png"
+import Tanvi from "../Contact/tanvi.png"
+import Adarsh from "../Contact/adarsh.png"
+import Aarnav from "../Contact/aarnav.png"
+import Trishaa from "../Contact/trishaa.png"
+
 export default function Contact() {
   const data2 = [
     {
-      image: `${Maanas}`,
-      name: "Maanas Popuri",
+      image: `${Yuva}`,
+      name: "Yuva Chandrahaas Nandigam",
       caption: "Coordinator",
-      phone: "+91 9886060434",
+      phone: "+91 8277238174",
     },
     {
-      image: `${Bhoomi}`,
-      name: "Bhoomi Motihar",
-      caption: "Joint-Coordinator and Minifest Head",
-      phone: "+91 9664390939",
+      image: `${Prisha}`,
+      name: "Prisha Singhal",
+      caption: "Joint Coordinator and Head of Minifest and Outreach",
+      phone: "+91 9354003919",
     },
     {
-      image: `${Aman}`,
-      name: "Aman Sharma",
-      caption: "Knowledge Team Head",
-      phone: "+91 8630314103",
+      image: `${Tanvi}`,
+      name: "Tanvi Kaushik",
+      caption: "Joint Coordinator and Head of Design and Excursions",
+      phone: "+91 9205980920",
     },
     {
-      image: `${Varenyam}`,
-      name: "Varenyam Bharti",
-      caption: "Sponsorship Head",
-      phone: "+91 6289735341",
+      image: `${Adarsh}`,
+      name: "Adarsh Kundu",
+      caption: "Joint Head of Knowledge Team",
+      phone: "+91 8128576996",
     },
     {
-      image: `${Anirvan}`,
-      name: "Anirvan Kanavi",
-      caption: "Joint-Coordinator",
-      phone: "+91 9136072921",
+      image: `${Aarnav}`,
+      name: "Aarnav Sood",
+      caption: "Joint Head of Knowledge Team",
+      phone: "+91 9930381911",
     },
+    {
+      image: `${Trishaa}`,
+      name: "Trishaa Ganesh Pai Vernekar",
+      caption: "Treasurer and Head of Sponsorships",
+      phone: "+91 7499766877",
+    }
   ];
 
   const [name, setName] = useState("");
@@ -121,15 +129,15 @@ export default function Contact() {
         setShowModal={setShowModal}
         handleCloseModal={handleCloseModal}
       />
-      <div className="heading" style={{ width: "100%", textAlign: "center" }}>
+      <div className="heading" style={{ width: "100%", textAlign: "center", color:"white" }}>
         Contact Us
       </div>
       <div className="contact">{Contact}</div>
       <div className="query">
         <div className="q-form">
           <div
-            className="heading"
-            style={{ width: "100%", textAlign: "center" }}
+            className="heading query-heading"
+            tyle={{ width: "100%", textAlign: "center" }}
           >
             Submit Query
           </div>
