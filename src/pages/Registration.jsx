@@ -41,7 +41,7 @@ export default function Registration() {
             />
             <Navbar />
             <div className="page" >
-                <div className="heading" style={{ width: "100%", textAlign: "center", paddingTop: "0px" }}>Registration Form</div>
+                <div className="heading" style={{ width: "100%", textAlign: "center", paddingTop: "5rem",color:"white" }}>Registration Form</div>
 
                 <div className="tabs-container">
                     <div className={`tab ${isStudentTab && 'active2'}`} onClick={handleStudentClick}>Register as a Student</div>
