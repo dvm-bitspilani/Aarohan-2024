@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
-import AarohanLogo from "../images/aarohanLogo.png"
+import AarohanLogo from "../images/Aarohan.png"
 import "../Styles/Navbar.css";
 
 export default function Header() {

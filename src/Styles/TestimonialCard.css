@@ -16,12 +16,8 @@
     width: 60vw;
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    font-size: 1rem;
-    margin-bottom: 30vh;
-}
-
-.testimonial p {
-    text-align: justify;
+    font-size: 1.45rem;
+    margin-bottom: 450px;
 }
 
 .testimonial h3 {
@@ -36,13 +32,24 @@
 .testimonials-heading {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem;
-    margin-top: 30vh;
+    padding-top: 30px;
 }
 
 .testimonials-heading h2 {
     font-weight: 400;
+    font-size: 3.75rem;
     letter-spacing: 1rem;
+}
+
+@media screen and (max-width: 1400px) {
+    .testimonial {
+        font-size: 1.2rem;
+    }
+
+    .testimonials-heading h2 {
+        font-size: 2.65rem;
+        letter-spacing: 0.75rem;
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -56,9 +63,8 @@
         width: 90vw;
         padding: 20px;
     }
-    .testimonials-heading {
-        font-size: 1rem;
-        margin-top: 20vh;
+    .testimonials-heading h2 {
+        font-size: 1.8rem;
     }
     .testimonial h3 {
         font-size: 1.1rem;

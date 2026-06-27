@@ -22,7 +22,7 @@ const assetsArr = [
   "/src/Contact/bhoomi_motihar.jpg",
   "/src/Contact/maanas_popuri.jpg",
   "/src/Contact/varenyam_bharti.jpg",
-  "/src/Images/quote.png",
+  "/src/images/quote.png"
 ];
 
 function App() {

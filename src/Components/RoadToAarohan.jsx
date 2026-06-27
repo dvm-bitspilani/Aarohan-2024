@@ -4,7 +4,7 @@ export default function RoadToAarohan() {
     return (
         <section className="road-div-container">
             <div className="road-div">
-                <h6>ROAD TO<br />AAROHAN</h6>
+                <h6>ROAD TO AAROHAN</h6>
                 <br />
                 <p className="quote">“The doors closed to plain sight can only be opened by the dimensions of knowledge.”</p>
                 <br />

@@ -9,8 +9,9 @@ import exploreImage from "../images/bulb.png"
 import innovateImage from "../images/upGraph.png"
 import excelImage from "../images/3ppl.png"
 
-export default function Landing() {
 
+export default function Landing() {
+    
 
     return (
         <>

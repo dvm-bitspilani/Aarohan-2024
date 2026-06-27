@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15vh 0 20vh;
+    padding: 220px 0;
 }
 
 .hero-div {
@@ -116,7 +116,7 @@
     }
 }
 .registration-div {
-    margin: 8rem 0 0 200px;
+    margin: 150px 0 0 200px;
     width: 23.4vw;
     display: flex;
     flex-direction: column;
@@ -136,7 +136,7 @@
 .aarohan-intro {
     font-family: 'Montserrat', sans-serif;
     padding: 20px 0 0;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 300;
     text-align: center;
     color: #fff;
@@ -152,24 +152,38 @@
     border-radius: 10px;
     background-color: #00000090;
     backdrop-filter: blur(5px);
-    margin-top: 20px;
+    cursor: pointer;
     transition: all 0.3s ease;
-   
+    /*font-size: 1.2rem;*/
+    letter-spacing: 0.2rem;
 }
 
 .registration-link:hover {
-    background-color: #00000099;
+    background-color: #000;
     border-color: gold;
     color: gold;
 }
 
+@media screen and (max-width: 1400px) {
+    .aarohan-intro {
+        font-size: 1rem;
+    }
+
+    .registration-div {
+        margin: 120px 0 0 150px;
+    }
+
+    .hero-div-container {
+        padding: 70px 0;
+    }
+}
 @media screen and (max-width: 1024px) {
     .registration-container {
         margin-bottom: 40px;
     }
 
     .registration-div {
-        margin: 5rem 40px auto;
+        margin: 150px 40px auto;
         width: 50vw;
         position: relative;
         top: 0;
@@ -179,7 +193,7 @@
 @media screen and (max-width: 768px) {
     .registration-div {
         width: 85vw;
-        margin: 5rem 30px auto;
+        margin: 150px 30px auto;
     }
     
     .registration-link {

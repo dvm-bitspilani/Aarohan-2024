@@ -44,10 +44,10 @@ export default function Gallery() {
 
       <div className="page" >
         <div
-          className="heading"
+          className="gallery-heading"
           style={{ width: "100%", textAlign: "center", paddingTop: "1.5rem" , color: 'white'}}
         >
-          Our Gallery
+          <h2>GALLERY</h2>
         </div>
 
 

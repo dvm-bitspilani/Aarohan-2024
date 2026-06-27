@@ -18,19 +18,18 @@
     width: 40vw;
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-
 }
 
 .road-div h6 {
     font-weight: 400;
-    font-size: 2.5rem;
+    font-size: 3.75rem;
     border-bottom: 1px solid #7047A5;
     text-align: center;
-   
+    letter-spacing: 1rem;
 }
 
 .road-div p {
-    font-size: 1rem;
+    font-size: 1.45rem;
     text-align: center;
 }
 
@@ -38,6 +37,17 @@
     color: gold;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
+}
+
+@media screen and (max-width: 1400px) {
+    .road-div h6 {
+        font-size: 2.65rem;
+        letter-spacing: 0.75rem;
+    }
+
+    .road-div p {
+        font-size: 1.2rem;
+    }
 }
 
 @media screen and (max-width: 1024px) {

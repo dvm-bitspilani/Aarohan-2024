@@ -32,8 +32,8 @@ html {
 }
 
 .aarohan-logo {
-    width: 200px; 
-    max-width: 100%;
+    width: 300px; 
+    height: auto;
 }
 
 .main-nav {
@@ -99,6 +99,12 @@ html {
     line-height: 1;
 }
 
+@media screen and (max-width: 1400px) {
+    .aarohan-logo {
+        width: 220px;
+    }
+}
+
 @media screen and (max-width: 1024px) {
     .hamburger-menu {
         display: block; 
@@ -142,5 +148,11 @@ html {
 
     .global-header {
         height: 4vh;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .aarohan-logo {
+        width: 160px;
     }
 }

@@ -1,16 +1,22 @@
+.contact-heading h2 {
+    font-size: 3.75rem;
+    letter-spacing: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+/* Changed from Flex to Grid to enforce strict column/row ratios */
 .contact {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2vw;
     color: white;
     text-align: center;
-    align-items:center;
+    /* 1. Change center to stretch so grid tracks force equal row heights */
+    align-items: stretch; 
+    justify-items: center; 
     margin-top: 2rem;
     user-select: none;
-}
-
-.contact>* {
-    flex: 20rem;
 }
 
 .profile {
@@ -21,9 +27,12 @@
     border-radius: 20px;
     background-color: #00000070;
     backdrop-filter: blur(5px);
-    justify-content: center;
     align-items: center;
-    width: 30vw;
+    width: 100%;            
+    max-width: 380px;       
+    /* 2. Add height: 100% so shorter cards expand to match the tallest card */
+    height: 100%; 
+    box-sizing: border-box; 
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     font-size: 1rem;
@@ -62,15 +71,31 @@
     font-size: 1rem;
 }
 
-@media screen and (max-width: 1024px) {
-    .profile {
-        width: 50vw;
+@media screen and (max-width: 1400px) {
+    .contact-heading h2 {
+        font-size: 2.65rem;
+        letter-spacing: 0.75rem;
     }
 }
 
-@media screen and (max-width: 768px) {
+/* Tablet view breakpoint */
+@media screen and (max-width: 1024px) {
+    .contact {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns - 3 rows */
+    }
     .profile {
-        width: 90vw;
+        max-width: 420px;
+    }
+}
+
+/* Mobile view breakpoint */
+@media screen and (max-width: 768px) {
+    .contact {
+        grid-template-columns: repeat(1, 1fr); /* 1 column - 6 rows */
+    }
+
+    .profile {
+        max-width: 90vw;
         padding: 20px;
     }
 
@@ -82,13 +107,17 @@
     .contact-name {
         font-size: 0.9rem;
     }
+
+    .contact-heading h2 {
+        font-size: 1.8rem;
+    }
 }
 
 .query {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 3rem 0;
+    margin: 3rem 0 0;
 }
 
 .q-form {
@@ -171,6 +200,27 @@
     color: gold;
 }
 
+.query-heading {
+    border-bottom: 1px solid #7047A5;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+}
+
+.query-heading h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 3.75rem;
+    letter-spacing: 1rem;
+    color: gold;
+}
+
+@media screen and (max-width: 1400px) {
+    .query-heading h2 {
+        font-size: 2.65rem;
+        letter-spacing: 0.75rem;
+    }
+}
+
 @media (max-width: 768px) {
     .q-form {
         width: 90vw;
@@ -184,14 +234,8 @@
     .q-form-submit button {
         width: 100%;
     }
-}
-.query-heading {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 2.5rem;
-    letter-spacing: 0.75rem;
-    color: gold;
-    border-bottom: 1px solid #7047A5;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
+
+    .query-heading h2 {
+        font-size: 1.8rem;
+    }
 }

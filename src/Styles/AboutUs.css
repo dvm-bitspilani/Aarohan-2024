@@ -22,15 +22,26 @@
 
 .about-div h6 {
     font-weight: 400;
-    font-size: 2.5rem;
-    letter-spacing: 0.75rem;
-    border-bottom: 1px solid #7047A5;
+    font-size: 3.75rem;
+    letter-spacing: 1rem;
+    /*border-bottom: 1px solid #7047A5;*/
     color: gold;
 }
 
 .about-div p{
-    font-size: 1rem;
+    font-size: 1.45rem;
     text-align: center;
+}
+
+@media screen and (max-width: 1400px) {
+    .about-div h6 {
+        font-size: 2.65rem;
+        letter-spacing: 0.75rem;
+    }
+
+    .about-div p {
+        font-size: 1.2rem;
+    }
 }
 
 @media screen and (max-width: 1024px) {

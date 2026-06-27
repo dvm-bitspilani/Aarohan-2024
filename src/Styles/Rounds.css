@@ -7,8 +7,8 @@
 .process-div-container h6 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 2.5rem;
-    letter-spacing: 0.75rem;
+    font-size: 3.75rem;
+    letter-spacing: 1rem;
 }
 
 .rounds-container {
@@ -36,17 +36,34 @@
 .round1 h6,
 .round2 h6 {
     font-weight: 400;
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: gold;
     letter-spacing: 0.75rem;
-    border-bottom: 1px solid #7047A5;
+    /*border-bottom: 1px solid #7047A5;*/
 }
 
 .round1 p,
 .round2 p{
-    font-size: 1rem;
+    font-size: 1.45rem;
     text-align: center;
     margin: auto;
+}
+
+@media screen and (max-width: 1400px) {
+    .process-div-container h6 {
+        font-size: 2.65rem;
+        letter-spacing: 0.75rem;
+    }
+
+    .round1 h6,
+    .round2 h6 {
+        font-size: 2.3rem;
+    }
+
+    .round1 p,
+    .round2 p {
+        font-size: 1.2rem;
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -73,7 +90,7 @@
     }
 
     .round1 h6, .round2 h6 {
-        font-size: 2rem;
+        font-size: 1.8rem;
         letter-spacing: 0.2rem;
     }
 }

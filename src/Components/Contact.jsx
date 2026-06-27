@@ -62,8 +62,6 @@ export default function Contact() {
 
   let isValid = false;
 
-  // console.log(name, email, phone, message)
-
   const Contact = data2.map((data, index) => {
     return (
       <Profile
@@ -98,7 +96,6 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     if (!isValid) {
       e.preventDefault();
-      // alert("Please enter all the details")
       setShowModal(true);
       setErrorMessage("Please Enter All the details");
       return false;
@@ -106,12 +103,10 @@ export default function Contact() {
     e.preventDefault();
     try {
       const response = await axios.post(`${BASE_URL}/ask_query/`, formData);
-      // console.log("Post created:", response.data);
       setShowModal(true);
       setErrorMessage("Query Submitted Successfuly!");
     } catch (error) {
       console.error("Error creating post:", error.response.data.message);
-      //   alert(error.response.data.message)
       setShowModal(true);
       setErrorMessage(error.response.data.message);
     }
@@ -129,17 +124,17 @@ export default function Contact() {
         setShowModal={setShowModal}
         handleCloseModal={handleCloseModal}
       />
-      <div className="heading" style={{ width: "100%", textAlign: "center", color:"white" }}>
-        Contact Us
+      <div className="heading contact-heading" style={{ width: "100%", textAlign: "center", color:"white" }}>
+        <h2>CONTACT US</h2>
       </div>
       <div className="contact">{Contact}</div>
       <div className="query">
         <div className="q-form">
           <div
-            className="heading query-heading"
-            tyle={{ width: "100%", textAlign: "center" }}
+            className="query-heading"
+            style={{ width: "100%", textAlign: "center" }}
           >
-            Submit Query
+            <h2>SUBMIT QUERY</h2>
           </div>
           <label htmlFor="">Full Name</label>
           <input
@@ -168,7 +163,7 @@ export default function Contact() {
           <label htmlFor="">Message</label>
           <textarea
             id=""
-            rows="10"
+            rows="7"
             value={message}
             onChange={(event) => setMessage(event.target.value)}
             placeholder="Enter Message"
