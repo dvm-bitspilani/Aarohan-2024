@@ -10,8 +10,6 @@ import AboutUs from "../Components/AboutUs";
 import RoadToAarohan from "../Components/RoadToAarohan";
 import Rounds from "../Components/Rounds";
 import AboutApogee from "../Components/AboutApogee";
-import Contacts from "../Components/Contact1";
-import Query from "../Components/Query";
 import Gallery from "./Gallery";
 
 export default function Main() {
