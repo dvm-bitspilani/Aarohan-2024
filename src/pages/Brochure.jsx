@@ -1,48 +1,48 @@
-import React from "react";
-import { useState } from "react";
 import Navbar from "../Components/Navbar";
-import { Document, Page, pdfjs } from "react-pdf";
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`;
-import "../Styles/Sample.css";
-import { Link } from "react-router-dom";
-import BackgroundImg from "../images/bg.png";
 import Footer from "../Components/Footer";
-import Preloader from "./Preloader";
-import FinalBg from "../images/final_bg.png"
-import '../Styles/Brochure.css'
+import "../Styles/Sample.css";
+import "../Styles/Brochure.css";
 
+export default function Brochure() {
+  const brochureFile = "/grades/Aarohan_SQP_9th.pdf";
 
-const Brochure = () =>{
-const [numPages, setNumPages] = useState(0);
- return(
- <>
-<Navbar />
-<div className="Brochure"  > 
-<h1 >Brochure</h1>
-</div>
+  return (
+    <>
+      <Navbar />
 
- <div className="pdf-wrapper">
-  <Document
-    file="/Aarohan_SQP_9th.pdf"
-    onLoadSuccess={({ numPages }) => setNumPages(numPages)}
-  >
-    {Array.from({ length: numPages }, (_, i) => (
-      <Page
-        key={i}
-        pageNumber={i + 1}
-        
-      />
-    ))}
-  </Document>
-</div>
-<div className='brochure_button'>
-    <a  href="./Aarohan_SQP_9th.pdf" download="Brochure.pdf">
-        Download PDF
-    </a>
-   </div>
-<Footer />
-    
+      <div
+        className="page"
+        style={{ paddingTop: "5rem" }}
+      >
+        <div
+          className="heading"
+          style={{
+            width: "100%",
+            textAlign: "center",
+            paddingTop: "0px",
+            color: "white",
+          }}
+        >
+          Brochure
+        </div>
+
+        <div className="pdf">
+          <iframe
+            src={`${brochureFile}#toolbar=0&navpanes=0&scrollbar=0`}
+            width="100%"
+            height="600px"
+            title="Brochure PDF"
+          ></iframe>
+
+          <a href={brochureFile} download="Brochure.pdf">
+            <button className="download">
+              DOWNLOAD
+            </button>
+          </a>
+        </div>
+
+        <Footer />
+      </div>
     </>
- )
+  );
 }
-export default Brochure
