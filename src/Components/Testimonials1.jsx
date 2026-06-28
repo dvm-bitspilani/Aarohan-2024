@@ -1,10 +1,94 @@
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
 import TestimonialCard from "./TestimonialCard";
 
+gsap.registerPlugin(ScrollTrigger)
 
-export default function Testimonials1() {    
+export default function Testimonials1() {
+    const containerRef1 = useRef(null);
+
+    useGSAP(() => {
+        //ScrollTrigger.normalizeScroll({allowNestedScroll: true})
+
+        const cards = gsap.utils.toArray(".testimonial-container");
+        const totalCards = cards.length;
+        const lastCard = cards[totalCards - 1];
+        
+        const lastCardStart = 20 + (totalCards - 1) * 3;
+
+        ScrollTrigger.create({
+            trigger: ".testimonials-heading",
+            start: "top 10%",
+            endTrigger: lastCard,
+            end: () => `top+=${window.innerHeight * 1.5}px ${lastCardStart}%`,
+            pin: true,
+            pinSpacing: false 
+        });
+
+        cards.forEach((card, index) => {
+            const isLastCard = index === totalCards - 1;
+
+            ScrollTrigger.create({
+                trigger: card,
+                start: `top ${20 + index * 3}%`,
+                endTrigger: isLastCard ? null : lastCard,
+                end: isLastCard 
+                    ? () => `+=${window.innerHeight * 1.5}` 
+                    : () => `top+=${window.innerHeight * 1.5}px ${lastCardStart}%`, 
+                pin: true,
+                pinSpacing: isLastCard
+            });
+
+            if (!isLastCard) {
+                const innerCard = card.querySelector(".testimonial"); 
+                
+                gsap.to(innerCard, {
+                    scale: 0.9, 
+                    transformOrigin: "top center",
+                    scrollTrigger: {
+                        trigger: cards[index + 1],
+                        start: "top 80%", 
+                        end: `top ${20 + (index + 1) * 3}%`, 
+                        scrub: true,
+                    }
+                });
+            }
+        });
+
+        const fadeTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: lastCard,
+                start: `top ${lastCardStart}%`,
+                end: () => `+=${window.innerHeight * 1.5}`,
+                scrub: true,
+            }
+        });
+
+        fadeTl.to([".testimonials-heading", ...cards], {
+            opacity: 0,
+            ease: "none",
+            duration: 1
+        }, 0.5);
+
+        document.fonts.ready.then(() => {
+            ScrollTrigger.refresh();
+        });
+
+        const layoutFix = setTimeout(() => {
+            ScrollTrigger.refresh();
+        }, 200);
+
+        return () => {
+            clearTimeout(layoutFix);
+        };
+
+    }, { scope: containerRef1 });
 
     return (
-        <div>
+        <div ref={containerRef1}>
             <div className="testimonials-heading">
                 <h2>TESTIMONIALS</h2>
             </div>
