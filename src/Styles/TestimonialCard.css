@@ -17,7 +17,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     font-size: 1.45rem;
-    margin-bottom: 450px;
+    /*margin-bottom: 450px;*/
 }
 
 .testimonial h3 {
@@ -32,7 +32,7 @@
 .testimonials-heading {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-    padding-top: 30px;
+    /*padding-top: 30px;*/
 }
 
 .testimonials-heading h2 {

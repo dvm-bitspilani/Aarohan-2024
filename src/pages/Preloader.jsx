@@ -10,6 +10,8 @@ export default function Preloader({ onEnter, assetsArr }) {
     let loadedAssets = 0;
 
     const isImage = (src) => /\.(png|jpe?g|gif|svg|webp)$/i.test(src);
+    const isFont = (src) => /\.(woff2?|ttf|otf|eot)$/i.test(src); 
+
     const preloadAsset = (src) => {
       return new Promise((resolve, reject) => {
         if (isImage(src)) {
@@ -21,7 +23,22 @@ export default function Preloader({ onEnter, assetsArr }) {
             resolve(img);
           };
           img.onerror = reject;
-        } else {
+        } 
+        else if (isFont(src)) {
+          const fontName = src.split("/").pop().split(".")[0];
+
+          const font = new FontFace(fontName, `url(${src})`, { display: 'swap' });
+          
+          font.load()
+            .then((loadedFace) => {
+              document.fonts.add(loadedFace);
+              loadedAssets++;
+              setProgress((loadedAssets / assetsToPreload.length) * 100);
+              resolve(loadedFace);
+            })
+            .catch(reject);
+        } 
+        else {
           reject(new Error("Unsupported asset type: " + src));
         }
       });

@@ -1,17 +1,18 @@
-import { useRef } from "react";
+/*import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import { useGSAP } from "@gsap/react";*/
 
 import TestimonialCard from "./TestimonialCard";
 
-gsap.registerPlugin(ScrollTrigger)
+//gsap.registerPlugin(ScrollTrigger)
 
 export default function Testimonials1() {
-    const containerRef1 = useRef(null);
+    /*const containerRef1 = useRef(null);
 
     useGSAP(() => {
         //ScrollTrigger.normalizeScroll({allowNestedScroll: true})
+        ScrollTrigger.config({ignoreMobileResize: true})
 
         const cards = gsap.utils.toArray(".testimonial-container");
         const totalCards = cards.length;
@@ -25,7 +26,8 @@ export default function Testimonials1() {
             endTrigger: lastCard,
             end: () => `top+=${window.innerHeight * 1.5}px ${lastCardStart}%`,
             pin: true,
-            pinSpacing: false 
+            pinSpacing: false ,
+            //markers: true
         });
 
         cards.forEach((card, index) => {
@@ -39,7 +41,8 @@ export default function Testimonials1() {
                     ? () => `+=${window.innerHeight * 1.5}` 
                     : () => `top+=${window.innerHeight * 1.5}px ${lastCardStart}%`, 
                 pin: true,
-                pinSpacing: isLastCard
+                pinSpacing: isLastCard,
+                //markers: true
             });
 
             if (!isLastCard) {
@@ -53,6 +56,7 @@ export default function Testimonials1() {
                         start: "top 80%", 
                         end: `top ${20 + (index + 1) * 3}%`, 
                         scrub: true,
+                        //markers: true
                     }
                 });
             }
@@ -85,10 +89,10 @@ export default function Testimonials1() {
             clearTimeout(layoutFix);
         };
 
-    }, { scope: containerRef1 });
+    }, { scope: containerRef1 });*/
 
     return (
-        <div ref={containerRef1}>
+        <div>
             <div className="testimonials-heading">
                 <h2>TESTIMONIALS</h2>
             </div>

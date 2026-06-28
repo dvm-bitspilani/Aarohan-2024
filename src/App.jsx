@@ -22,7 +22,8 @@ const assetsArr = [
   "/src/Contact/bhoomi_motihar.jpg",
   "/src/Contact/maanas_popuri.jpg",
   "/src/Contact/varenyam_bharti.jpg",
-  "/src/images/quote.png"
+  "/src/images/quote.png",
+  "/src/fonts/Montserrat-VariableFont_wght.ttf"
 ];
 
 function App() {
