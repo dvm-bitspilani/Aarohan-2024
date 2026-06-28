@@ -27,12 +27,7 @@ export default function FAQ() {
       answer:
         "The exam focuses on enriching the application skill-set of the students, rather than testing the memory. A set of passages with a unifying scientific phenomenon is provided, based on which MCQs are given. For sample papers, click on the link ",
     },
-    {
-      question:
-        "How credible is the paper, since it's designed by a student body?",
-      answer:
-        "The paper made by the organizing committee would be proof-read by a panel of Professors and the credibility of the paper is unquestionable. ",
-    },
+    
     {
       question: "What would the students gain?",
       answer:
@@ -76,12 +71,12 @@ export default function FAQ() {
       <Navbar />
       <div
         className="page"
-        style={{ paddingTop: "0px" }}
+        style={{ paddingTop: "5rem" }}
       >
         <div className="FAQ">
           <div
             className="heading"
-            style={{ width: "100%", textAlign: "center", paddingTop: "2rem" }}
+            style={{ width: "100%", textAlign: "center", paddingTop: "2rem",color:"white" }}
           >
             Frequently Asked Questions
           </div>
