@@ -17,14 +17,15 @@ export default function Testimonials1() {
         const cards = gsap.utils.toArray(".testimonial-container");
         const totalCards = cards.length;
         const lastCard = cards[totalCards - 1];
+         const lastReal = document.querySelector(".last-real-card .testimonial");
         
-        const lastCardStart = 20 + (totalCards - 1) * 3;
+        const lastCardStart = 20 + (totalCards - 1) * 5;
 
         ScrollTrigger.create({
             trigger: ".testimonials-heading",
             start: "top 10%",
             endTrigger: lastCard,
-            end: () => `top+=${window.innerHeight * 1.5}px ${lastCardStart}%`,
+            end: () => `top+=${window.innerHeight * 3}px ${lastCardStart}%`,
             pin: true,
             pinSpacing: false ,
             //markers: true
@@ -66,16 +67,44 @@ export default function Testimonials1() {
             scrollTrigger: {
                 trigger: lastCard,
                 start: `top ${lastCardStart}%`,
-                end: () => `+=${window.innerHeight * 1.5}`,
+                end: () => `+=${window.innerHeight * 3}`,
                 scrub: true,
             }
         });
 
-        fadeTl.to([".testimonials-heading", ...cards], {
-            opacity: 0,
-            ease: "none",
-            duration: 1
-        }, 0.5);
+        fadeTl
+.to(".testimonials-heading", {
+    opacity: 0,
+    ease: "none",
+    duration: 0.2
+}, 0.1)
+
+.to(cards, {
+    opacity: 0,
+    ease: "none",
+    duration: 0.8
+}, 0.2);
+       
+
+gsap.to(lastReal, {
+    backdropFilter: "blur(0px)",
+    scrollTrigger: {
+        trigger: ".last-real-card",
+        start: "top 20%",
+        end: "top 10%",
+        scrub: true,
+    }
+});
+gsap.to(lastReal, {
+    backdropFilter: "blur(0px)",
+    backgroundColor: "rgba(0,0,0,1)",
+    scrollTrigger: {
+        trigger: ".last-real-card",
+        start: "top 20%",
+        end: "top 10%",
+        scrub: true,
+    }
+});
 
         document.fonts.ready.then(() => {
             ScrollTrigger.refresh();
@@ -100,27 +129,9 @@ export default function Testimonials1() {
             <br />
 
             <TestimonialCard
-                words="Its an excellent opportunity to explore math and science beyond school level. Not having a subjective written paper pattern makes this exam interesting. The entire exam is fun learning and tests our IQ which makes the entire exposure worth experiencing."
-                name="Dherya Shreyashkumar Limbhetwala"
+                words="I participated in the Aarohan competition at BITS, Pilani in 2024. What impressed me most was the format - it was both challenging and unique, which made it a truly engaging experience. The competition also provided great exposure to BITS Pilani. The Apogee fest is also great with a multitude of events and lectures taking place. I even made some new friends and learned a lot from the experience. Aarohan was a rewarding competition that pushed my limits and helped me grow as a participant. Aarohan not only allowed me to showcase my abilities but also opened doors to new opportunities and connections. It was an unforgettable experience that I would highly recommend to anyone looking to challenge themselves, achieve recognition, and immerse themselves in a top-tier college festival environment."
+                name="Amogh Achyut Hirve"
                 standard={10}
-            />
-
-            <TestimonialCard
-                words="Overall it was an amazing experience. The programme aimed at promoting creative thinking through brilliant puzzles and activities which is far from the rote learning in school. All the guides were really knowledgeable and helpful. The programme also gave us an opportunity to have a tour of the campus that too during the Technical fest organized. "
-                name="Pranshu Goel"
-                standard={10}
-            />
-
-            <TestimonialCard
-                words="It was an incredible experience. Team Aarohan creates such creative and innovative challenges based on real world application of sciences. Its not like any other exam and I would encourage everyone to give it a try. I feel very fortunate to have been able to attend the second round and APOGEE 2024, and interact with such great people from all across India."
-                name="Abhiraj Pharate"
-                standard={11}
-            />
-
-            <TestimonialCard
-                words="The second round was series of events like murder mystery, battleship, bidding wars, a genetic game, etc. We got to meet Mohit Chauhan, saw a rocket launch and had a QnA session with the rocket builders. We also had lots of fun in the Annual BITS PILANI fest going on at the time. The Bhaiyas and Didis were awesome too! Totally worth giving the exam! Good luck!"
-                name="Nilay"
-                standard={11}
             />
 
             <TestimonialCard
@@ -130,10 +141,36 @@ export default function Testimonials1() {
             />
 
             <TestimonialCard
-                words="I participated in the Aarohan competition at BITS, Pilani in 2024. What impressed me most was the format - it was both challenging and unique, which made it a truly engaging experience. The competition also provided great exposure to BITS Pilani. The Apogee fest is also great with a multitude of events and lectures taking place. I even made some new friends and learned a lot from the experience. Aarohan was a rewarding competition that pushed my limits and helped me grow as a participant. Aarohan not only allowed me to showcase my abilities but also opened doors to new opportunities and connections. It was an unforgettable experience that I would highly recommend to anyone looking to challenge themselves, achieve recognition, and immerse themselves in a top-tier college festival environment."
-                name="Amogh Achyut Hirve"
+                words="The second round was series of events like murder mystery, battleship, bidding wars, a genetic game, etc. We got to meet Mohit Chauhan, saw a rocket launch and had a QnA session with the rocket builders. We also had lots of fun in the Annual BITS PILANI fest going on at the time. The Bhaiyas and Didis were awesome too! Totally worth giving the exam! Good luck!"
+                name="Nilay"
+                standard={11}
+            />
+
+            <TestimonialCard
+                words="It was an incredible experience. Team Aarohan creates such creative and innovative challenges based on real world application of sciences. Its not like any other exam and I would encourage everyone to give it a try. I feel very fortunate to have been able to attend the second round and APOGEE 2024, and interact with such great people from all across India."
+                name="Abhiraj Pharate"
+                standard={11}
+            />
+
+            <TestimonialCard
+                words="Overall it was an amazing experience. The programme aimed at promoting creative thinking through brilliant puzzles and activities which is far from the rote learning in school. All the guides were really knowledgeable and helpful. The programme also gave us an opportunity to have a tour of the campus that too during the Technical fest organized. "
+                name="Pranshu Goel"
                 standard={10}
-            />            
+            />
+
+
+            <TestimonialCard
+                words="Its an excellent opportunity to explore math and science beyond school level. Not having a subjective written paper pattern makes this exam interesting. The entire exam is fun learning and tests our IQ which makes the entire exposure worth experiencing."
+                name="Dherya Shreyashkumar Limbhetwala"
+                standard={10}
+                className="last-real-card"
+            />
+            <TestimonialCard
+            words="abc"
+            name="abc"
+            standard={10}
+            className="testimonial-hidden"
+           />
         </div>
-    );
+    )
 }
