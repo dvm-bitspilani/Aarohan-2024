@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import RoadImg from "../images/road.png";
 import BackgroundImg from "../images/bg.png";
-import Ellipse from "../images/ellipse2.png";
+
 import Contact from "../Components/Contact";
 import "../Styles/global.css";
 import Testimonials1 from "../Components/Testimonials1";
@@ -48,11 +48,6 @@ export default function Main() {
        <Rounds />
 
         <AboutApogee />
-
-        <div className="ellipse2">
-          <img src={Ellipse} />
-        </div>
-
         <Testimonials1 />
         <Gallery />
         <Contact />

@@ -1,17 +1,17 @@
-/*import { useRef } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";*/
+import { useGSAP } from "@gsap/react";
 
 import TestimonialCard from "./TestimonialCard";
 
-//gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Testimonials1() {
-    /*const containerRef1 = useRef(null);
+    const containerRef1 = useRef(null);
 
     useGSAP(() => {
-        //ScrollTrigger.normalizeScroll({allowNestedScroll: true})
+        
         ScrollTrigger.config({ignoreMobileResize: true})
 
         const cards = gsap.utils.toArray(".testimonial-container");
@@ -89,10 +89,10 @@ export default function Testimonials1() {
             clearTimeout(layoutFix);
         };
 
-    }, { scope: containerRef1 });*/
+    }, { scope: containerRef1 });
 
     return (
-        <div>
+        <div ref={containerRef1}>
             <div className="testimonials-heading">
                 <h2>TESTIMONIALS</h2>
             </div>
