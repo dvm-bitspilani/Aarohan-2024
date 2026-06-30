@@ -92,8 +92,7 @@ export default function Gallery() {
             </div>
           </div>
         </div>
-
-        {/* MOBILE: 2 horizontal rows */}
+  
         <div className="gallery-grid-mobile">
           <div className="gallery-row">
             <div className="gallery-row-track scroll-left">

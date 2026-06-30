@@ -64,26 +64,27 @@ export default function Testimonials1() {
         });
 
         const fadeTl = gsap.timeline({
-            scrollTrigger: {
-                trigger: lastCard,
-                start: `top ${lastCardStart}%`,
-                end: () => `+=${window.innerHeight * 3}`,
-                scrub: true,
-            }
-        });
+        scrollTrigger: {
+        trigger: lastCard,
+        start: `top ${lastCardStart - 10}%`,
+        end: () => `+=${window.innerHeight * 3}`,
+        scrub: true,
+    }
+});
 
-        fadeTl
+fadeTl
 .to(".testimonials-heading", {
     opacity: 0,
     ease: "none",
     duration: 0.2
 }, 0.1)
 
-.to(cards, {
+.to(".testimonial", {
     opacity: 0,
     ease: "none",
-    duration: 0.8
-}, 0.2);
+    stagger: 0.05,
+    duration: 0.5
+}, 0.1);
        
 
 gsap.to(lastReal, {
@@ -121,7 +122,7 @@ gsap.to(lastReal, {
     }, { scope: containerRef1 });
 
     return (
-        <div ref={containerRef1}>
+        <div ref={containerRef1} className="testimonial-section">
             <div className="testimonials-heading">
                 <h2>TESTIMONIALS</h2>
             </div>

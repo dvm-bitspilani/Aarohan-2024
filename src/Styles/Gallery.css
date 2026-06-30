@@ -73,12 +73,13 @@
 
 
 .gallery-grid-mobile {
-  display: none; /* hidden on desktop */
+  display: none;
   flex-direction: column;
   gap: clamp(0.5rem, 3vw, 1.25rem);
-  width: 100%;
-  padding: 1rem clamp(0.5rem, 3vw, 1.5rem);
+  width: 90vw;
+  margin-left: calc(50% - 45vw);
   box-sizing: border-box;
+  margin-top: 2rem;
 }
 
 .gallery-row {
@@ -93,7 +94,7 @@
 .gallery-row-track {
   display: flex;
   flex-direction: row;
-  gap: clamp(0.5rem, 3vw, 1.25rem);
+  gap: clamp(1rem, 4vw, 2rem);
   height: 100%;
   width: max-content;
 }
@@ -119,7 +120,7 @@
 .gallery-card-h {
   flex: 0 0 auto;
   height: 100%;
-  width: clamp(110px, 32vw, 180px);
+  width: clamp(150px, 42vw, 240px);
   border-radius: 6px;
   overflow: hidden;
   background: #fff;
@@ -141,15 +142,14 @@
 
 @media screen and (max-width: 1400px) {
   .gallery-heading h2 {
-    font-size: 2.65rem;
-    letter-spacing: 0.75rem;
+    font-size: 2.6rem;
   }
 }
 
 @media screen and (max-width: 768px) {
   .gallery-heading h2 {
     font-size: 1.8rem;
-    letter-spacing: 0.75rem;
+   
   }
 }
 
