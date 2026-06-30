@@ -8,6 +8,7 @@
 .testimonial {
     display: flex;
     flex-direction: column;
+    padding: 25px;
     border: 2px solid #7047A5;
     border-radius: 20px;
     background-color: #00000090;
@@ -19,7 +20,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     font-size: 1.45rem;
-    margin-bottom: 30vh;
+    margin-bottom: 30svh;
 }
 
 .testimonial h3 {
@@ -34,7 +35,7 @@
 .testimonials-heading {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-    margin-top: 30vh;
+    margin-top: 30svh;
 }
 
 .testimonials-heading h2 {
@@ -63,13 +64,13 @@
 @media screen and (max-width: 768px) {
     .testimonial {
         width: 90vw;
-        padding: 20px;
+        padding: 10px;
     }
     .testimonials-heading h2 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
     .testimonial h3 {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 }
 .testimonial-hidden{

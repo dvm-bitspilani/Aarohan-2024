@@ -22,7 +22,7 @@ html {
     width: 100%;
     
     z-index: 100;
-    height: 10vh;
+    height: 10svh;
     min-height: 70px;
 }
 
@@ -115,7 +115,7 @@ html {
         top: 0;
         right: -100%;
         width: 100vw;
-        height: 100vh;
+        height: 100svh;
         background-color: rgba(15, 15, 25, 0.95);
         backdrop-filter: blur(10px);
         display: flex;
@@ -137,7 +137,7 @@ html {
     .main-ul {
         flex-direction: column;
         width: 100%;
-        height: 60vh;
+        height: 60svh;
         justify-content: space-evenly;
         gap: 0;
     }
@@ -147,7 +147,7 @@ html {
     }
 
     .global-header {
-        height: 4vh;
+        height: 4svh;
     }
 }
 

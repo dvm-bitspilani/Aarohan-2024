@@ -1,5 +1,5 @@
 iframe {
-    height: 60vh;
+    height: 60svh;
     width: 50%;
     margin: auto;
 }
@@ -56,7 +56,7 @@ iframe {
 
 @media only screen and (max-width: 1000px) {
     iframe {
-        height: 60vh;
+        height: 60svh;
         width: 100%;
         margin: auto;
     }

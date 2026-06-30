@@ -17,7 +17,7 @@ export default function Testimonials1() {
         const cards = gsap.utils.toArray(".testimonial-container");
         const totalCards = cards.length;
         const lastCard = cards[totalCards - 1];
-         const lastReal = document.querySelector(".last-real-card .testimonial");
+        const lastReal = document.querySelector(".last-real-card .testimonial");
         
         const lastCardStart = 20 + (totalCards - 1) * 5;
 
@@ -54,7 +54,7 @@ export default function Testimonials1() {
                     transformOrigin: "top center",
                     scrollTrigger: {
                         trigger: cards[index + 1],
-                        start: "top 80%", 
+                        start: "top 90%", 
                         end: `top ${20 + (index + 1) * 3}%`, 
                         scrub: true,
                         //markers: true
@@ -83,7 +83,7 @@ fadeTl
     opacity: 0,
     ease: "none",
     stagger: 0.05,
-    duration: 0.5
+    duration: 0.2
 }, 0.1);
        
 
@@ -130,7 +130,7 @@ gsap.to(lastReal, {
             <br />
 
             <TestimonialCard
-                words="I participated in the Aarohan competition at BITS, Pilani in 2024. What impressed me most was the format - it was both challenging and unique, which made it a truly engaging experience. The competition also provided great exposure to BITS Pilani. The Apogee fest is also great with a multitude of events and lectures taking place. I even made some new friends and learned a lot from the experience. Aarohan was a rewarding competition that pushed my limits and helped me grow as a participant. Aarohan not only allowed me to showcase my abilities but also opened doors to new opportunities and connections. It was an unforgettable experience that I would highly recommend to anyone looking to challenge themselves, achieve recognition, and immerse themselves in a top-tier college festival environment."
+                words="I participated in the Aarohan competition at BITS Pilani in 2024, and what impressed me most was its unique and challenging format. It was an engaging experience that also gave me great exposure to BITS Pilani and the APOGEE fest, with its exciting events and lectures. I made new friends, learned a lot, and was pushed to grow as a participant. Aarohan gave me the opportunity to showcase my abilities while opening doors to new opportunities and meaningful connections. It was an unforgettable experience that I would highly recommend to anyone looking to challenge themselves and experience a world-class college festival."
                 name="Amogh Achyut Hirve"
                 standard={10}
             />

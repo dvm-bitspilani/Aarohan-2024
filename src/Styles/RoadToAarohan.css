@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 60vh 0;
+    margin: 60svh 0;
 }
 
 .road-div {
@@ -58,7 +58,7 @@
 
 @media screen and (max-width: 768px) {
     .road-div-container {
-        margin: 30vh 0;
+        margin: 30svh 0;
     }
 
     .road-div {

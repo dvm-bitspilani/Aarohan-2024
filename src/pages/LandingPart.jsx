@@ -19,7 +19,7 @@ export default function Landing() {
             <div className="registration-div">
                 <img src={AarohanLogo} className="aarohan-intro-img" alt="Aarohan Logo" />
 
-                <p className="aarohan-intro">A premier STEM Olympiad for high school students to challenge, explore and excel in the disciplines that shape our future.</p>
+                <p className="aarohan-intro">A premier STEM Olympiad organised by students of BITS Pilani for high school students to challenge, explore and excel in the disciplines that shape our future.</p>
                 <br />
                 <Link to="/Registration" >
                   <button  className="registration-link">REGISTER</button>
@@ -31,22 +31,22 @@ export default function Landing() {
                 <HeroSection
                     imagePath={challengeImage}
                     heading="Challenge"
-                    line="Test your knowledge with the best"
+                    line="Test your knowledge with the best."
                     isLast={false} />
                 <HeroSection
                     imagePath={exploreImage}
                     heading="Explore"
-                    line="Discover new ideas and perspectives"
+                    line="Discover new ideas and perspectives."
                     isLast={false} />
                 <HeroSection
                     imagePath={innovateImage}
                     heading="Innovate"
-                    line="Solve real-world problems and build the future"
+                    line="Solve real-world problems and build the future."
                     isLast={false} />
                 <HeroSection
                     imagePath={excelImage}
-                    heading="Excel"
-                    line="Achieve excellence in STEM disciplines"
+                    heading="Exposure"
+                    line="Get a chance to visit BITS Pilani during APOGEE, our tech fest."
                     isLast={true} />
             </div>
         </section>  

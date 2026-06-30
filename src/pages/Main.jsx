@@ -12,6 +12,7 @@ import Rounds from "../Components/Rounds";
 import AboutApogee from "../Components/AboutApogee";
 
 import Gallery from "./Gallery";
+import Socials from "../Components/Socials";
 
 export default function Main() {
   const Round1 =
@@ -51,6 +52,7 @@ export default function Main() {
         <Testimonials1 />
         <Gallery />
         <Contact />
+        <Socials />
         <Footer />
       </div>
     </>

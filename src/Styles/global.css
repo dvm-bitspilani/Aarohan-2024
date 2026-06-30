@@ -1,5 +1,5 @@
 .landing-page {
-    height: 100vh;
+    height: 100svh;
     position: relative;
 }
 
@@ -106,7 +106,7 @@ input#hamburger {
 .landing-text-container {
     position: absolute;
     top: 32%;
-    left: 25vh;
+    left: 25svh;
     display: flex;
     gap: 1rem;
     flex-direction: column;
@@ -147,7 +147,7 @@ input#hamburger {
 
 .ellipse1 {
     position: absolute;
-    top: 200vh;
+    top: 200svh;
     left: -50vw;
     width: 2rem;
     height: 2rem;
@@ -417,7 +417,7 @@ svg {
     .landing-text-container {
         width: 100%;
         left: 0;
-        top: 20vh;
+        top: 20svh;
     }
 
     .landing-text-container img {
