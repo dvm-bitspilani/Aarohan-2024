@@ -17,7 +17,7 @@ export default function Socials() {
                         <span>Facebook</span>
                     </a>
 
-                    <a href="linkedin.com/company/aarohan-bits-pilani/" target="_blank" rel="noopener noreferrer" className="socials-sites">
+                    <a href="https://linkedin.com/company/aarohan-bits-pilani/" target="_blank" rel="noopener noreferrer" className="socials-sites">
                         <i className="fab fa-linkedin-in"></i>
                         <span>LinkedIn</span>
                     </a>
