@@ -4,7 +4,7 @@ import "../Styles/Sample.css";
 import "../Styles/Brochure.css";
 
 export default function Brochure() {
-  const brochureFile = "/grades/Aarohan_SQP_9th.pdf";
+  const brochureFile = "PDFs/Brochure2026-27.pdf";
 
   return (
     <>
