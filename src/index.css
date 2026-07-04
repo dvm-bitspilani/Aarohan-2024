@@ -45,7 +45,7 @@ body::before {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /*transition: height 999999s;*/
+  transition: height 999999s;
 }
 
 #root {
