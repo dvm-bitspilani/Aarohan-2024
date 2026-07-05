@@ -18,7 +18,7 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   overscroll-behavior: none;
-  height: -webkit-fill-available; /* lets iOS Safari resolve the body's fill-available fallback correctly */
+  height: -webkit-fill-available;
 }
 
 body {
@@ -29,9 +29,9 @@ body {
   background-color: #111027;
   overflow-x: hidden;
   overflow-y: auto;
-  min-height: 100vh;                 /* fallback: very old browsers */
-  min-height: -webkit-fill-available; /* fallback: iOS Safari < 15.4 */
-  min-height: 100svh;                 /* static: never resizes on scroll */
+  min-height: 100vh;                 
+  min-height: -webkit-fill-available; 
+  min-height: 100svh;                 
 }
 
 body::before {
@@ -40,9 +40,9 @@ body::before {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;                 /* fallback: very old browsers */
-  height: -webkit-fill-available; /* fallback: iOS Safari < 15.4 */
-  height: 100svh;                 /* static: locks size, no address-bar jump */
+  height: 100vh;                 
+  height: -webkit-fill-available; 
+  height: 100svh;                 
   z-index: -1;
   background-image: url('../images/final_bg.png');
   background-size: cover;
@@ -52,8 +52,8 @@ body::before {
 
 #root {
   width: 100%;
-  min-height: 100vh;                 /* fallback: very old browsers */
-  min-height: -webkit-fill-available; /* fallback: iOS Safari < 15.4 */
-  min-height: 100svh;                 /* static: never resizes on scroll */
+  min-height: 100vh;                 
+  min-height: -webkit-fill-available;
+  min-height: 100svh;
   overflow-x: hidden;
 }
