@@ -38,12 +38,12 @@ body::before {
   content: "";
   position: fixed;
   /*top: 0;
-  left: 0;
+  left: 0;*/
   width: 100vw;
   height: 100vh;                 
   height: -webkit-fill-available; 
-  height: 100svh;*/
-  inset: 0;             
+  height: 100lvh;
+  /*inset: 0;*/             
   z-index: -1;
   background-image: url('../images/final_bg.png');
   background-size: cover;
