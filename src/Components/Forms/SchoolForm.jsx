@@ -1,11 +1,10 @@
-import axios from "axios";
 import { useFormik } from "formik";
 import { useEffect, useState } from "react";
 
 import { schoolFormSchema } from "./ValidationSchemas/formSchemas";
 
 import { FaFileDownload } from "react-icons/fa";
-import { BASE_URL } from "../../Utils/apis";
+import apiClient from "../../Utils/apiClient";
 import Modal from "../Modal";
 import LocationInput from "./Inputs/Location";
 import TextInput from "./Inputs/TextInput";
@@ -53,12 +52,12 @@ export default function SchoolForm({ closed = false, children }) {
     onSubmit: (values, action) => {
       setIsLoading(true);
       console.log("submit");
-      axios
-        .post(`${BASE_URL}/schoolreg/`, values)
+      apiClient
+        .post(`/schoolreg/`, values)
         .then((response) => {
           if (response.data.message === "School created.") {
-            axios
-              .post(`${BASE_URL}/payment/`, {
+            apiClient
+              .post(`/payment/`, {
                 email_id: response.data.email_id,
                 reg_type: response.data.reg_type,
               })

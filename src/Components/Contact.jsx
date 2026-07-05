@@ -1,7 +1,6 @@
-import axios from "axios";
 import { useState } from "react";
 import "../Styles/Contact.css";
-import { BASE_URL } from "../Utils/apis";
+import apiClient from "../Utils/apiClient";
 import Modal from "./Modal";
 import Profile from "./Profile";
 
@@ -102,7 +101,7 @@ export default function Contact() {
     }
     e.preventDefault();
     try {
-      const response = await axios.post(`${BASE_URL}/ask_query/`, formData);
+      const response = await apiClient.post(`/ask_query/`, formData);
       setShowModal(true);
       setErrorMessage("Query Submitted Successfuly!");
     } catch (error) {
