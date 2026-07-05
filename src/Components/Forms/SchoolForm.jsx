@@ -128,7 +128,7 @@ export default function SchoolForm({ closed = false, children }) {
       </a>
       <form
         className="form"
-        style={{ marginTop: 0, marginBottom: "1rem" }}
+        style={{ marginTop: "1.5rem", marginBottom: "1.5rem" }}
         onSubmit={handleSubmit}
       >
         <TextInput

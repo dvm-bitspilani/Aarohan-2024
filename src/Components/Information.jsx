@@ -16,7 +16,7 @@ export default function Information({
   lastDate = "20th November, 2025",
 }) {
   return (
-    <div className="information">
+    <div className="information" style={{marginTop:"1.5rem"}}>
       <p>Dates for Aarohan {year}:</p>
       <ul>
         {
