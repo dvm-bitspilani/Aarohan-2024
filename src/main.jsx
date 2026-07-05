@@ -14,6 +14,17 @@ import Gallery from './pages/Gallery.jsx';
 import AnswerKey from './pages/AnswerKey.jsx';
 import Brochure from './pages/Brochure.jsx';
 
+function setAppHeight() {
+  document.documentElement.style.setProperty(
+    '--app-height',
+    `${window.innerHeight}px`
+  );
+}
+setAppHeight();
+window.addEventListener('orientationchange', () => {
+  setTimeout(setAppHeight, 200);
+});
+
 const router = createBrowserRouter([
   {
     path: "/",
