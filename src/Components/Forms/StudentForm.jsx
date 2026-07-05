@@ -1,7 +1,6 @@
-import axios from "axios";
 import { useFormik } from "formik";
 import { useEffect, useState } from "react";
-import { BASE_URL } from "../../Utils/apis";
+import apiClient from "../../Utils/apiClient";
 import Modal from "../Modal";
 import LocationInput from "./Inputs/Location";
 import CustomRadio from "./Inputs/Radio";
@@ -50,12 +49,12 @@ export default function StudentForm({ closed, children }) {
     onSubmit: (values, action) => {
       setIsLoading(true);
       console.log(values);
-      axios
-        .post(`${BASE_URL}/studentreg/`, values)
+      apiClient
+        .post(`/studentreg/`, values)
         .then((response) => {
           if (response.data.message === "Student registered.") {
-            axios
-              .post(`${BASE_URL}/payment/`, {
+            apiClient
+              .post(`/payment/`, {
                 email_id: response.data.email_id,
                 reg_type: response.data.reg_type,
               })
