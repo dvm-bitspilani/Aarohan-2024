@@ -1,3 +1,0 @@
-# allow pdf files to be viewed on same origin 
-/*
-  X-Frames-Options: SAMEORIGIN
