@@ -242,6 +242,7 @@ input#hamburger {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    margin-top: 3rem;
     padding-top: 5rem;
     padding-bottom: 1rem;
 }
