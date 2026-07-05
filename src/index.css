@@ -17,7 +17,6 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  overscroll-behavior: none;
 }
 
 body {
@@ -27,19 +26,13 @@ body {
   color: white;
   background-color: #111027;
   overflow-x: hidden;
-  overflow-y: auto;
-  min-height: 100vh;                     
-  min-height: var(--app-height, 100vh);  
+  min-height: 100vh;
 }
 
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;                      
-  height: var(--app-height, 100vh);   
+  inset: 0;
   z-index: -1;
   background-image: url('../images/final_bg.png');
   background-size: cover;
@@ -49,7 +42,5 @@ body::before {
 
 #root {
   width: 100%;
-  min-height: 100vh;                     
-  min-height: var(--app-height, 100vh);  
   overflow-x: hidden;
 }

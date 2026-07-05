@@ -12,6 +12,7 @@ export default function Testimonials1() {
 
     useGSAP(() => {
         
+        ScrollTrigger.normalizeScroll(true);
         ScrollTrigger.config({ignoreMobileResize: true})
 
         const cards = gsap.utils.toArray(".testimonial-container");
