@@ -237,14 +237,18 @@ input#hamburger {
 
 .heading {
     color: #1F94FC;
-    font-family: Poppins;
+    /*font-family: Poppins;
     font-size: 2.5rem;
     font-style: normal;
     font-weight: 600;
-    line-height: normal;
+    line-height: normal;*/
     margin-top: 3rem;
     padding-top: 5rem;
     padding-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.75rem;
+    letter-spacing: 0.75rem;
+    font-weight: 300;
 }
 
 .text {
@@ -379,6 +383,20 @@ svg {
 
 .clocktower-container svg {
     opacity: 0;
+}
+
+@media screen and (max-width: 1400px) {
+    .heading {
+        font-size: 2.65rem;
+        letter-spacing: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 728px) {
+    .heading {
+        font-size: 1.8rem;
+        letter-spacing: 0.2rem;
+    }
 }
 
 @media only screen and (max-width: 1300px) {

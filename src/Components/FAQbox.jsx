@@ -24,7 +24,7 @@ export default function FAQbox(props) {
                 // height: `${!isActive ? 35 : 100}` + 'px'
             }}
             >   
-            <div className="FAQ-question">
+            <div className={`FAQ-question ${isActive ? 'active' : ''}`}>
                 <div>{props.question}</div>
                 <div className={`plusminus ${isActive ? 'active' : ''}`} onClick={handleCrossClick}></div>
 
