@@ -8,58 +8,110 @@ import Main from "./pages/Main";
 import Landing from "./pages/LandingPart.jsx";
 import Preloader from "./pages/Preloader.jsx";
 
+
+import finalBg from "./images/final_bg.webp";
+import aarohanLogo from "./images/aarohanLogo.png";
+import quote from "./images/quote.png";
+import aarohan2027 from "./images/Aarohan2027.png";
+import trophy from "./images/trophy.png";
+import bulb from "./images/bulb.png";
+import upGraph from "./images/upGraph.png";
+import threePeople from "./images/3ppl.png";
+
+
+import yuva from "./Contact/yuva.jpg";
+import tanvi from "./Contact/tanvi.jpg";
+import aarnav from "./Contact/aarnav.jpg";
+import prisha from "./Contact/prisha_singhal.jpg";
+import adarsh from "./Contact/adarsh.jpg";
+import trishaa from "./Contact/trishaa.jpg";
+
+
+import g1 from "./Gallery/1.webp";
+import g2 from "./Gallery/2.webp";
+import g3 from "./Gallery/3.webp";
+import g4 from "./Gallery/4.webp";
+import g5 from "./Gallery/5.webp";
+import g6 from "./Gallery/6.webp";
+import g7 from "./Gallery/7.webp";
+import g8 from "./Gallery/8.webp";
+import g9 from "./Gallery/9.webp";
+import g10 from "./Gallery/10.jpg";
+import g11 from "./Gallery/11.jpg";
+import g12 from "./Gallery/12.jpg";
+import g13 from "./Gallery/13.jpg";
+import g14 from "./Gallery/14.jpeg";
+import g15 from "./Gallery/15.jpeg";
+import g16 from "./Gallery/16.jpeg";
+import g17 from "./Gallery/17.jpeg";
+import g18 from "./Gallery/18.jpeg";
+import g19 from "./Gallery/19.webp";
+import g20 from "./Gallery/20.webp";
+import g21 from "./Gallery/21.webp";
+
+
+import montserrat from "./fonts/Montserrat-VariableFont_wght.ttf";
+
 const assetsArr = [
-  "/src/images/final_bg.webp",
-  "/src/images/aarohanLogo.png",
-  "/src/Contact/yuva.jpg",
-  "/src/Contact/tanvi.jpg",
-  "/src/Contact/aarnav.jpg",
-  "/src/Contact/prisha_singhal.jpg",
-  "/src/Contact/adarsh.jpg",
-  "/src/Contact/trishaa.jpg",
-  "/src/images/quote.png",
-  "/src/fonts/Montserrat-VariableFont_wght.ttf",
-  "/src/images/Aarohan2027.jpg",
-  "/src/Gallery/1.webp",
-  "/src/Gallery/2.webp",
-  "/src/Gallery/3.webp",
-  "/src/Gallery/4.webp",
-  "/src/Gallery/5.webp",
-  "/src/Gallery/6.webp",
-  "/src/Gallery/7.webp",
-  "/src/Gallery/8.webp",
-  "/src/Gallery/9.webp",
-  "/src/Gallery/10.jpg",
-  "/src/Gallery/11.jpg",
-  "/src/Gallery/12.jpg",
-  "/src/Gallery/13.jpg",
-  "/src/Gallery/14.jpeg",
-  "/src/Gallery/15.jpeg",
-  "/src/Gallery/16.jpeg",
-  "/src/Gallery/17.jpeg",
-  "/src/Gallery/18.jpeg",
-  "/src/Gallery/19.webp",
-  "/src/Gallery/20.webp",
-  "/src/Gallery/21.webp",
-  "/src/images/trophy.png",
-  "/src/images/bulb.png",
-  "/src/images/upGraph.png",
-  "/src/images/3ppl.png"
+  finalBg,
+  aarohanLogo,
+
+  yuva,
+  tanvi,
+  aarnav,
+  prisha,
+  adarsh,
+  trishaa,
+
+  quote,
+  montserrat,
+  aarohan2027,
+
+  g1,
+  g2,
+  g3,
+  g4,
+  g5,
+  g6,
+  g7,
+  g8,
+  g9,
+  g10,
+  g11,
+  g12,
+  g13,
+  g14,
+  g15,
+  g16,
+  g17,
+  g18,
+  g19,
+  g20,
+  g21,
+
+  trophy,
+  bulb,
+  upGraph,
+  threePeople,
 ];
 
 function App() {
   const [isPreLoading, setIsPreLoading] = useState(true);
 
   return isPreLoading ? (
-    <Preloader onEnter={() => setIsPreLoading(false)} assetsArr={assetsArr} />
+    <Preloader
+      assetsArr={assetsArr}
+      onEnter={() => setIsPreLoading(false)}
+    />
   ) : (
-    <div>
+    <>
       <div className="landing-page">
         <Navbar />
         <Landing />
       </div>
-      <Main className="target" />
-    </div>
+
+      <Main />
+    </>
   );
 }
 
