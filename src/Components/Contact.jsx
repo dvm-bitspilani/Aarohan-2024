@@ -4,12 +4,12 @@ import apiClient from "../Utils/apiClient";
 import Modal from "./Modal";
 import Profile from "./Profile";
 
-import Yuva from "../Contact/yuva.png"
-import Prisha from "../Contact/prisha_singhal.png"
-import Tanvi from "../Contact/tanvi.png"
-import Adarsh from "../Contact/adarsh.png"
-import Aarnav from "../Contact/aarnav.png"
-import Trishaa from "../Contact/trishaa.png"
+import Yuva from "../Contact/yuva.jpg"
+import Prisha from "../Contact/prisha_singhal.jpg"
+import Tanvi from "../Contact/tanvi.jpg"
+import Adarsh from "../Contact/adarsh.jpg"
+import Aarnav from "../Contact/aarnav.jpg"
+import Trishaa from "../Contact/trishaa.jpg"
 
 export default function Contact() {
   const data2 = [
