@@ -50,7 +50,7 @@ import g20 from "./Gallery/20.webp";
 import g21 from "./Gallery/21.webp";
 
 
-import montserrat from "./fonts/Montserrat-VariableFont_wght.ttf";
+
 
 const assetsArr = [
   finalBg,
@@ -64,7 +64,6 @@ const assetsArr = [
   trishaa,
 
   quote,
-  montserrat,
   aarohan2027,
 
   g1,
