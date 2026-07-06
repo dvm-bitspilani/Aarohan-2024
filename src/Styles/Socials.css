@@ -51,11 +51,12 @@
     font-family:'Montserrat',sans-serif;
     font-size:1.2rem;
     white-space:nowrap;
-    transition:.3s ease;
-
+    transition: all 0.3s ease;
 }
 
-
+.socials-sites span {
+    transition: all 0.3s ease;
+}
 
 .socials-sites i {
     width:42px;
@@ -66,7 +67,7 @@
     border-radius:50%;
     border:2px solid transparent;
     font-size:1.3rem;
-    transition:.3s ease;
+    transition: all 0.3s ease;
 }
 
 .socials-sites:hover {
@@ -84,14 +85,15 @@
     transform:scale(1.08);
 }
 .gmail:hover {
-    color:white
+    /*color:white;*/
+    cursor: pointer;
 }
 
-.gmail:hover i {
+/*.gmail:hover i {
     border-color:transparent;
     box-shadow:none;
     transform:none;
-}
+}*/
 
 @media(max-width:1400px){
 

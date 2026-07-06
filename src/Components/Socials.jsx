@@ -1,6 +1,15 @@
 import "../Styles/Socials.css";
 
 export default function Socials() {
+    async function copyMail() {
+        try {
+            await navigator.clipboard.writeText("aarohan@bits-apogee.org")
+            alert("E-mail ID copied to clipboard!")
+        } catch(err) {
+            console.error("Failed to copy: ", err)
+        }
+    }
+
     return (
         <section className="socials-container">
             <div className="socials-box">
@@ -22,7 +31,7 @@ export default function Socials() {
                         <span>LinkedIn</span>
                     </a>
 
-                    <div className="socials-sites gmail">
+                    <div className="socials-sites gmail" onClick={copyMail}>
                         <i className="fas fa-envelope"></i>
                         <span>aarohan@bits-apogee.org</span>
                     </div>
