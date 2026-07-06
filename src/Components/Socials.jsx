@@ -3,7 +3,7 @@ import "../Styles/Socials.css";
 export default function Socials() {
     async function copyMail() {
         try {
-            //await navigator.clipboard.writeText("aarohan@bits-apogee.org")
+            await navigator.clipboard.writeText("aarohan@bits-apogee.org")
             alert("E-mail ID copied to clipboard!")
         } catch(err) {
             console.error("Failed to copy: ", err)
