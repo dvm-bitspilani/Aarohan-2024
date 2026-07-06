@@ -2,7 +2,8 @@ import "../Styles/AboutUs.css"
 
 export default function AboutUs() {
     return (
-        <section id="about-container" className="about-container">
+        <section id="about-container" className="about-container"
+        style={{paddingTop:"2rem"}}>
             <div className="about-div">
                 <h6>ABOUT US</h6>
                 <br />
