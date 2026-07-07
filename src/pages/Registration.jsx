@@ -33,12 +33,7 @@ export default function Registration() {
     return (
         isPreLoading ? <Preloader onEnter={() => setIsPreLoading(false)} assetsArr={assetsArr} /> :
         <>
-            <Modal 
-                showModal={showModal}
-                title="Important Notice: Third and Final Examination Attempt"
-                message={"Please be informed that a third and final examination attempt has been scheduled for 23rd November 2025. This opportunity is available exclusively for students who have not yet appeared for the examination. Registration Deadline: 20th November 2025."} 
-                handleCloseModal={() => setShowModal(false)}
-            />
+            
             <Navbar />
             <div className="page" >
                 <div className="heading" style={{ width: "100%", textAlign: "center", paddingTop: "5rem",color:"white" }}>Registration Form</div>
