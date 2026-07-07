@@ -46,12 +46,12 @@ textarea {
 
   color: white;
 
-  background: transparent;
+  background: #11111199;
 
   border: 2px solid #7047a5;
   border-radius: 8px;
 
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
 .input-box:focus,
@@ -59,6 +59,10 @@ textarea {
 textarea:focus {
   outline: none;
   border-color: gold;
+}
+
+.form-location select {
+  margin-top: 0.5rem;
 }
 
 /* ---------- RADIO BUTTONS ---------- */
@@ -71,20 +75,21 @@ textarea:focus {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: .5rem;
 }
 
 .class-radio label {
   width: auto;
   padding: 12px 20px;
 
+  margin-top: 0;
+
   border: 2px solid #7047a5;
   border-radius: 8px;
 
-  background: transparent;
+  background: #11111199;
 
   cursor: pointer;
-  transition: .3s;
+  transition: all 0.3s ease-in-out;
 }
 
 .class-radio label:hover {
@@ -92,7 +97,7 @@ textarea:focus {
 }
 
 input[type="radio"]:checked + label {
-  background: rgba(112,71,165,.25);
+  background: #000;
   border-color: gold;
   color: gold;
 }
@@ -117,7 +122,12 @@ input[type="radio"]:checked + label {
   align-items: center;
   gap: 12px;
 
-  margin-top: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.3rem;
+  text-align: center;
+
+  width: min(100%, 1000px);
+  margin: 2rem auto 0;
   padding: 16px;
 
   text-decoration: none;
@@ -126,15 +136,16 @@ input[type="radio"]:checked + label {
   border: 2px solid #7047a5;
   border-radius: 10px;
 
-  background: transparent;
+  background: #11111199;
+  backdrop-filter: blur(5px);
 
-  transition: .3s;
+  transition: all 0.3s ease-in-out;
 }
 
 .school-pdf-download-link:hover {
   color: gold;
   border-color: gold;
-  background: rgba(255,255,255,.05);
+  background: #000;
 }
 
 /* ---------- SUBMIT BUTTON ---------- */
@@ -158,18 +169,18 @@ input[type="radio"]:checked + label {
   cursor: pointer;
 
   color: white;
-  background: transparent;
+  background: #11111199;
 
   border: 2px solid #7047a5;
   border-radius: 10px;
 
-  transition: .3s;
+  transition: all 0.3s ease-in-out;
 }
 
 .submit-buttons button:hover {
   color: gold;
   border-color: gold;
-  background: rgba(255,255,255,.05);
+  background: #000;
 }
 
 /* ---------- MISC ---------- */
@@ -228,6 +239,11 @@ input[type="radio"]:checked + label {
   .class-radio label {
     width: calc(50% - 5px);
     text-align: center;
+  }
+
+  .school-pdf-download-link {
+    font-size: 0.8rem;
+    letter-spacing: 0.2rem;
   }
 
 }

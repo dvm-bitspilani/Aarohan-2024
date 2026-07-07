@@ -29,7 +29,7 @@ export default function Information({
         }
       </ul>
       <p>
-        The last date for registration is the {lastDate}.
+        The last date for registration is {lastDate}.
       </p>
       <p style={{paddingBottom:"1rem"}}>
         { /* Please note that you will have to attempt ONLY ONE of the{" "}
