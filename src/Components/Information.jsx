@@ -1,29 +1,27 @@
 import { date } from "yup";
 import { toWords } from "../Utils/apis";
+import "../Styles/Information.css"
 
 export default function Information({
   year = 2026,
   dates = [{
-    date: "2nd November, 2025",
+    date: "1st November, 2026",
     slots: ["9:00 a.m. - 11:00 a.m.", "3:00 p.m. - 5:00 p.m."]
   }, {
-    date: "9nd November, 2025",
+    date: "15th November, 2026",
     slots: ["9:00 a.m. - 11:00 a.m.", "3:00 p.m. - 5:00 p.m."]
-  }, {
-    date: "23rd November, 2025",
-    slots: ["3:00 p.m. - 5:00 p.m."]
   }],
-  lastDate = "20th November, 2025",
+  lastDate = "20th November, 2026",
 }) {
   return (
     <div className="information" style={{marginTop:"1.5rem"}}>
-      <p>Dates for Aarohan {year}:</p>
+      <p className="date-heading">Dates for Aarohan {year}:</p>
       <ul>
         {
           dates.map(date => 
-            <div key={date.date}>
-              <li>{date.date}</li>
-              <ul className="slots-list">
+            <div key={date.date} >
+              <li className="date">{date.date}</li>
+              <ul className="slots-list" >
                 {date.slots.map((slot, i) => <li key={i}>Slot {i + 1}: {slot}</li>)}
               </ul>
             </div>
@@ -33,7 +31,7 @@ export default function Information({
       <p>
         The last date for registration is the {lastDate}.
       </p>
-      <p>
+      <p style={{paddingBottom:"1rem"}}>
         { /* Please note that you will have to attempt ONLY ONE of the{" "}
         {toWords.convert(dates.length, { currency: false }).toLowerCase()}{" "}
         attempt{dates.length > 1 && "s"}. */ } You will NOT be allowed to give the

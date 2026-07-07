@@ -53,7 +53,6 @@ import g21 from "./Gallery/21.webp";
 
 
 const assetsArr = [
-  finalBg,
   aarohanLogo,
 
   yuva,
