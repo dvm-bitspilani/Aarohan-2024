@@ -6,4 +6,4 @@ export const DATES = [{
   slots: ["9:00 a.m. - 11:00 a.m.", "3:00 p.m. - 5:00 p.m."]
 }]
 
-export const LAST_DATE = "20th November, 2026";
+export const LAST_DATE = "31st October, 2026";

@@ -11,7 +11,7 @@ export default function Information({
     date: "15th November, 2026",
     slots: ["9:00 a.m. - 11:00 a.m.", "3:00 p.m. - 5:00 p.m."]
   }],
-  lastDate = "20th November, 2026",
+  lastDate = "31st October, 2026",
 }) {
   return (
     <div className="information" style={{marginTop:"1.5rem"}}>
