@@ -58,29 +58,32 @@ export default function SchoolForm({ closed = false, children }) {
         .post(`/schoolreg/`, values)
         .then((response) => {
           if (response.data.message === "School created.") {
-            apiClient
-              .post(`/payment/`, {
-                email_id: response.data.email_id,
-                reg_type: response.data.reg_type,
-              })
-              .then((paymentResponse) => {
-                window.document.write(paymentResponse.data);
-                setIsLoading(false);
-              })
-              .catch((err) => {
-                setShowModal(true);
-                setErrorMessage("Payment Error");
-                setIsLoading(false);
-                console.log(err);
-              });
-          }
-        })
-        .catch((err) => {
-          setShowModal(true);
-          setErrorMessage(
-            "An unexpected error occured, please try again later"
-          );
-          setIsLoading(false);
+  const uploadPromise = excelFile
+    ? handleExcelUpload(excelFile)
+    : Promise.resolve();
+
+  uploadPromise
+    .then(() => {
+      return apiClient.post("/payment/", {
+        email_id: response.data.email_id,
+        reg_type: response.data.reg_type,
+      });
+    })
+    .then((paymentResponse) => {
+      window.document.write(paymentResponse.data);
+      setIsLoading(false);
+    })
+    .catch((err) => {
+      console.error(err);
+      setShowModal(true);
+      setErrorMessage(
+        excelFile
+          ? "Excel upload or payment failed."
+          : "Payment Error"
+      );
+      setIsLoading(false);
+    });
+}
         });
     },
     validationSchema: schoolFormSchema,
@@ -115,33 +118,12 @@ export default function SchoolForm({ closed = false, children }) {
 
 
 const handleExcelUpload = async (file) => {
-  console.log("Uploading file:", file);
-
   if (!file) return;
 
-  try {
-    setIsLoading(true);
+  const formData = new FormData();
+  formData.append("file", file);
 
-    const formData = new FormData();
-    formData.append("file", file);
-
-    const response = await apiClient.post(
-      "/school_student_upload/",
-      formData
-    );
-
-    console.log(response);
-
-    setShowModal(true);
-    setErrorMessage("Excel uploaded successfully.");
-  } catch (err) {
-    console.error(err);
-
-    setShowModal(true);
-    setErrorMessage("Failed to upload Excel file.");
-  } finally {
-    setIsLoading(false);
-  }
+  return apiClient.post("/school_student_upload/", formData);
 };
 const downloadTemplate = async () => {
   try {
@@ -282,20 +264,17 @@ const downloadTemplate = async () => {
           disabled={true}
         />
         <input
-         type="file"
-         accept=".xlsx,.xls"
-         ref={fileInputRef}
-         style={{ display: "none" }}
-         name="school_student_upload"
-         onChange={(e) => {
-        const file = e.target.files[0];
- 
-        if (file) {
-        setExcelFile(file);
-        handleExcelUpload(file);
-        }
-        }}
-        /> 
+  type="file"
+  accept=".xlsx,.xls"
+  ref={fileInputRef}
+  style={{ display: "none" }}
+  onChange={(e) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setExcelFile(file);
+    }
+  }}
+/> 
 
         <div className="submit-buttons">
           <button
@@ -318,7 +297,7 @@ const downloadTemplate = async () => {
           disabled={isLoading}
           onClick={() => fileInputRef.current.click()}
           >
-         {isLoading ? "Uploading..." : "UPLOAD EXCEL"}
+         {excelFile ? excelFile.name : "SELECT EXCEL"}
          </button>
           <button className="form-submit" type="submit" disabled={isLoading}>
             {isLoading ? "Loading..." : "SUBMIT"}
