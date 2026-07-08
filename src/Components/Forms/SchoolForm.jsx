@@ -1,5 +1,5 @@
 import { useFormik } from "formik";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef } from "react";
 
 import { schoolFormSchema } from "./ValidationSchemas/formSchemas";
 
@@ -17,11 +17,13 @@ export default function SchoolForm({ closed = false, children }) {
       </div>
     );
   }
-
+   
+  const [excelFile, setExcelFile] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
   const [totalAmount, setTotalAmount] = useState(0);
+  const fileInputRef = useRef(null);
 
   const handleCloseModal = () => {
     setShowModal(false);
@@ -110,6 +112,37 @@ export default function SchoolForm({ closed = false, children }) {
   function handleCancel() {
     resetForm();
   }
+
+
+const handleExcelUpload = async (file) => {
+  console.log("Uploading file:", file);
+
+  if (!file) return;
+
+  try {
+    setIsLoading(true);
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    const response = await apiClient.post(
+      "/school_student_upload/",
+      formData
+    );
+
+    console.log(response);
+
+    setShowModal(true);
+    setErrorMessage("Excel uploaded successfully.");
+  } catch (err) {
+    console.error(err);
+
+    setShowModal(true);
+    setErrorMessage("Failed to upload Excel file.");
+  } finally {
+    setIsLoading(false);
+  }
+};
 
   return (
     <>
@@ -221,6 +254,21 @@ export default function SchoolForm({ closed = false, children }) {
           value={totalAmount}
           disabled={true}
         />
+        <input
+         type="file"
+         accept=".xlsx,.xls"
+         ref={fileInputRef}
+         style={{ display: "none" }}
+         name="school_student_upload"
+         onChange={(e) => {
+        const file = e.target.files[0];
+ 
+        if (file) {
+        setExcelFile(file);
+        handleExcelUpload(file);
+        }
+        }}
+        />  
 
         <div className="submit-buttons">
           <button
@@ -230,6 +278,14 @@ export default function SchoolForm({ closed = false, children }) {
           >
             CANCEL
           </button>
+          <button
+          type="button"
+          className="form-submit"
+          disabled={isLoading}
+          onClick={() => fileInputRef.current.click()}
+          >
+         {isLoading ? "Uploading..." : "UPLOAD EXCEL"}
+         </button>
           <button className="form-submit" type="submit" disabled={isLoading}>
             {isLoading ? "Loading..." : "SUBMIT"}
           </button>
