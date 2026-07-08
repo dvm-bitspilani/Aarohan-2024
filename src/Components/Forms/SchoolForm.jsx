@@ -143,6 +143,33 @@ const handleExcelUpload = async (file) => {
     setIsLoading(false);
   }
 };
+const downloadTemplate = async () => {
+  try {
+    const response = await apiClient.get(
+      "/school_student_template/",
+      {
+        responseType: "blob",
+      }
+    );
+
+    const url = window.URL.createObjectURL(
+      new Blob([response.data])
+    );
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "school_student_template.xlsx";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    window.URL.revokeObjectURL(url);
+  } catch (err) {
+    console.error(err);
+    setShowModal(true);
+    setErrorMessage("Failed to download template.");
+  }
+};
 
   return (
     <>
@@ -268,9 +295,16 @@ const handleExcelUpload = async (file) => {
         handleExcelUpload(file);
         }
         }}
-        />  
+        /> 
 
         <div className="submit-buttons">
+          <button
+        type="button"
+        onClick={downloadTemplate}
+        className="submit-buttons"
+        >
+        DOWNLOAD TEMPLATE
+      </button>
           <button
             className="form-cancel"
             onClick={handleCancel}
