@@ -58,7 +58,7 @@ export default function StudentForm({ closed=false, children }) {
               .post(`/payment/`, {
                 email_id: response.data.email_id,
                 reg_type: response.data.reg_type,
-                coupon_code:response.data.coupon_code,
+                coupon_code:values.coupon_code,
               })
               .then((paymentResponse) => {
                 window.document.write(paymentResponse.data);
