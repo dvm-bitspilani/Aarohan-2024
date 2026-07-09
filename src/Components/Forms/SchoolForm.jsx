@@ -64,6 +64,7 @@ Object.entries(values).forEach(([key, value]) => {
 apiClient
   .post("/school_student_upload/", formData)
         .then((response) => {
+          console.log(response.data);
           if (response.data.message.startsWith("School Registered.")) {
             apiClient
               .post(`/payment/`, {
