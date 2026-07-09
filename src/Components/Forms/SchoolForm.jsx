@@ -64,7 +64,7 @@ Object.entries(values).forEach(([key, value]) => {
 apiClient
   .post("/school_student_upload/", formData)
         .then((response) => {
-          if (response.data.message === "School registered.") {
+          if (response.data.message.startsWith("School Registered.")) {
             apiClient
               .post(`/payment/`, {
                 email_id: response.data.email_id,
