@@ -52,7 +52,6 @@ export default function StudentForm({ closed=false, children }) {
       apiClient
         .post(`/studentreg/`, values)
         .then((response) => {
-          console.log(response)
           if (response.data.message === "Student registered.") {
             apiClient
               .post(`/payment/`, {
