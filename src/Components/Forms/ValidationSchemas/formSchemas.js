@@ -9,7 +9,7 @@ export const studentFormSchema = Yup.object({
     studying_in_class: Yup.string().required("All fields are required").oneOf(["9", "10", "11", "12"], "Class has an invalid input"),
     contact_no: Yup.string().matches(/^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/g, 'Please enter a valid phone number').required('All fields are required'),
     email_id: Yup.string().email("Email is invalid").required("All fields are required"),
-    coupon_code: Yup.string().matches(/^[a-zA-Z0-9]{8}$/, "Invalid Coupon")
+    coupon_code: Yup.string().matches(/^[a-zA-Z0-9]$/, "Invalid Coupon")
 })
 
 export const schoolFormSchema = Yup.object({
