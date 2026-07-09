@@ -248,14 +248,14 @@ export default function SchoolForm({ closed = false, children }) {
           disabled={true}
         />
         <input
-  ref={fileInputRef}
-  type="file"
-  accept=".xls,.xlsx"
-  hidden
-  onChange={(e) => {
-    setFieldValue("file", e.target.files[0]);
-  }}
-/>
+         ref={fileInputRef}
+         type="file"
+         accept=".xls,.xlsx"
+         hidden
+         onChange={(e) => {
+         setFieldValue("file", e.target.files[0]);
+         }}
+         />
         <div className="submit-buttons">
           <button
            type="button"
@@ -265,15 +265,14 @@ export default function SchoolForm({ closed = false, children }) {
            Download Excel Template
           </button>
 
-<button
-  type="button"
-  className="form-submit"
-  onClick={() => fileInputRef.current.click()}
-  disabled={isLoading}
->
-  {values.file ? "Uploaded": "Upload Excel"}
-
-</button>
+         <button
+          type="button"
+          className="form-submit"
+          onClick={() => fileInputRef.current.click()}
+          disabled={isLoading}
+         >
+         {values.file ? "Uploaded": "Upload Excel"}
+         </button>
           <button
             className="form-cancel"
             onClick={handleCancel}
