@@ -65,7 +65,7 @@ apiClient
   .post("/school_student_upload/", formData)
         .then((response) => {
           console.log(response.data);
-          if (response.data.message.startsWith("School Registered.")) {
+          if (response.data.message.startsWith("School registered.")) {
             apiClient
               .post(`/payment/`, {
                 email_id: response.data.email_id,
