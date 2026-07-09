@@ -57,14 +57,13 @@ export default function SchoolForm({ closed = false, children }) {
       console.log("submit");
       const formData = new FormData();
 
-Object.entries(values).forEach(([key, value]) => {
-  formData.append(key, value);
-});
+    Object.entries(values).forEach(([key, value]) => {
+    formData.append(key, value);
+    });
 
-apiClient
+  apiClient
   .post("/school_student_upload/", formData)
         .then((response) => {
-          console.log(response.data);
           if (response.data.message.startsWith("School registered.")) {
             apiClient
               .post(`/payment/`, {
@@ -152,13 +151,7 @@ apiClient
         setShowModal={setShowModal}
         handleCloseModal={handleCloseModal}
       />
-      <a
-        href="/PDFs/school_application_form.pdf"
-        download="Application Form.pdf"
-        className="school-pdf-download-link"
-      >
-        <span>DOWNLOAD STUDENT APPLICATION FORM</span>
-      </a>
+      
       <form
         className="form"
         style={{ marginTop: "1.5rem", marginBottom: "1.5rem" }}
@@ -278,7 +271,7 @@ apiClient
   onClick={() => fileInputRef.current.click()}
   disabled={isLoading}
 >
-  {values.file ? values.file.name : "Upload"}
+  {values.file ? "Uploaded": "Upload Excel"}
 
 </button>
           <button

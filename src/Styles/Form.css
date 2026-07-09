@@ -182,6 +182,17 @@ input[type="radio"]:checked + label {
   border-color: gold;
   background: #000;
 }
+@media (max-width: 768px) {
+  .submit-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .submit-buttons button {
+    width: 100%;
+  }
+}
 
 /* ---------- MISC ---------- */
 
