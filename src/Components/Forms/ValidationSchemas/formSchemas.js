@@ -22,7 +22,18 @@ export const schoolFormSchema = Yup.object({
     eleventh_class_students: Yup.string().matches(/^\d+$/g, "Number of students has to be 0 or positive"),
     twelfth_class_students: Yup.string().matches(/^\d+$/g, "Number of students has to be 0 or positive"),
     contact_no: Yup.string().matches(/^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/g, 'Please enter a valid phone number').required('All fields are required'),
-    email_id: Yup.string().email("Email is invalid").required("All fields are required")
+    email_id: Yup.string().email("Email is invalid").required("All fields are required"),
+    file: Yup.mixed()
+  .required("Please upload an Excel file")
+  .test(
+    "fileFormat",
+    "Only .xls and .xlsx files are allowed",
+    (value) => {
+      if (!value) return false;
+
+      return /\.(xls|xlsx)$/i.test(value.name);
+    }
+  ),
 }).test('students-zero', "Total number of students cannot be 0",
     (values) => {
         const tempArr = [+values.ninth_class_students, +values.tenth_class_students, +values.eleventh_class_students, +values.twelfth_class_students]

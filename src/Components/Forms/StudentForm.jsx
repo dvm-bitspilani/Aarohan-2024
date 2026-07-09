@@ -8,7 +8,7 @@ import RadioGroup from "./Inputs/RadioGroup";
 import TextInput from "./Inputs/TextInput";
 import { studentFormSchema } from "./ValidationSchemas/formSchemas";
 
-export default function StudentForm({ closed, children }) {
+export default function StudentForm({ closed=false, children }) {
   if (closed) {
     return (
       <div className="information">

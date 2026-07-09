@@ -50,14 +50,21 @@ export default function SchoolForm({ closed = false, children }) {
       twelfth_class_students: "0",
       contact_no: "",
       email_id: "",
+      file:null
     },
     onSubmit: (values, action) => {
       setIsLoading(true);
       console.log("submit");
-      apiClient
-        .post(`/schoolreg/`, values)
+      const formData = new FormData();
+
+Object.entries(values).forEach(([key, value]) => {
+  formData.append(key, value);
+});
+
+apiClient
+  .post("/school_student_upload/", formData)
         .then((response) => {
-          if (response.data.message === "School created.") {
+          if (response.data.message === "School registered.") {
             apiClient
               .post(`/payment/`, {
                 email_id: response.data.email_id,
@@ -96,7 +103,7 @@ export default function SchoolForm({ closed = false, children }) {
   }, [errors]);
 
   useEffect(() => {
-    // console.log('effect')
+
     const class9 = values.ninth_class_students;
     const class10 = values.tenth_class_students;
     const class11 = values.eleventh_class_students;
@@ -113,6 +120,28 @@ export default function SchoolForm({ closed = false, children }) {
     resetForm();
   }
 
+  const downloadTemplate = async () => {
+  try {
+    const response = await apiClient.get("/school_student_template/", {
+      responseType: "blob",
+    });
+
+    const url = window.URL.createObjectURL(response.data);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "School_Student_Template.xlsx";
+
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    window.URL.revokeObjectURL(url);
+  } catch (err) {
+    setShowModal(true);
+    setErrorMessage("Unable to download template.");
+  }
+};
 
   return (
     <>
@@ -224,7 +253,33 @@ export default function SchoolForm({ closed = false, children }) {
           value={totalAmount}
           disabled={true}
         />
+        <input
+  ref={fileInputRef}
+  type="file"
+  accept=".xls,.xlsx"
+  hidden
+  onChange={(e) => {
+    setFieldValue("file", e.target.files[0]);
+  }}
+/>
         <div className="submit-buttons">
+          <button
+           type="button"
+           className="form-submit"
+           onClick={downloadTemplate}
+          >
+           Download Excel Template
+          </button>
+
+<button
+  type="button"
+  className="form-submit"
+  onClick={() => fileInputRef.current.click()}
+  disabled={isLoading}
+>
+  {values.file ? values.file.name : "Upload"}
+
+</button>
           <button
             className="form-cancel"
             onClick={handleCancel}
