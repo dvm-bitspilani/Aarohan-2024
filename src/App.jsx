@@ -54,6 +54,7 @@ import g21 from "./Gallery/21.webp";
 
 const assetsArr = [
   aarohanLogo,
+  finalBg,
 
   yuva,
   tanvi,
@@ -102,14 +103,14 @@ function App() {
       onEnter={() => setIsPreLoading(false)}
     />
   ) : (
-    <>
-      <div className="landing-page">
-        <Navbar />
-        <Landing />
-      </div>
-
-      <Main />
-    </>
+<>
+<div
+  className="landing-page">
+ <Navbar />
+ <Landing />
+</div>
+<Main />
+</>
   );
 }
 

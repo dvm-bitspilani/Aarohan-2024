@@ -68,6 +68,8 @@ export default function Preloader({ onEnter, assetsArr = [] }) {
       });
 
     Promise.all(assetsArr.map(preloadAsset)).then(() => {
+      document.body.classList.add("loaded");
+
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           onEnter();
@@ -75,6 +77,7 @@ export default function Preloader({ onEnter, assetsArr = [] }) {
       });
     });
   }, [assetsArr, onEnter]);
+  
 
   return (
     <div className="preloader">
