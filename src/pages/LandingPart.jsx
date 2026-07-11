@@ -15,7 +15,7 @@ export default function Landing() {
 
     return (
         <>
-            <div className="regs-open">
+            {/*<div className="regs-open">
                 <div className="regs-open-track">
                     <span>Registrations Now Open!!</span>
                     <span>Registrations Now Open!!</span>
@@ -28,7 +28,7 @@ export default function Landing() {
                     <span>Registrations Now Open!!</span>
                     <span>Registrations Now Open!!</span>
                 </div>
-            </div>
+            </div>*/}
 
            <div className="registration-container">
             <div className="registration-div">
