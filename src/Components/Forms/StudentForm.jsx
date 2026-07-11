@@ -79,7 +79,7 @@ export default function StudentForm({ closed=false, children }) {
           } else {
             setShowModal(true);
             setErrorMessage(
-              "An unexpected error occured, please try again later"
+              err.response.data.message
             );
             setIsLoading(false);
           }

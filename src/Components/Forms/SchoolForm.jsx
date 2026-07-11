@@ -85,7 +85,7 @@ export default function SchoolForm({ closed = false, children }) {
         .catch((err) => {
           setShowModal(true);
           setErrorMessage(
-            "An unexpected error occured, please try again later"
+            err.response.data.message
           );
           setIsLoading(false);
         });
