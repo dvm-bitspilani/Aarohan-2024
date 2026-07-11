@@ -24,6 +24,8 @@ export default function Landing() {
                     <span>Registrations Now Open!!</span>
                     <span>Registrations Now Open!!</span>
                     <span>Registrations Now Open!!</span>
+                    <span>Registrations Now Open!!</span>
+                    <span aria-hidden="true">Registrations Now Open!!</span>
                     <span aria-hidden="true">Registrations Now Open!!</span>
                     <span aria-hidden="true">Registrations Now Open!!</span>
                     <span aria-hidden="true">Registrations Now Open!!</span>
