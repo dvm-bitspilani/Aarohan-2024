@@ -209,14 +209,18 @@
     white-space: nowrap;
     padding: 10px 0;
     font-weight: bold;
-    margin-top: -80px;
-    position: fixed;
+    margin-top: 10svh;
+    /*position: fixed;*/
 }
 
 .regs-open-track {
     display: inline-flex;
-    gap: 80px;
+    /*gap: 80px;*/
     animation: scrollLeft 12s linear infinite;
+}
+
+.regs-open-track span {
+    margin-right: 80px;
 }
 
 @keyframes scrollLeft {
@@ -226,5 +230,11 @@
 
     to {
         transform: translateX(-50%);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .regs-open {
+        margin-top: 70px;
     }
 }
