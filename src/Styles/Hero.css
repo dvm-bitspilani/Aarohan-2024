@@ -203,12 +203,12 @@
 
 .regs-open {
     width: 100%;
-    background-color: red;
-    color: #000;
+    background-color: rgb(18, 15, 108);
+    /*color: #000;*/
     overflow: hidden;
     white-space: nowrap;
     padding: 10px 0;
-    font-weight: bold;
+    /*font-weight: bold;*/
     margin-top: 10svh;
     /*position: fixed;*/
 }
@@ -221,6 +221,7 @@
 
 .regs-open-track span {
     margin-right: 80px;
+    font-family: sans-serif;
 }
 
 @keyframes scrollLeft {
