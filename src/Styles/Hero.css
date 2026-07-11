@@ -200,3 +200,31 @@
         padding: 15px 30px;
     }
 }
+
+.regs-open {
+    width: 100%;
+    background-color: red;
+    color: #000;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    font-weight: bold;
+    margin-top: -80px;
+    position: fixed;
+}
+
+.regs-open-track {
+    display: inline-flex;
+    gap: 80px;
+    animation: scrollLeft 12s linear infinite;
+}
+
+@keyframes scrollLeft {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}

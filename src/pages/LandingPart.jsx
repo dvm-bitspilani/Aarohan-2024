@@ -15,6 +15,21 @@ export default function Landing() {
 
     return (
         <>
+            <div className="regs-open">
+                <div className="regs-open-track">
+                    <span>Registrations Now Open!!</span>
+                    <span>Registrations Now Open!!</span>
+                    <span>Registrations Now Open!!</span>
+                    <span>Registrations Now Open!!</span>
+                    <span>Registrations Now Open!!</span>
+                    <span>Registrations Now Open!!</span>
+                    <span>Registrations Now Open!!</span>
+                    <span>Registrations Now Open!!</span>
+                    <span>Registrations Now Open!!</span>
+                    <span>Registrations Now Open!!</span>
+                </div>
+            </div>
+
            <div className="registration-container">
             <div className="registration-div">
                 <img src={AarohanLogo} className="aarohan-intro-img" alt="Aarohan Logo" />
