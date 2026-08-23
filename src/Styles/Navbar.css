@@ -12,7 +12,7 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5vw;
+    padding: 16px clamp(20px, 3vw, 72px);
     background-color: #ffffff10;
     backdrop-filter: blur(3px);
     
@@ -22,7 +22,7 @@ html {
     width: 100%;
     
     z-index: 100;
-    height: 10svh;
+    height: clamp(70px, 10svh, 92px);
     min-height: 70px;
 }
 
@@ -32,7 +32,7 @@ html {
 }
 
 .aarohan-logo {
-    width: 300px; 
+    width: clamp(185px, 18vw, 300px);
     height: auto;
 }
 
@@ -45,14 +45,15 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    font-size: 1rem;
+    font-size: clamp(0.74rem, 0.86vw, 1rem);
     list-style-type: none;
-    gap: 2vw;
+    gap: clamp(10px, 1.25vw, 24px);
+    white-space: nowrap;
 }
 
 .inactive-link,
 .active-link,
-.about-link {
+.section-link {
     text-decoration: none;
     color: #fff;
     font-family: 'Montserrat', sans-serif;
@@ -65,8 +66,20 @@ html {
 }
 
 .inactive-link:hover,
-.about-link:hover {
+.section-link:hover {
     color: #947BC3;
+}
+
+.inactive-link:focus-visible,
+.active-link:focus-visible,
+.section-link:focus-visible {
+    outline: 2px solid gold;
+    outline-offset: 5px;
+}
+
+#about-container,
+#wissenova-rankings {
+    scroll-margin-top: clamp(86px, 12svh, 116px);
 }
 
 .hamburger-menu {

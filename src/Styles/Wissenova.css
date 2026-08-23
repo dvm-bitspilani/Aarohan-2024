@@ -1,0 +1,334 @@
+.wissenova-section {
+    --wissenova-ink: #f7f4ff;
+    --wissenova-muted: #c9c3db;
+    --wissenova-night: rgba(17, 16, 39, 0.94);
+    --wissenova-violet: #7047a5;
+    --wissenova-blue: #1f94fc;
+    --wissenova-gold: #f1c764;
+    --wissenova-silver: #b9c4d6;
+    color: var(--wissenova-ink);
+    font-family: "Montserrat", sans-serif;
+    padding: clamp(6rem, 13vw, 11rem) 5vw clamp(5rem, 9vw, 8rem);
+    scroll-margin-top: clamp(5rem, 12svh, 7rem);
+}
+
+.wissenova-shell {
+    width: min(100%, 68rem);
+    margin: 0 auto;
+    container-type: inline-size;
+}
+
+.wissenova-intro {
+    max-width: 48rem;
+    margin: 0 auto clamp(2.8rem, 6vw, 4.75rem);
+    text-align: center;
+}
+
+.wissenova-kicker {
+    color: var(--wissenova-blue);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.9rem;
+    text-transform: uppercase;
+}
+
+.wissenova-intro h2 {
+    color: var(--wissenova-ink);
+    font-size: clamp(2rem, 5.2vw, 4rem);
+    font-weight: 350;
+    letter-spacing: clamp(0.12rem, 1.2vw, 0.76rem);
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.wissenova-description {
+    color: var(--wissenova-muted);
+    font-size: clamp(1rem, 1.8vw, 1.14rem);
+    font-weight: 400;
+    line-height: 1.75;
+    margin-top: 1.6rem;
+}
+
+.wissenova-featured {
+    align-items: stretch;
+    display: grid;
+    gap: clamp(0.75rem, 2vw, 1.25rem);
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: clamp(2.2rem, 5vw, 3.75rem);
+}
+
+.wissenova-featured-card {
+    background: linear-gradient(145deg, rgba(31, 30, 58, 0.95), var(--wissenova-night));
+    border: 1px solid color-mix(in srgb, var(--wissenova-violet) 75%, transparent);
+    border-radius: 1.15rem;
+    min-width: 0;
+    padding: clamp(1.15rem, 2.5vw, 1.75rem);
+    position: relative;
+    text-align: center;
+}
+
+.wissenova-featured-card::before {
+    background: var(--wissenova-violet);
+    border-radius: inherit;
+    content: "";
+    height: 2px;
+    left: 18%;
+    position: absolute;
+    right: 18%;
+    top: -1px;
+}
+
+.wissenova-featured-card--gold {
+    border-color: color-mix(in srgb, var(--wissenova-gold) 52%, var(--wissenova-violet));
+}
+
+.wissenova-featured-card--gold::before {
+    background: var(--wissenova-gold);
+}
+
+.wissenova-featured-card--silver {
+    border-color: color-mix(in srgb, var(--wissenova-silver) 58%, var(--wissenova-violet));
+}
+
+.wissenova-featured-card--silver::before {
+    background: var(--wissenova-silver);
+}
+
+.wissenova-medal {
+    align-items: center;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    color: var(--wissenova-gold);
+    display: flex;
+    font-size: 1.05rem;
+    font-weight: 650;
+    height: 3.15rem;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    width: 3.15rem;
+}
+
+.wissenova-featured-card--silver .wissenova-medal {
+    color: var(--wissenova-silver);
+}
+
+.wissenova-featured-label {
+    color: var(--wissenova-muted);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.wissenova-featured-card h3 {
+    font-size: clamp(1rem, 2.15vw, 1.35rem);
+    font-weight: 550;
+    line-height: 1.25;
+    margin: 0.5rem 0 1.15rem;
+    overflow-wrap: anywhere;
+}
+
+.wissenova-featured-details {
+    border-top: 1px solid rgba(201, 195, 219, 0.22);
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 0.9rem;
+}
+
+.wissenova-featured-details div {
+    min-width: 0;
+}
+
+.wissenova-featured-details dt,
+.wissenova-row-stat small {
+    color: var(--wissenova-muted);
+    display: block;
+    font-size: 0.63rem;
+    font-weight: 550;
+    letter-spacing: 0.11em;
+    margin-bottom: 0.22rem;
+    text-transform: uppercase;
+}
+
+.wissenova-featured-details dd {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.wissenova-ranking-list {
+    border-top: 1px solid rgba(112, 71, 165, 0.8);
+}
+
+.wissenova-ranking-list ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.wissenova-ranking-head,
+.wissenova-ranking-row {
+    align-items: center;
+    column-gap: 1.25rem;
+    display: grid;
+    grid-template-columns: 4rem minmax(0, 1fr) 5rem 5.5rem 4.5rem;
+}
+
+.wissenova-ranking-head {
+    color: var(--wissenova-muted);
+    font-size: 0.67rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    padding: 0.9rem 1.25rem;
+    text-transform: uppercase;
+}
+
+.wissenova-ranking-row {
+    background: rgba(17, 16, 39, 0.72);
+    border: 1px solid transparent;
+    border-bottom-color: rgba(112, 71, 165, 0.45);
+    min-height: 5.1rem;
+    padding: 0.9rem 1.25rem;
+    transition: border-color 220ms cubic-bezier(0.25, 1, 0.5, 1), background-color 220ms cubic-bezier(0.25, 1, 0.5, 1), transform 220ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.wissenova-ranking-row:first-child {
+    border-top-color: rgba(112, 71, 165, 0.45);
+}
+
+.wissenova-ranking-row:hover {
+    background: rgba(31, 30, 58, 0.86);
+    border-color: rgba(31, 148, 252, 0.72);
+    transform: translateX(0.35rem);
+}
+
+.wissenova-rank-number {
+    color: var(--wissenova-gold);
+    font-size: 1.1rem;
+    font-weight: 650;
+}
+
+.wissenova-entrant-name {
+    font-size: clamp(0.95rem, 1.9vw, 1.12rem);
+    font-weight: 550;
+    overflow-wrap: anywhere;
+}
+
+.wissenova-row-stat {
+    color: var(--wissenova-muted);
+    font-size: 0.94rem;
+    font-weight: 500;
+}
+
+.wissenova-row-stat small {
+    display: none;
+}
+
+.wissenova-points {
+    color: var(--wissenova-ink);
+    font-weight: 650;
+}
+
+.wissenova-note {
+    border-left: 2px solid var(--wissenova-blue);
+    color: var(--wissenova-muted);
+    font-size: clamp(0.88rem, 1.6vw, 1rem);
+    font-style: italic;
+    line-height: 1.6;
+    margin: clamp(1.5rem, 3vw, 2.25rem) auto 0;
+    max-width: 43rem;
+    padding-left: 1rem;
+}
+
+@container (max-width: 44rem) {
+    .wissenova-featured {
+        grid-template-columns: 1fr;
+    }
+
+    .wissenova-featured-card {
+        align-items: center;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        text-align: left;
+    }
+
+    .wissenova-medal {
+        grid-row: span 2;
+        margin: 0 1rem 0 0;
+    }
+
+    .wissenova-featured-label {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .wissenova-featured-card h3 {
+        grid-column: 2;
+        grid-row: 2;
+        margin: 0.35rem 0 0;
+    }
+
+    .wissenova-featured-details {
+        border-left: 1px solid rgba(201, 195, 219, 0.22);
+        border-top: 0;
+        grid-column: 3;
+        grid-row: 1 / span 2;
+        padding: 0 0 0 1rem;
+    }
+
+    .wissenova-ranking-head {
+        display: none;
+    }
+
+    .wissenova-ranking-row {
+        column-gap: 0.75rem;
+        grid-template-columns: 2.3rem minmax(0, 1fr) auto;
+        min-height: 0;
+        padding: 1rem;
+        row-gap: 0.55rem;
+    }
+
+    .wissenova-rank-number {
+        grid-row: span 2;
+    }
+
+    .wissenova-entrant-name {
+        grid-column: 2 / -1;
+    }
+
+    .wissenova-row-stat {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .wissenova-row-stat small {
+        display: block;
+    }
+
+    .wissenova-points {
+        justify-self: end;
+    }
+}
+
+@container (max-width: 28rem) {
+    .wissenova-featured-card {
+        grid-template-columns: auto 1fr;
+    }
+
+    .wissenova-featured-details {
+        border-left: 0;
+        border-top: 1px solid rgba(201, 195, 219, 0.22);
+        grid-column: 1 / -1;
+        grid-row: auto;
+        margin-top: 0.75rem;
+        padding: 0.75rem 0 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wissenova-ranking-row {
+        transition: none;
+    }
+}
