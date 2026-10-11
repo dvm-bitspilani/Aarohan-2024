@@ -31,8 +31,10 @@ export default function Header() {
     };
 }, [isMenuOpen]);
 
+    const isHomeRoute = location.pathname === "/" || location.pathname === "/aarohan2027";
+
     useEffect(() => {
-        if (location.pathname === "/" && location.state?.scrollTo) {
+        if (isHomeRoute && location.state?.scrollTo) {
             const targetId = location.state.scrollTo;
             let clearStateTimeout;
 
@@ -42,9 +44,9 @@ export default function Header() {
                 } else {
                     const element = document.getElementById(targetId);
                     if (element) {
-                        element.scrollIntoView({ 
-                            behavior: "smooth", 
-                            block: "center" 
+                        element.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
                         });
                     }
                 }
@@ -60,19 +62,19 @@ export default function Header() {
                 if (clearStateTimeout) clearTimeout(clearStateTimeout);
             };
         }
-    }, [location, navigate]);
+    }, [isHomeRoute, location, navigate]);
 
-    const handleScrollToAbout = (e) => {
+    const handleScrollToSection = (sectionId) => (e) => {
         e.preventDefault();
         closeMenu();
 
-        if (location.pathname === "/") {
-            const element = document.getElementById("about-container");
+        if (isHomeRoute) {
+            const element = document.getElementById(sectionId);
             if (element) {
-                element.scrollIntoView({ behavior: "smooth", block: "center" });
+                element.scrollIntoView({ behavior: "smooth", block: "start" });
             }
         } else {
-            navigate("/", { state: { scrollTo: "about-container" } });
+            navigate("/", { state: { scrollTo: sectionId } });
         }
     };
 
@@ -80,7 +82,7 @@ export default function Header() {
         e.preventDefault();
         closeMenu();
 
-        if (location.pathname === "/") {
+        if (isHomeRoute) {
             window.scrollTo({ top: 0, behavior: "smooth" });
         } else {
             navigate("/", { state: { scrollTo: "top" } });
@@ -117,7 +119,22 @@ export default function Header() {
                         </NavLink>
                     </li>
                     <li>
-                        <a href="#about-container" className="about-link" onClick={handleScrollToAbout}>ABOUT US</a>
+                        <a
+                            href="#about-container"
+                            className="section-link"
+                            onClick={handleScrollToSection("about-container")}
+                        >
+                            ABOUT US
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#wissenova-rankings"
+                            className="section-link"
+                            onClick={handleScrollToSection("wissenova-rankings")}
+                        >
+                            WISSENOVA
+                        </a>
                     </li>
                     <li>
                         <NavLink
