@@ -7,9 +7,10 @@ import Profile from "./Profile";
 import Yuva from "../Contact/yuva.jpg"
 import Prisha from "../Contact/prisha_singhal.jpg"
 import Tanvi from "../Contact/tanvi.jpg"
-import Adarsh from "../Contact/adarsh.jpg"
-import Aarnav from "../Contact/aarnav.jpg"
+// import Adarsh from "../Contact/adarsh.jpg"
+// import Aarnav from "../Contact/aarnav.jpg"
 import Trishaa from "../Contact/trishaa.jpg"
+import Devarsh from "../Contact/devarshDave.jpeg"
 
 export default function Contact() {
   const data2 = [
@@ -32,23 +33,18 @@ export default function Contact() {
       phone: "+91 9205980920",
     },
     {
-      image: `${Adarsh}`,
-      name: "Adarsh Kundu",
-      caption: "Joint Head of Knowledge Team",
-      phone: "+91 8128576996",
-    },
-    {
-      image: `${Aarnav}`,
-      name: "Aarnav Sood",
-      caption: "Joint Head of Knowledge Team",
-      phone: "+91 9930381911",
+      image: `${Devarsh}`,
+      name: "Devarsh Dave",
+      caption: "Head of Knowledge Team",
+      phone: "+91 9902535237",
     },
     {
       image: `${Trishaa}`,
       name: "Trishaa Ganesh Pai Vernekar",
       caption: "Treasurer and Head of Sponsorships",
       phone: "+91 7499766877",
-    }
+    },
+    
   ];
 
   const [name, setName] = useState("");

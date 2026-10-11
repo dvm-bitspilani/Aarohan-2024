@@ -5,16 +5,14 @@
     font-weight: 300;
 }
 
-/* Changed from Flex to Grid to enforce strict column/row ratios */
 .contact {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
     color: white;
     text-align: center;
-    /* 1. Change center to stretch so grid tracks force equal row heights */
-    align-items: stretch; 
-    justify-items: center; 
     margin-top: 2rem;
     user-select: none;
 }
@@ -22,26 +20,32 @@
 .profile {
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 25px;
     border: 2px solid #7047A5;
     border-radius: 20px;
     background-color: #00000070;
     backdrop-filter: blur(5px);
-    align-items: center;
-    width: 100%;            
-    max-width: 380px;       
-    /* 2. Add height: 100% so shorter cards expand to match the tallest card */
-    height: 100%; 
-    box-sizing: border-box; 
+
+    /* Three cards per row on desktop */
+    flex: 0 1 calc((100% - 4rem) / 3);
+    max-width: 380px;
+    min-width: 0;
+    box-sizing: border-box;
+
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     font-size: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
 }
 
 .img-container {
     width: 12vw;
     height: 12vw;
+    max-width: 215px;
+    max-height: 215px;
+    aspect-ratio: 1;
+    flex-shrink: 0;
     border-radius: 10%;
     background-size: cover;
     background-position: center;
@@ -71,37 +75,41 @@
     font-size: 1rem;
 }
 
-@media screen and (max-width: 1400px) {
-    .contact-heading h2 {
-        font-size: 2.65rem;
-        letter-spacing: 0.75rem;
-    }
-}
-
-/* Tablet view breakpoint */
+/* Smaller desktop and tablet */
 @media screen and (max-width: 1024px) {
     .contact {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns - 3 rows */
+        gap: 1.5rem;
     }
+
     .profile {
+        flex-basis: calc((100% - 1.5rem) / 2);
         max-width: 420px;
+    }
+
+    .img-container {
+        width: 20vw;
+        height: 20vw;
     }
 }
 
-/* Mobile view breakpoint */
+/* Mobile */
 @media screen and (max-width: 768px) {
     .contact {
-        grid-template-columns: repeat(1, 1fr); /* 1 column - 6 rows */
+        gap: 1.5rem;
+        padding: 0 1rem;
     }
 
     .profile {
-        max-width: 90vw;
+        flex: 0 1 100%;
+        max-width: 420px;
         padding: 20px;
     }
 
     .img-container {
         width: 30vw;
         height: 30vw;
+        max-width: 180px;
+        max-height: 180px;
     }
 
     .contact-name {
@@ -110,6 +118,14 @@
 
     .contact-heading h2 {
         font-size: 1.8rem;
+        letter-spacing: 0.3rem;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1400px) {
+    .contact-heading h2 {
+        font-size: 2.65rem;
+        letter-spacing: 0.75rem;
     }
 }
 
