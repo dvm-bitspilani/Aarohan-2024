@@ -17,22 +17,22 @@ export default function Landing() {
         <>
             <div className="regs-open">
                 <div className="regs-open-track">
-                    <span>Registrations Now Open!!</span>
-                    <span>Registrations Now Open!!</span>
-                    <span>Registrations Now Open!!</span>
-                    <span>Registrations Now Open!!</span>
-                    <span>Registrations Now Open!!</span>
-                    <span>Registrations Now Open!!</span>
-                    <span>Registrations Now Open!!</span>
-                    <span>Registrations Now Open!!</span>
-                    <span aria-hidden="true">Registrations Now Open!!</span>
-                    <span aria-hidden="true">Registrations Now Open!!</span>
-                    <span aria-hidden="true">Registrations Now Open!!</span>
-                    <span aria-hidden="true">Registrations Now Open!!</span>
-                    <span aria-hidden="true">Registrations Now Open!!</span>
-                    <span aria-hidden="true">Registrations Now Open!!</span>
-                    <span aria-hidden="true">Registrations Now Open!!</span>
-                    <span aria-hidden="true">Registrations Now Open!!</span>
+                    <span>Deadline Approcaching !!</span>
+                    <span>Deadline Approcaching !!</span>
+                    <span>Deadline Approcaching !!</span>
+                    <span>Deadline Approcaching !!</span>
+                    <span>Deadline Approcaching !!</span>
+                    <span>Deadline Approcaching !!</span>
+                    <span>Deadline Approcaching !!</span>
+                    <span>Deadline Approcaching !!</span>
+                    <span aria-hidden="true">Deadline Approcaching !!</span>
+                    <span aria-hidden="true">Deadline Approcaching !!</span>
+                    <span aria-hidden="true">Deadline Approcaching !!</span>
+                    <span aria-hidden="true">Deadline Approcaching !!</span>
+                    <span aria-hidden="true">Deadline Approcaching !!</span>
+                    <span aria-hidden="true">Deadline Approcaching !!</span>
+                    <span aria-hidden="true">Deadline Approcaching !!</span>
+                    <span aria-hidden="true">Deadline Approcaching !!</span>
                 </div>
             </div>
 
