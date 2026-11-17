@@ -10,8 +10,11 @@ export default function Information({
   }, {
     date: "15th November, 2026",
     slots: ["9:00 a.m. - 11:00 a.m.", "3:00 p.m. - 5:00 p.m."]
+  }, {
+    date: "22nd November, 2026",
+    slots: ["9:00 a.m. - 11:00 a.m.", "3:00 p.m. - 5:00 p.m."]
   }],
-  lastDate = "14th November, 2026",
+  lastDate = "21st November, 2026",
 }) {
   return (
     <div className="information" style={{marginTop:"1.5rem"}}>
